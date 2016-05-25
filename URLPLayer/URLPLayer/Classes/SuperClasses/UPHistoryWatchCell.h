@@ -10,4 +10,20 @@
 
 @interface UPHistoryWatchCell : UPBaseTableCell
 
+/**
+ 图片
+ */
+@property  (nonatomic, strong)UIImageView *picImgView;
+
+/**
+ 标题
+ */
+@property (nonatomic, strong)UILabel *titleLab;
+
+/**
+ 简介
+ */
+@property (nonatomic, strong)UILabel *descriptLab;
+
+
 @end

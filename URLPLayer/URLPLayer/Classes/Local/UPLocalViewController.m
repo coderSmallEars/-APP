@@ -24,11 +24,18 @@
     [super viewDidLoad];
     self.localView.delegate = self;
     [_localView updateCycleScrollViewImages:nil titles:nil];
-    [_localView updateHistoryWatchTableView:@[@"",@""]];
+    [_localView updateHistoryWatchTableView:@[@"",@"",@"",@""]];
 }
 -(void)uiview:(UIView *)view collectionEventType:(id)type params:(id)params{
     [super uiview:view collectionEventType:type params:params];
     if ([type isEqualToString:@"点击删除按钮"]) {
+        
+    }
+    if ([type isEqualToString:@"点击历史观看cell"]) {
+        
+    }
+    //搜索
+    if ([type isEqualToString:@"navbar_search_icon-"]) {
         
     }
 
