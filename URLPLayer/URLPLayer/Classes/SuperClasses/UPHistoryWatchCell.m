@@ -26,11 +26,11 @@
     [self.contentView addSubview:_picImgView];
     _titleLab = [[UILabel alloc]init];
     _titleLab.numberOfLines = 0;
-    _titleLab.textColor =[UIColor colorWithRGB:000000];
+    _titleLab.textColor =[UIColor colorWithHexString:@"000000"];
     _titleLab.font = [UIFont systemFontOfSize:15.f];
     [self.contentView addSubview:_titleLab];
     _descriptLab = [[UILabel alloc]init];
-    _descriptLab.textColor = [UIColor colorWithRGB:989898];
+    _descriptLab.textColor = [UIColor colorWithHexString:@"989898"];
     _descriptLab.font = [UIFont systemFontOfSize:12.0];
     _descriptLab.numberOfLines = 0;
     [self.contentView addSubview: _descriptLab];

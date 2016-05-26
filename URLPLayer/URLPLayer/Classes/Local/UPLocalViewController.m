@@ -8,7 +8,7 @@
 
 #import "UPLocalViewController.h"
 
-@interface UPLocalViewController ()
+@interface UPLocalViewController ()<UIAlertViewDelegate>
 
 @end
 
@@ -29,6 +29,11 @@
 -(void)uiview:(UIView *)view collectionEventType:(id)type params:(id)params{
     [super uiview:view collectionEventType:type params:params];
     if ([type isEqualToString:@"点击删除按钮"]) {
+        //清空,先看数据库有内容否
+        if (YES) {
+            UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"" message:@"是否全部清空?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+            [alert show];
+        }
         
     }
     if ([type isEqualToString:@"点击历史观看cell"]) {
@@ -38,7 +43,27 @@
     if ([type isEqualToString:@"navbar_search_icon-"]) {
         
     }
+    if ([type isEqualToString:@"置顶"]) {
+        
+    }
+    if ([type isEqualToString:@"点击了轮播图"]) {
+        
+    }
+    if ([type isEqualToString:@"搜索本地视频"]) {
+        
+    }
 
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0){
+        return;
+        
+    }else{
+     //清空数据库数据
+     [_localView updateHistoryWatchTableView:nil];
+    }
+    
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

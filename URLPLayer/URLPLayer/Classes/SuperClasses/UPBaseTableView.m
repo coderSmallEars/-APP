@@ -18,11 +18,11 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         
-        _tableView.backgroundColor = [UIColor whiteColor];
+        _tableView.backgroundColor = [UIColor clearColor];
         _tableView.tableFooterView = [[UIView alloc] init];
         
         //分割线设置
-        _tableView.separatorColor = [UIColor colorWithRed:221/255.0 green:221/255.0 blue:221/255.0 alpha:1];
+        _tableView.separatorColor = [UIColor colorWithHexString:@"dddddd"];
         self.tableView.separatorInset = UIEdgeInsetsMake(0, ALD(19.5f), 0, ALD(19.5f));
         
         [self addSubview:_tableView];

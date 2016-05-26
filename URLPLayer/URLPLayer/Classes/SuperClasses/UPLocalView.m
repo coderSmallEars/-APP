@@ -20,6 +20,7 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = [UIColor colorWithHexString:@"f5f5f5"];
         [self.navigationView creatNavigitionViewWithLeftImgName:@"navbar_backarrow_icon" titleName:@"历史" rightImgName:@"navbar_search_icon-"];
        //删除按钮
         UIButton * deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -37,6 +38,43 @@
 
 -(void)clickDeleteBtn{
     [self uiview:nil collectionEventType:@"点击删除按钮" params:nil];
+}
+-(void)clickToLocalVideo{
+    [self uiview:nil collectionEventType:@"搜索本地视频" params:nil];
+
+}
+-(UIButton *)searchLocalBtn{
+    if (_searchLocalBtn == nil) {
+        _searchLocalBtn  =[UIButton buttonWithType:UIButtonTypeCustom];
+        [_searchLocalBtn setTitle:@"搜索本地视频" forState:UIControlStateNormal];
+        _searchLocalBtn.titleLabel.font  = [UIFont systemFontOfSize:14.0];
+        [_searchLocalBtn setTitleColor:[UIColor colorWithHexString:@"333333"] forState:UIControlStateNormal];
+        [_searchLocalBtn setBackgroundColor:[UIColor colorWithHexString:@"f5f5f5"]];
+        _searchLocalBtn.layer.cornerRadius = 6.0;
+        _searchLocalBtn.clipsToBounds = YES;
+        _searchLocalBtn.frame = CGRectMake(0, 0, 100.f, 30.f);
+        _searchLocalBtn.centerX = kScreenWidth/2.0;
+        _searchLocalBtn.top = self.showNoticeLab.bottom + 10.f;
+        _searchLocalBtn.hidden = YES;
+        [_searchLocalBtn addTarget:self action:@selector(clickToLocalVideo) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:_searchLocalBtn];
+    }
+    return _searchLocalBtn;
+
+}
+-(UILabel *)showNoticeLab{
+    if (_showNoticeLab == nil) {
+        _showNoticeLab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 20)];
+        _showNoticeLab.center = _historyWatchTV.center;
+        _showNoticeLab.centerY = _showNoticeLab.centerY - 30.f;
+        _showNoticeLab.textAlignment = NSTextAlignmentCenter;
+        _showNoticeLab.textColor = [UIColor colorWithHexString:@"333333"];
+        _showNoticeLab.font = [UIFont systemFontOfSize:14.0];
+        _showNoticeLab.text = @"您还没有历史浏览记录";
+        [self addSubview:_showNoticeLab];
+        _showNoticeLab.hidden = YES;
+    }
+    return _showNoticeLab;
 }
 -(UPNavigationView*)navigationView{
     if (!_navigationView) {
@@ -60,7 +98,7 @@
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
 {
-    NSLog(@"---点击了第%ld张图片", (long)index);
+    [self uiview:nil collectionEventType:@"点击了轮播图" params:@(index)];
     
 }
 -(void)updateCycleScrollViewImages:(id)images titles:(id)titles{
@@ -76,6 +114,13 @@
  更新历史浏览列表
  */
 -(void)updateHistoryWatchTableView:(id)datas{
+    if (datas == nil) {
+        self.showNoticeLab.hidden = NO;
+        self.searchLocalBtn.hidden = NO;
+    }else{
+        self.showNoticeLab.hidden = YES;
+        self.searchLocalBtn.hidden = YES;
+    }
     [_historyWatchTV updateView:datas];
 }
 

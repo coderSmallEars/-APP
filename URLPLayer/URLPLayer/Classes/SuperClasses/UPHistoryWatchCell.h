@@ -7,8 +7,8 @@
 //
 
 #import "UPBaseTableCell.h"
-
-@interface UPHistoryWatchCell : UPBaseTableCell
+#import "MGSwipeTableCell.h"
+@interface UPHistoryWatchCell : MGSwipeTableCell
 
 /**
  图片
@@ -25,5 +25,6 @@
  */
 @property (nonatomic, strong)UILabel *descriptLab;
 
+-(void)updateView:(id)datas;
 
 @end
