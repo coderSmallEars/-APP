@@ -7,7 +7,7 @@
 //
 
 #import "UPHistoryWatchCell.h"
-#import "UIImageView+WebCache.h"
+
 @implementation UPHistoryWatchCell
 /**
  height ALDHeight(114.5)

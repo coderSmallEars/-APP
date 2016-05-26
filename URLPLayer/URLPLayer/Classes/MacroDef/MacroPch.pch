@@ -37,10 +37,25 @@
 #import "FMDB.h"
 #import "MMDrawerController.h"
 #import "MJRefresh.h"
+#import "UIImageView+WebCache.h"
+#import "SqliteTool.h"
+#import "DownloadTool.h"
+#import "NSString+Hash.h"
 
 
+// 缓存主目录
+#define ZFCachesDirectory [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"Video"]
 
+// 保存文件名
+#define ZFFileName(url) [[url md5String] stringByAppendingString:@".mp4"]
 
+// 文件的存放路径（caches）
+#define ZFFileFullpath(url) [ZFCachesDirectory stringByAppendingPathComponent:ZFFileName(url)]
 
+// 文件的已下载长度
+#define ZFDownloadLength(url) [[[NSFileManager defaultManager] attributesOfItemAtPath:ZFFileFullpath(url) error:nil][NSFileSize] integerValue]
+
+// 暂停或恢复时resumedata的路径
+#define kResumeDataPath(url) [[[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"Video"]  stringByAppendingPathComponent:[[url md5String] stringByAppendingString:@".tmp"]]
 
 #endif /* MacroPch_pch */

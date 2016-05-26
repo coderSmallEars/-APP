@@ -44,6 +44,11 @@
 		630B05EF1CF5AA42008733E6 /* UPHistoryWatchtTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 630B05EE1CF5AA42008733E6 /* UPHistoryWatchtTableView.m */; };
 		630B05F21CF5AF89008733E6 /* UPBaseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 630B05F11CF5AF89008733E6 /* UPBaseTableCell.m */; };
 		630B05F51CF5B037008733E6 /* UPHistoryWatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 630B05F41CF5B037008733E6 /* UPHistoryWatchCell.m */; };
+		637978691CF6D08100B44F7C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 637978681CF6D08100B44F7C /* libsqlite3.0.tbd */; };
+		6379786D1CF6D36300B44F7C /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6379786C1CF6D36300B44F7C /* VideoModel.m */; };
+		637978711CF6D65B00B44F7C /* SqliteTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 637978701CF6D65B00B44F7C /* SqliteTool.m */; };
+		637978751CF6D67F00B44F7C /* DownloadTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 637978741CF6D67F00B44F7C /* DownloadTool.m */; };
+		637978791CF6E02600B44F7C /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 637978781CF6E02600B44F7C /* NSString+Hash.m */; };
 		63B1DE001CF67F60001B9A54 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B1DDFC1CF67F60001B9A54 /* MGSwipeButton.m */; };
 		63B1DE011CF67F60001B9A54 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B1DDFE1CF67F60001B9A54 /* MGSwipeTableCell.m */; };
 		8A85F9401CF0B1DF006E89F9 /* UPLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85F93F1CF0B1DF006E89F9 /* UPLocalViewController.m */; };
@@ -150,6 +155,15 @@
 		630B05F11CF5AF89008733E6 /* UPBaseTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPBaseTableCell.m; path = URLPLayer/Classes/SuperClasses/UPBaseTableCell.m; sourceTree = SOURCE_ROOT; };
 		630B05F31CF5B037008733E6 /* UPHistoryWatchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPHistoryWatchCell.h; path = URLPLayer/Classes/SuperClasses/UPHistoryWatchCell.h; sourceTree = SOURCE_ROOT; };
 		630B05F41CF5B037008733E6 /* UPHistoryWatchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPHistoryWatchCell.m; path = URLPLayer/Classes/SuperClasses/UPHistoryWatchCell.m; sourceTree = SOURCE_ROOT; };
+		637978681CF6D08100B44F7C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		6379786B1CF6D36300B44F7C /* VideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoModel.h; path = URLPLayer/Classes/Local/VideoModel.h; sourceTree = SOURCE_ROOT; };
+		6379786C1CF6D36300B44F7C /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoModel.m; path = URLPLayer/Classes/Local/VideoModel.m; sourceTree = SOURCE_ROOT; };
+		6379786F1CF6D65B00B44F7C /* SqliteTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteTool.h; sourceTree = "<group>"; };
+		637978701CF6D65B00B44F7C /* SqliteTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteTool.m; sourceTree = "<group>"; };
+		637978731CF6D67F00B44F7C /* DownloadTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadTool.h; sourceTree = "<group>"; };
+		637978741CF6D67F00B44F7C /* DownloadTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadTool.m; sourceTree = "<group>"; };
+		637978771CF6E02600B44F7C /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		637978781CF6E02600B44F7C /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		63B1DDFB1CF67F60001B9A54 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
 		63B1DDFC1CF67F60001B9A54 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
 		63B1DDFD1CF67F60001B9A54 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
@@ -195,6 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				637978691CF6D08100B44F7C /* libsqlite3.0.tbd in Frameworks */,
 				E2E44723429A8F455E214273 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +280,7 @@
 		630B05661CF58822008733E6 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				637978761CF6E02600B44F7C /* Security */,
 				63B1DDF91CF67F60001B9A54 /* MGSwipeTableCell */,
 				630B05B21CF59CBC008733E6 /* SDWebImage */,
 				630B059B1CF59AA1008733E6 /* SDCycleScrollView */,
@@ -342,6 +358,52 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		637978641CF6D03000B44F7C /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				637978721CF6D66600B44F7C /* downloadTool */,
+				6379786E1CF6D65B00B44F7C /* sqliteTool */,
+			);
+			name = Tool;
+			path = URLPLayer/Classes/Tool;
+			sourceTree = SOURCE_ROOT;
+		};
+		6379786A1CF6D33100B44F7C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6379786B1CF6D36300B44F7C /* VideoModel.h */,
+				6379786C1CF6D36300B44F7C /* VideoModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6379786E1CF6D65B00B44F7C /* sqliteTool */ = {
+			isa = PBXGroup;
+			children = (
+				6379786F1CF6D65B00B44F7C /* SqliteTool.h */,
+				637978701CF6D65B00B44F7C /* SqliteTool.m */,
+			);
+			path = sqliteTool;
+			sourceTree = "<group>";
+		};
+		637978721CF6D66600B44F7C /* downloadTool */ = {
+			isa = PBXGroup;
+			children = (
+				637978731CF6D67F00B44F7C /* DownloadTool.h */,
+				637978741CF6D67F00B44F7C /* DownloadTool.m */,
+			);
+			path = downloadTool;
+			sourceTree = "<group>";
+		};
+		637978761CF6E02600B44F7C /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				637978771CF6E02600B44F7C /* NSString+Hash.h */,
+				637978781CF6E02600B44F7C /* NSString+Hash.m */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
 		63B1DDF91CF67F60001B9A54 /* MGSwipeTableCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +418,7 @@
 		83E8834899B6A90B42ECE259 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				637978681CF6D08100B44F7C /* libsqlite3.0.tbd */,
 				79ADE0A8CF9C83141812247D /* libPods.a */,
 			);
 			name = Frameworks;
@@ -510,6 +573,7 @@
 		8AB1D0C31CF056C800C47609 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				637978641CF6D03000B44F7C /* Tool */,
 				630B05661CF58822008733E6 /* ThirdPart */,
 				8AB1D0C41CF056FD00C47609 /* SuperClasses */,
 				8A85F9471CF0B287006E89F9 /* Drawer */,
@@ -557,6 +621,7 @@
 		8AB1D0CD1CF0579200C47609 /* Loacal */ = {
 			isa = PBXGroup;
 			children = (
+				6379786A1CF6D33100B44F7C /* Model */,
 				8A85F9351CF0B0C2006E89F9 /* Core */,
 				8A85F9361CF0B0C2006E89F9 /* View */,
 				8A85F93E1CF0B1DF006E89F9 /* UPLocalViewController.h */,
@@ -784,10 +849,12 @@
 				630B052D1CF552D4008733E6 /* UPLocalView.m in Sources */,
 				630B05D61CF59CBC008733E6 /* SDImageCache.m in Sources */,
 				8ACAF95B1CF0C7B2002981E4 /* UPRefreshTableView.m in Sources */,
+				637978711CF6D65B00B44F7C /* SqliteTool.m in Sources */,
 				630B05DD1CF59CBC008733E6 /* UIButton+WebCache.m in Sources */,
 				630B05EC1CF5A744008733E6 /* UPBaseTableView.m in Sources */,
 				630B05B11CF59AA1008733E6 /* UIView+SDExtension.m in Sources */,
 				63B1DE011CF67F60001B9A54 /* MGSwipeTableCell.m in Sources */,
+				637978791CF6E02600B44F7C /* NSString+Hash.m in Sources */,
 				630B05AB1CF59AA1008733E6 /* TAAbstractDotView.m in Sources */,
 				630B05E01CF59CBC008733E6 /* UIImage+WebP.m in Sources */,
 				8A85F9401CF0B1DF006E89F9 /* UPLocalViewController.m in Sources */,
@@ -812,8 +879,10 @@
 				8ACAF9581CF0C17C002981E4 /* UPViewController.m in Sources */,
 				630B05D91CF59CBC008733E6 /* SDWebImageDownloader.m in Sources */,
 				8AB1D0C71CF0573A00C47609 /* UPNavigationController.m in Sources */,
+				637978751CF6D67F00B44F7C /* DownloadTool.m in Sources */,
 				630B05AD1CF59AA1008733E6 /* TADotView.m in Sources */,
 				8AB1D0951CF054C300C47609 /* AppDelegate.m in Sources */,
+				6379786D1CF6D36300B44F7C /* VideoModel.m in Sources */,
 				630B05E21CF59CBC008733E6 /* UIImageView+WebCache.m in Sources */,
 				8AB1D0921CF054C300C47609 /* main.m in Sources */,
 				630B05AF1CF59AA1008733E6 /* SDCollectionViewCell.m in Sources */,
