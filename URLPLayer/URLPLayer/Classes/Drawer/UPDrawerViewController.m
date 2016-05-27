@@ -25,7 +25,19 @@
     [super viewDidLoad];
     _drawerView.delegate = self;
 }
+-(void)uiview:(UIView *)view collectionEventType:(id)type params:(id)params{
+    [super uiview:view collectionEventType:type params:params];
+    if ([type isEqualToString:@"切换主题色"]) {
+        
+    }
+    if ([type isEqualToString:@"主人模式"]) {
+        
+    }
+    if ([type isEqualToString:@"清除缓存"]) {
+        
+    }
 
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

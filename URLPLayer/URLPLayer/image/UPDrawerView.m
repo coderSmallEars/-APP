@@ -13,12 +13,13 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
+        
         [self layoutTableView];
     }
     return self;
 }
 -(void)layoutTableView{
-    _drawerTableView  = [[UPDrawerTableView alloc]initWithFrame:CGRectMake(0, kScreenHeight/3.0, kScreenWidth, kScreenHeight * 2/3.0)];
+    _drawerTableView  = [[UPDrawerTableView alloc]initWithFrame:CGRectMake(0, kScreenHeight/3.0, kScreenWidth, 5 *(ALDHeight(22.f) + 20.f) + 1.5f)];
     [self addSubview:_drawerTableView];
 
 

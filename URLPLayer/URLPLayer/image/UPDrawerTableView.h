@@ -9,5 +9,6 @@
 #import "UPBaseTableView.h"
 
 @interface UPDrawerTableView : UPBaseTableView
-
+//数据源
+@property (nonatomic, strong) NSArray * dataArr;
 @end

@@ -11,6 +11,7 @@
 		6303A9CA1CF7CDA8008AD4EF /* bg_Input-panel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6303A9C81CF7CDA8008AD4EF /* bg_Input-panel@3x.png */; };
 		6303A9CD1CF7DCCF008AD4EF /* UPDrawerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6303A9CC1CF7DCCF008AD4EF /* UPDrawerView.m */; };
 		6303A9D01CF7DD91008AD4EF /* UPDrawerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6303A9CF1CF7DD91008AD4EF /* UPDrawerTableView.m */; };
+		6303A9D31CF7E175008AD4EF /* UPDrawerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6303A9D21CF7E175008AD4EF /* UPDrawerCell.m */; };
 		630B051B1CF542EF008733E6 /* UPView.m in Sources */ = {isa = PBXBuildFile; fileRef = 630B051A1CF542EF008733E6 /* UPView.m */; };
 		630B051E1CF548D4008733E6 /* UPNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 630B051D1CF548D4008733E6 /* UPNavigationView.m */; };
 		630B05251CF54E82008733E6 /* navbar_backarrow_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 630B05221CF54E82008733E6 /* navbar_backarrow_icon@2x.png */; };
@@ -98,6 +99,8 @@
 		6303A9CC1CF7DCCF008AD4EF /* UPDrawerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPDrawerView.m; path = URLPLayer/image/UPDrawerView.m; sourceTree = SOURCE_ROOT; };
 		6303A9CE1CF7DD91008AD4EF /* UPDrawerTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPDrawerTableView.h; path = URLPLayer/image/UPDrawerTableView.h; sourceTree = SOURCE_ROOT; };
 		6303A9CF1CF7DD91008AD4EF /* UPDrawerTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPDrawerTableView.m; path = URLPLayer/image/UPDrawerTableView.m; sourceTree = SOURCE_ROOT; };
+		6303A9D11CF7E175008AD4EF /* UPDrawerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPDrawerCell.h; path = URLPLayer/image/UPDrawerCell.h; sourceTree = SOURCE_ROOT; };
+		6303A9D21CF7E175008AD4EF /* UPDrawerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPDrawerCell.m; path = URLPLayer/image/UPDrawerCell.m; sourceTree = SOURCE_ROOT; };
 		630B05191CF542EF008733E6 /* UPView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPView.h; path = URLPLayer/Classes/SuperClasses/UPView.h; sourceTree = SOURCE_ROOT; };
 		630B051A1CF542EF008733E6 /* UPView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPView.m; path = URLPLayer/Classes/SuperClasses/UPView.m; sourceTree = SOURCE_ROOT; };
 		630B051C1CF548D4008733E6 /* UPNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPNavigationView.h; path = URLPLayer/Classes/SuperClasses/UPNavigationView.h; sourceTree = SOURCE_ROOT; };
@@ -553,6 +556,8 @@
 				6303A9CC1CF7DCCF008AD4EF /* UPDrawerView.m */,
 				6303A9CE1CF7DD91008AD4EF /* UPDrawerTableView.h */,
 				6303A9CF1CF7DD91008AD4EF /* UPDrawerTableView.m */,
+				6303A9D11CF7E175008AD4EF /* UPDrawerCell.h */,
+				6303A9D21CF7E175008AD4EF /* UPDrawerCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -903,6 +908,7 @@
 				630B05D61CF59CBC008733E6 /* SDImageCache.m in Sources */,
 				8ACAF95B1CF0C7B2002981E4 /* UPRefreshTableView.m in Sources */,
 				637978711CF6D65B00B44F7C /* SqliteTool.m in Sources */,
+				6303A9D31CF7E175008AD4EF /* UPDrawerCell.m in Sources */,
 				630B05DD1CF59CBC008733E6 /* UIButton+WebCache.m in Sources */,
 				630B05EC1CF5A744008733E6 /* UPBaseTableView.m in Sources */,
 				630B05B11CF59AA1008733E6 /* UIView+SDExtension.m in Sources */,
