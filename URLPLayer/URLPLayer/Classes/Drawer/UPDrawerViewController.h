@@ -7,7 +7,8 @@
 //
 
 #import "UPViewController.h"
-
+#import "UPDrawerView.h"
 @interface UPDrawerViewController : UPViewController
 
+@property (nonatomic, strong) UPDrawerView * drawerView;
 @end

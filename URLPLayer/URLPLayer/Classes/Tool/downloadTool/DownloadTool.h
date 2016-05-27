@@ -37,13 +37,12 @@
 
 /**
  *  开启任务下载资源
- *
- *  @param url           下载地址
- *  @param progressBlock 回调下载进度
- *  @param stateBlock    下载状态
  */
 - (void)addTaskWithVideoPlayModel:(VideoModel * )videoPlayModel;
 
+/**
+ 暂停或开始下载任务
+ */
 - (void)suspendOrBeginWithVideoPlayModel:(VideoModel * )videoPlayModel;
 
 

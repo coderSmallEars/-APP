@@ -14,10 +14,16 @@
 
 @implementation UPDrawerViewController
 
+-(void)loadView{
+    [super loadView];
+    _drawerView = [[UPDrawerView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.view = _drawerView;
+
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"设置"; 
-    // Do any additional setup after loading the view.
+    _drawerView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {

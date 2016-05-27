@@ -43,9 +43,7 @@
     if ([type isEqualToString:@"navbar_search_icon-"]) {
         
     }
-    if ([type isEqualToString:@"置顶"]) {
-        
-    }
+    
     if ([type isEqualToString:@"点击了轮播图"]) {
         
     }

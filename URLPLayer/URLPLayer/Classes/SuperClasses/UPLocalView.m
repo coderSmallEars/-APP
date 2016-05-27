@@ -70,7 +70,7 @@
         _showNoticeLab.textAlignment = NSTextAlignmentCenter;
         _showNoticeLab.textColor = [UIColor colorWithHexString:@"333333"];
         _showNoticeLab.font = [UIFont systemFontOfSize:14.0];
-        _showNoticeLab.text = @"您还没有历史浏览记录";
+        _showNoticeLab.text = @"您还没有历史游览记录";
         [self addSubview:_showNoticeLab];
         _showNoticeLab.hidden = YES;
     }

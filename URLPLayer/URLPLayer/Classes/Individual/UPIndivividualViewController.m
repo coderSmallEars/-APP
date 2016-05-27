@@ -15,12 +15,36 @@
 
 @implementation UPIndivividualViewController
 
+-(void)loadView{
+    [super loadView];
+    _indivividualView = [[UPIndivividualView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.view = _indivividualView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"个人";
-    // Do any additional setup after loading the view.
+    
+    _indivividualView.delegate  = self;
 }
+-(void)uiview:(UIView *)view collectionEventType:(id)type params:(id)params{
+    [super uiview:view collectionEventType:type params:params];
+    if ([type isEqualToString:@"吐槽"]) {
+        
+    }
+    if ([type isEqualToString:@"qq群291075189"]) {
+        
+    }
+    if ([type isEqualToString:@"公众号"]) {
+        
+    }
+    if ([type isEqualToString:@"联系我们"]){
+    
+    }
+    //搜索按钮
+    if ([type isEqualToString:@"navbar_search_icon-"]) {
+        
+    }
 
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

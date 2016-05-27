@@ -224,7 +224,7 @@ static FMDatabaseQueue *queue;
     NSMutableArray * modelArr = [NSMutableArray array];
     [queue inDatabase:^(FMDatabase *dealDB) {
         // 1.查询数据
-        FMResultSet *rs = [dealDB executeQuery:@"select * from History"];
+        FMResultSet *rs = [dealDB executeQuery:@"select * from History order by id desc"];
         while ([rs next]) {
             VideoModel * model = [[VideoModel alloc]init];
             model.fileName = [rs stringForColumn:@"fileName"];

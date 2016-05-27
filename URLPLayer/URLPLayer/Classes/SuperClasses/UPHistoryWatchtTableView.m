@@ -62,7 +62,9 @@
             [self.datas removeObjectAtIndex:path.row];
             [self.datas insertObject:moveData atIndex:0];
             [self.tableView moveRowAtIndexPath:path toIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-            [self uiview:nil collectionEventType:@"置顶" params:nil];
+#warning  修改数据库
+            
+            
         }
     
     }

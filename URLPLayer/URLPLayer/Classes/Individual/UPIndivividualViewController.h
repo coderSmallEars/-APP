@@ -7,7 +7,9 @@
 //
 
 #import "UPViewController.h"
-
+#import "UPIndivividualView.h"
 @interface UPIndivividualViewController : UPViewController
+
+@property (nonatomic, strong)UPIndivividualView *indivividualView;
 
 @end
