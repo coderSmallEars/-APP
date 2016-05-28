@@ -9,8 +9,6 @@
 #ifndef SDImport_h
 #define SDImport_h
 
-
-//Super Classes
 #import "UPNavigationController.h"
 #import "UPTabBarController.h"
 #import "UPViewController.h"
@@ -27,9 +25,6 @@
 //drawer
 #import "UPDrawerViewController.h"
 
-//播放器
-#import "UPPlayer.h"
-
 //Third Part
 #import "YYKit.h"
 #import "FMDB.h"
@@ -39,8 +34,8 @@
 #import "SqliteTool.h"
 #import "DownloadTool.h"
 #import "NSString+Hash.h"
+#import <Masonry.h>
 #import "Toast+UIView.h"
-
 
 
 #endif /* SDImport_h */

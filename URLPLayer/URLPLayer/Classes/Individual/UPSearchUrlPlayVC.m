@@ -8,7 +8,6 @@
 
 #import "UPSearchUrlPlayVC.h"
 #import "UPSearchUrlPlayView.h"
-#import "UPPlayerView.h"
 #define originStr @"rtmp://live.hkstv.hk.lxdns.com/live/hks"
 #define kLOLMovieStr @"http://videohy.tc.qq.com/vhot2.qqvideo.tc.qq.com/i0198e3nrxv.p702.1.mp4?vkey=E9894CE1624646A3877812381E269D676EF73984C0657894A14208D50BEDE2A97C477064E18DBCD6BFC65DA1CB875B13D6A84D7FEF9DcAE0FCB67C215C0724C6EC2A0CBA161BE9C4877A4096F9030814F0624A24B5B9D5F37&sha=&level=3&br=200&fmt=hd&sdtfrom=%28null%29&platform=0&guid=7bb4c06070471033bbcf80fbd48ad00a&ocid=232660908"
 #define TencentSports @"http://123.125.86.21/vlive.qqvideo.tc.qq.com/v0020wmbdf9.p412.1.mp4?vkey=363C785E45D581170C38D6C5CE607F987D5AAA44CAD1B5764218CA977C3BF8F4553CD78DAAF45FBD160154CFA2384EFEC26F5EE438040750F67F8709A2291CA12CA8D0F09D4B390DAA1B28C3541981F29EEAF0972B7F8A15&sha=&level=3&br=200&fmt=hd&sdtfrom=v3030&platform=40403&guid=E411ADA7B940479FAEF7FAE4BF6CE3E6"
@@ -71,10 +70,6 @@
         [self presentViewController:[(NSDictionary *)params objectForKey:@"VC"] animated:YES completion:^{
             
         }];
-        
-        UPPlayerView * playerView = [[UPPlayerView alloc]initWithURL:[NSURL URLWithString:kReadJsonList ? [(NSDictionary *)params objectForKey:@"searchtext"] : originStr]];
-        
-        
         
     }
 

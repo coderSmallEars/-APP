@@ -18,33 +18,6 @@
 #import "MacroDef.h"
 //Super Classes
 #import "SDImport.h"
-#import "UPNavigationController.h"
-#import "UPTabBarController.h"
-#import "UPViewController.h"
-
-//Local
-#import "UPLocalViewController.h"
-
-//Resource
-#import "UPResourceViewController.h"
-
-//Individual
-#import "UPIndivividualViewController.h"
-
-//drawer
-#import "UPDrawerViewController.h"
-
-//Third Part
-#import "YYKit.h"
-#import "FMDB.h"
-#import "MMDrawerController.h"
-#import "MJRefresh.h"
-#import "UIImageView+WebCache.h"
-#import "SqliteTool.h"
-#import "DownloadTool.h"
-#import "NSString+Hash.h"
-#import <Masonry.h>
-
 //Tools
 #import "UPInlineMethod.h"
 // 缓存主目录

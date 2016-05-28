@@ -16,8 +16,6 @@
 
 @property (nonatomic , strong) UITableView * tableView;
 
-@property (nonatomic , strong) UPPlayer * bmplayer;
-
 
 @end
 
@@ -55,7 +53,6 @@
     {
         NSLog(@"%@",_search.text);
         
-        [self uiview:nil collectionEventType:@"打开播放器" params:@{@"VC":self.bmplayer,@"searchtext":_search.text}];
     }
     
     else [self makeToast:@"请输入有效网址"
@@ -110,19 +107,6 @@
     return _cancel;
 }
 
-
-
--(UPPlayer *)bmplayer
-{
-    if (!_bmplayer) {
-        
-        _bmplayer  = [UPPlayer new];
-        
-    }
-    
-    return _bmplayer;
-    
-}
 
 -(UITableView *)tableView
 {
