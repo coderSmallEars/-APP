@@ -35,8 +35,6 @@
         [self presentViewController:searchUrlPlay animated:YES completion:^{
             
         }];
-        
-        
     }
 
 
