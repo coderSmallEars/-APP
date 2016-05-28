@@ -16,6 +16,9 @@
 
 @property (nonatomic , strong) UITableView * tableView;
 
+@property (nonatomic , strong) BMPlayer * bmplayer;
+
+
 @end
 
 @implementation SearchUrlPlayView
@@ -37,16 +40,29 @@
 
 
 
-
+#pragma mark - 取消搜索
 -(void)dissmissVC
 {
     [self uiview:nil collectionEventType:@"取消" params:nil];
 }
 
-#pragma mark - searchDelegate
+#pragma mark - searchDelegate(search代理)
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    NSLog(@"jiji");
+    NSRange range = [_search.text rangeOfString:@"http://"];
+    
+    if (range.length > 0)
+    {
+        NSLog(@"%@",_search.text);
+        
+        [self uiview:nil collectionEventType:@"打开播放器" params:@{@"VC":self.bmplayer,@"searchtext":_search.text}];
+    }
+    
+    else [self makeToast:@"请输入有效网址"
+                    duration:0.5
+                    position:@"center"
+     ];
+
 }
 
 #pragma mark - 懒加载
@@ -66,6 +82,8 @@
         _search.delegate = self;
         
         _search.returnKeyType = UIReturnKeySearch;
+        
+        _search.showsScopeBar = YES;
         
     }
     
@@ -90,6 +108,20 @@
     }
     
     return _cancel;
+}
+
+
+
+-(BMPlayer *)bmplayer
+{
+    if (!_bmplayer) {
+        
+        _bmplayer  = [BMPlayer new];
+        
+    }
+    
+    return _bmplayer;
+    
 }
 
 -(UITableView *)tableView
