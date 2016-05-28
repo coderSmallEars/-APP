@@ -28,12 +28,19 @@
 }
 -(void)uiview:(UIView *)view collectionEventType:(id)type params:(id)params{
     [super uiview:view collectionEventType:type params:params];
+    
+     AppDelegate * app  =  [UIApplication sharedApplication].delegate;
+    
     if ([type isEqualToString:@"切换主题色"]) {
         
-    }
-    if ([type isEqualToString:@"主人模式"]) {
+        [app exchageColor:[UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1]];
         
-      AppDelegate * app  =  [UIApplication sharedApplication].delegate;
+        [app.mmDrawer closeDrawerAnimated:YES completion:^(BOOL finished) {
+            
+        }];
+
+    }
+    if ([type isEqualToString:@"加密模式"]) {
         
       [app.mmDrawer closeDrawerAnimated:YES completion:^(BOOL finished) {
           

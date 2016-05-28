@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UIView+Util.h"
 
 @interface AppDelegate ()
 
@@ -34,16 +35,66 @@
     
     self.window.rootViewController = self.mmDrawer;
     
-    [self exchageColor];
+    AppDelegate * app  =  [UIApplication sharedApplication].delegate
+    ;
+    [app exchageColor:[UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1]];
     
     [self.window makeKeyAndVisible];
     
     return YES;
 }
 
--(void)exchageColor
+
+
+#pragma mark - 主题色外观控制
+-(void)exchageColor:(UIColor *)color
 {
-    [[UIApplication sharedApplication] keyWindow].tintColor = [UIColor orangeColor];
+    /************ 控件外观设置 **************/
+    [[UIApplication sharedApplication] keyWindow].tintColor = color;
+    
+    //再plist文件中设置View controller-based status bar appearance 为 NO才能起效
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    //导航条上标题的颜色
+    NSDictionary *navbarTitleTextAttributes = @{NSForegroundColorAttributeName:color};
+    [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
+    
+    //导航条上UIBarButtonItem颜色
+    [[UINavigationBar appearance] setTintColor:color];
+    
+    //TabBar选中图标的颜色,默认是蓝色
+    [[UITabBar appearance] setTintColor:color];
+    //TabBarItem选中的颜色
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:color} forState:UIControlStateSelected];
+    
+    //导航条的背景颜色
+    [[UINavigationBar appearance] setBarTintColor:color];
+    
+    //TabBar的背景颜色
+    [[UITabBar appearance] setBarTintColor:color];
+    
+    [UISearchBar appearance].tintColor =color;
+    //当某个class被包含在另外一个class内时，才修改外观。
+    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setCornerRadius:14.0];
+    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setAlpha:0.6];
+    
+    
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = color;
+    pageControl.currentPageIndicatorTintColor = color;
+    
+    [[UITextField appearance] setTintColor:color];
+    [[UITextView appearance]  setTintColor:color];
+    
+
+    UIMenuController *menuController = [UIMenuController sharedMenuController];
+    
+    [menuController setMenuVisible:YES animated:YES];
+    [menuController setMenuItems:@[
+                                   [[UIMenuItem alloc] initWithTitle:@"复制" action:NSSelectorFromString(@"copyText:")],
+                                   [[UIMenuItem alloc] initWithTitle:@"删除" action:NSSelectorFromString(@"deleteObject:")]
+                                   ]];
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
