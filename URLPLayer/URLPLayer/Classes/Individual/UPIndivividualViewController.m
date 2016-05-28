@@ -8,7 +8,8 @@
 //
 
 #import "UPIndivividualViewController.h"
-
+#import "SearchUrlPlayVC.h"
+#import "DownLoadVC.h"
 @interface UPIndivividualViewController ()
 
 @end
@@ -30,8 +31,11 @@
     if ([type isEqualToString:@"吐槽"]) {
         
     }
-    if ([type isEqualToString:@"qq群291075189"]) {
+    if ([type isEqualToString:@"下载管理"]) {
         
+        DownLoadVC * downLoadVC = [DownLoadVC new];
+        downLoadVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:downLoadVC animated:YES];
     }
     if ([type isEqualToString:@"公众号"]) {
         
@@ -42,7 +46,15 @@
     //搜索按钮
     if ([type isEqualToString:@"navbar_search_icon-"]) {
         
+        SearchUrlPlayVC * searchUrlPlay = [SearchUrlPlayVC new];
+        
+        [self presentViewController:searchUrlPlay animated:YES completion:^{
+            
+        }];
+        
+        
     }
+
 
 }
 - (void)didReceiveMemoryWarning {

@@ -20,7 +20,7 @@
     return self;
 }
 -(void)layout{
-    _picImgView = [[UIImageView alloc]initWithFrame:CGRectMake(ALD(19.5f), ALDHeight(10.f) ,ALD(135.f) ,ALDHeight(94.f))];
+    _picImgView = [[UIImageView alloc]initWithFrame:CGRectMake(ALD(19.5f), ALDHeight(10.f) ,ALD(110.f) ,ALDHeight(70.f))];
     _picImgView.layer.cornerRadius = 8.0;
     _picImgView.clipsToBounds = YES;
     [self.contentView addSubview:_picImgView];

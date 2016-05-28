@@ -7,6 +7,7 @@
 //
 
 #import "UPDrawerViewController.h"
+#import "AppDelegate.h"
 
 @interface UPDrawerViewController ()
 
@@ -32,12 +33,20 @@
     }
     if ([type isEqualToString:@"主人模式"]) {
         
+      AppDelegate * app  =  [UIApplication sharedApplication].delegate;
+        
+      [app.mmDrawer closeDrawerAnimated:YES completion:^(BOOL finished) {
+          
+      }];
+        
     }
     if ([type isEqualToString:@"清除缓存"]) {
         
     }
 
 }
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

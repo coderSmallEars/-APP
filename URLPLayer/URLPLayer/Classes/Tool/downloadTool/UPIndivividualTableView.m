@@ -24,7 +24,7 @@
     if (self) {
         self.backgroundColor  = [UIColor colorWithHexString:@"f5f5f5"];
         
-        self.datas =[NSMutableArray arrayWithArray:@[@"qq群291075189",@"公众号",@"联系我们"]];
+        self.datas =[NSMutableArray arrayWithArray:@[@"下载管理",@"公众号",@"联系我们"]];
         /**
          监听键盘的弹出，把输入工具条往上移
          */

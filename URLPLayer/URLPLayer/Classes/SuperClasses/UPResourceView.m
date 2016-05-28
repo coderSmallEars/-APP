@@ -34,7 +34,7 @@
     return _navigationView;
 }
 -(void)layoutCycleScrollView{
-    cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 20.f + kNavigationBarHeight, kScreenWidth, ALDHeight(170.f)) delegate:self placeholderImage:[UIImage imageNamed:@""]];
+    cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 20.f + kNavigationBarHeight, kScreenWidth, ALDHeight(100.f)) delegate:self placeholderImage:[UIImage imageNamed:@""]];
     cycleScrollView.currentPageDotImage = [UIImage imageNamed:@"pageControlCurrentDot"];
     cycleScrollView.pageDotImage = [UIImage imageNamed:@"pageControlDot"];
    

@@ -14,7 +14,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor colorWithHexString:@"f5f5f5"];
-        self.dataArr =@[@{@"navbar_delete_icon":@"切换主题色"},@{@"navbar_delete_icon":@"主人模式"},@{@"navbar_delete_icon":@"清除缓存"}];
+        self.dataArr =@[@{@"navbar_delete_icon":@"切换主题色"},@{@"navbar_delete_icon":@"加密模式"},@{@"navbar_delete_icon":@"清除缓存"}];
     }
     return self;
 

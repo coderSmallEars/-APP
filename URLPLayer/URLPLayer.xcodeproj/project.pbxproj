@@ -56,6 +56,10 @@
 		637978791CF6E02600B44F7C /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 637978781CF6E02600B44F7C /* NSString+Hash.m */; };
 		6379787C1CF6F85800B44F7C /* UPIndivividualView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6379787B1CF6F85800B44F7C /* UPIndivividualView.m */; };
 		6379787F1CF6FCA900B44F7C /* UPIndivividualTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6379787E1CF6FCA900B44F7C /* UPIndivividualTableView.m */; };
+		638B46A21CF990DB00A64991 /* SearchUrlPlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 638B46A11CF990DB00A64991 /* SearchUrlPlayVC.m */; };
+		638B46A61CF992B000A64991 /* SearchUrlPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 638B46A51CF992B000A64991 /* SearchUrlPlayView.m */; };
+		638E0BF51CF9B9A1002B0F06 /* DownLoadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 638E0BF41CF9B9A1002B0F06 /* DownLoadVC.m */; };
+		638E0BF91CF9B9FA002B0F06 /* DownLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 638E0BF81CF9B9FA002B0F06 /* DownLoadView.m */; };
 		63B1DE001CF67F60001B9A54 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B1DDFC1CF67F60001B9A54 /* MGSwipeButton.m */; };
 		63B1DE011CF67F60001B9A54 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B1DDFE1CF67F60001B9A54 /* MGSwipeTableCell.m */; };
 		8A85F9401CF0B1DF006E89F9 /* UPLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85F93F1CF0B1DF006E89F9 /* UPLocalViewController.m */; };
@@ -183,6 +187,14 @@
 		6379787B1CF6F85800B44F7C /* UPIndivividualView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPIndivividualView.m; path = URLPLayer/Classes/Tool/downloadTool/UPIndivividualView.m; sourceTree = SOURCE_ROOT; };
 		6379787D1CF6FCA900B44F7C /* UPIndivividualTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPIndivividualTableView.h; path = URLPLayer/Classes/Tool/downloadTool/UPIndivividualTableView.h; sourceTree = SOURCE_ROOT; };
 		6379787E1CF6FCA900B44F7C /* UPIndivividualTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPIndivividualTableView.m; path = URLPLayer/Classes/Tool/downloadTool/UPIndivividualTableView.m; sourceTree = SOURCE_ROOT; };
+		638B46A01CF990DB00A64991 /* SearchUrlPlayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchUrlPlayVC.h; path = URLPLayer/Classes/Individual/SearchUrlPlayVC.h; sourceTree = SOURCE_ROOT; };
+		638B46A11CF990DB00A64991 /* SearchUrlPlayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchUrlPlayVC.m; path = URLPLayer/Classes/Individual/SearchUrlPlayVC.m; sourceTree = SOURCE_ROOT; };
+		638B46A41CF992B000A64991 /* SearchUrlPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchUrlPlayView.h; path = URLPLayer/Classes/Individual/SearchUrlPlayView.h; sourceTree = SOURCE_ROOT; };
+		638B46A51CF992B000A64991 /* SearchUrlPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchUrlPlayView.m; path = URLPLayer/Classes/Individual/SearchUrlPlayView.m; sourceTree = SOURCE_ROOT; };
+		638E0BF31CF9B9A1002B0F06 /* DownLoadVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DownLoadVC.h; path = URLPLayer/Classes/Individual/DownLoadVC.h; sourceTree = SOURCE_ROOT; };
+		638E0BF41CF9B9A1002B0F06 /* DownLoadVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DownLoadVC.m; path = URLPLayer/Classes/Individual/DownLoadVC.m; sourceTree = SOURCE_ROOT; };
+		638E0BF71CF9B9FA002B0F06 /* DownLoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadView.h; sourceTree = SOURCE_ROOT; };
+		638E0BF81CF9B9FA002B0F06 /* DownLoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadView.m; sourceTree = SOURCE_ROOT; };
 		63B1DDFB1CF67F60001B9A54 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
 		63B1DDFC1CF67F60001B9A54 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
 		63B1DDFD1CF67F60001B9A54 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
@@ -450,6 +462,37 @@
 			path = Security;
 			sourceTree = "<group>";
 		};
+		638B469F1CF9902500A64991 /* publicvc */ = {
+			isa = PBXGroup;
+			children = (
+				638B46A31CF9926B00A64991 /* view */,
+				638B46A01CF990DB00A64991 /* SearchUrlPlayVC.h */,
+				638B46A11CF990DB00A64991 /* SearchUrlPlayVC.m */,
+			);
+			name = publicvc;
+			path = Individual;
+			sourceTree = "<group>";
+		};
+		638B46A31CF9926B00A64991 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				638B46A41CF992B000A64991 /* SearchUrlPlayView.h */,
+				638B46A51CF992B000A64991 /* SearchUrlPlayView.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		638E0BF61CF9B9E3002B0F06 /* Down */ = {
+			isa = PBXGroup;
+			children = (
+				638E0BF31CF9B9A1002B0F06 /* DownLoadVC.h */,
+				638E0BF41CF9B9A1002B0F06 /* DownLoadVC.m */,
+				638E0BF71CF9B9FA002B0F06 /* DownLoadView.h */,
+				638E0BF81CF9B9FA002B0F06 /* DownLoadView.m */,
+			);
+			name = Down;
+			sourceTree = "<group>";
+		};
 		63B1DDF91CF67F60001B9A54 /* MGSwipeTableCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,6 +568,7 @@
 				6379787B1CF6F85800B44F7C /* UPIndivividualView.m */,
 				6379787D1CF6FCA900B44F7C /* UPIndivividualTableView.h */,
 				6379787E1CF6FCA900B44F7C /* UPIndivividualTableView.m */,
+				638E0BF61CF9B9E3002B0F06 /* Down */,
 			);
 			name = View;
 			path = URLPlayer/Classes/Individual/View;
@@ -636,6 +680,7 @@
 				8AB1D0CD1CF0579200C47609 /* Loacal */,
 				8AB1D0CE1CF057A800C47609 /* Resource */,
 				8AB1D0CF1CF057BE00C47609 /* Individual */,
+				638B469F1CF9902500A64991 /* publicvc */,
 				8AB1D0CB1CF0577800C47609 /* MacroDef */,
 			);
 			name = Classes;
@@ -917,6 +962,7 @@
 				630B05AB1CF59AA1008733E6 /* TAAbstractDotView.m in Sources */,
 				630B05E01CF59CBC008733E6 /* UIImage+WebP.m in Sources */,
 				6303A9CD1CF7DCCF008AD4EF /* UPDrawerView.m in Sources */,
+				638B46A61CF992B000A64991 /* SearchUrlPlayView.m in Sources */,
 				8A85F9401CF0B1DF006E89F9 /* UPLocalViewController.m in Sources */,
 				8A85F9431CF0B1E7006E89F9 /* UPResourceViewController.m in Sources */,
 				8A85F9461CF0B1F7006E89F9 /* UPIndivividualViewController.m in Sources */,
@@ -925,18 +971,21 @@
 				6379787C1CF6F85800B44F7C /* UPIndivividualView.m in Sources */,
 				630B05B01CF59AA1008733E6 /* SDCycleScrollView.m in Sources */,
 				630B05F21CF5AF89008733E6 /* UPBaseTableCell.m in Sources */,
+				638E0BF51CF9B9A1002B0F06 /* DownLoadVC.m in Sources */,
 				630B051E1CF548D4008733E6 /* UPNavigationView.m in Sources */,
 				630B05DF1CF59CBC008733E6 /* UIImage+MultiFormat.m in Sources */,
 				630B05D81CF59CBC008733E6 /* SDWebImageDecoder.m in Sources */,
 				630B05D51CF59CBC008733E6 /* NSData+ImageContentType.m in Sources */,
 				630B05AC1CF59AA1008733E6 /* TAAnimatedDotView.m in Sources */,
 				630B05DA1CF59CBC008733E6 /* SDWebImageDownloaderOperation.m in Sources */,
+				638E0BF91CF9B9FA002B0F06 /* DownLoadView.m in Sources */,
 				630B05F51CF5B037008733E6 /* UPHistoryWatchCell.m in Sources */,
 				630B05D41CF59CBC008733E6 /* MKAnnotationView+WebCache.m in Sources */,
 				8A85F94C1CF0B2A5006E89F9 /* UPDrawerViewController.m in Sources */,
 				6379787F1CF6FCA900B44F7C /* UPIndivividualTableView.m in Sources */,
 				8AB1D0CA1CF0574F00C47609 /* UPTabBarController.m in Sources */,
 				630B05AE1CF59AA1008733E6 /* TAPageControl.m in Sources */,
+				638B46A21CF990DB00A64991 /* SearchUrlPlayVC.m in Sources */,
 				630B05E91CF5A233008733E6 /* UPResourceView.m in Sources */,
 				8ACAF9581CF0C17C002981E4 /* UPViewController.m in Sources */,
 				630B05D91CF59CBC008733E6 /* SDWebImageDownloader.m in Sources */,

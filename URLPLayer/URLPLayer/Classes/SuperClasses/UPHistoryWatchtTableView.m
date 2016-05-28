@@ -14,7 +14,7 @@
 @end
 @implementation UPHistoryWatchtTableView
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return ALDHeight(114.5f);
+    return ALDHeight(90.5f);
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString* ID = @"UPHistoryWatchCell";

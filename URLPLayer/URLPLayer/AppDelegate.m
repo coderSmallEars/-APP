@@ -19,17 +19,31 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     UPTabBarController *tabbar = [[UPTabBarController alloc] init];
+    
     UPDrawerViewController *drawerVC = [UPDrawerViewController new];
+    
     UPNavigationController *drawerNC = [[UPNavigationController alloc] initWithRootViewController:drawerVC];
     
-    MMDrawerController *mmDrawer = [[MMDrawerController alloc] initWithCenterViewController:tabbar leftDrawerViewController:drawerNC];
-    mmDrawer.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
-    mmDrawer.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll;
+    self.mmDrawer = [[MMDrawerController alloc] initWithCenterViewController:tabbar leftDrawerViewController:drawerNC];
     
-    self.window.rootViewController = mmDrawer;
+    self.mmDrawer.maximumLeftDrawerWidth = kUPScreenWidth/2;
+    
+    self.mmDrawer.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
+    
+    self.mmDrawer.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll;
+    
+    self.window.rootViewController = self.mmDrawer;
+    
+    [self exchageColor];
+    
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+-(void)exchageColor
+{
+    [[UIApplication sharedApplication] keyWindow].tintColor = [UIColor orangeColor];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

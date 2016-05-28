@@ -7,7 +7,7 @@
 //
 
 #import "UPResourceViewController.h"
-
+#import "SearchUrlPlayVC.h"
 @interface UPResourceViewController ()
 
 @end
@@ -22,6 +22,24 @@
     [super viewDidLoad];
     _resourceView.delegate = self;
     [_resourceView updateCycleScrollViewImages:nil titles:nil];
+}
+
+-(void)uiview:(UIView *)view collectionEventType:(id)type params:(id)params
+{
+    [super uiview:view collectionEventType:type params:params];
+    
+    if ([type isEqualToString:@"navbar_search_icon-"]) {
+        
+        SearchUrlPlayVC * searchUrlPlay = [SearchUrlPlayVC new];
+        
+        [self presentViewController:searchUrlPlay animated:YES completion:^{
+            
+        }];
+        
+        
+    }
+
+
 }
 
 - (void)didReceiveMemoryWarning {

@@ -33,6 +33,7 @@
 }
 -(void)addDelegate{
     [super addDelegate];
+    self.navigationView.delegate = self.delegate;
     _indivividualTV.delegate  = self.delegate;
 
 }

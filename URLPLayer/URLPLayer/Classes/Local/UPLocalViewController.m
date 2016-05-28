@@ -7,6 +7,7 @@
 //
 
 #import "UPLocalViewController.h"
+#import "SearchUrlPlayVC.h"
 
 @interface UPLocalViewController ()<UIAlertViewDelegate>
 
@@ -41,6 +42,13 @@
     }
     //搜索
     if ([type isEqualToString:@"navbar_search_icon-"]) {
+        
+        SearchUrlPlayVC * searchUrlPlay = [SearchUrlPlayVC new];
+        
+        [self presentViewController:searchUrlPlay animated:YES completion:^{
+            
+        }];
+        
         
     }
     
