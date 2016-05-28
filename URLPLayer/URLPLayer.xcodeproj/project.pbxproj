@@ -60,6 +60,7 @@
 		638B46A61CF992B000A64991 /* SearchUrlPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 638B46A51CF992B000A64991 /* SearchUrlPlayView.m */; };
 		638E0BF51CF9B9A1002B0F06 /* DownLoadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 638E0BF41CF9B9A1002B0F06 /* DownLoadVC.m */; };
 		638E0BF91CF9B9FA002B0F06 /* DownLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 638E0BF81CF9B9FA002B0F06 /* DownLoadView.m */; };
+		638E0BFB1CF9C32D002B0F06 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638E0BFA1CF9C32D002B0F06 /* IJKMediaFramework.framework */; };
 		63B1DE001CF67F60001B9A54 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B1DDFC1CF67F60001B9A54 /* MGSwipeButton.m */; };
 		63B1DE011CF67F60001B9A54 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B1DDFE1CF67F60001B9A54 /* MGSwipeTableCell.m */; };
 		8A85F9401CF0B1DF006E89F9 /* UPLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85F93F1CF0B1DF006E89F9 /* UPLocalViewController.m */; };
@@ -195,6 +196,7 @@
 		638E0BF41CF9B9A1002B0F06 /* DownLoadVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DownLoadVC.m; path = URLPLayer/Classes/Individual/DownLoadVC.m; sourceTree = SOURCE_ROOT; };
 		638E0BF71CF9B9FA002B0F06 /* DownLoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadView.h; sourceTree = SOURCE_ROOT; };
 		638E0BF81CF9B9FA002B0F06 /* DownLoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadView.m; sourceTree = SOURCE_ROOT; };
+		638E0BFA1CF9C32D002B0F06 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		63B1DDFB1CF67F60001B9A54 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
 		63B1DDFC1CF67F60001B9A54 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
 		63B1DDFD1CF67F60001B9A54 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				638E0BFB1CF9C32D002B0F06 /* IJKMediaFramework.framework in Frameworks */,
 				637978691CF6D08100B44F7C /* libsqlite3.0.tbd in Frameworks */,
 				E2E44723429A8F455E214273 /* libPods.a in Frameworks */,
 			);
@@ -338,6 +341,7 @@
 		630B05661CF58822008733E6 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				638E0BFA1CF9C32D002B0F06 /* IJKMediaFramework.framework */,
 				637978761CF6E02600B44F7C /* Security */,
 				63B1DDF91CF67F60001B9A54 /* MGSwipeTableCell */,
 				630B05B21CF59CBC008733E6 /* SDWebImage */,
@@ -1132,6 +1136,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/URLPLayer/Classes/ThirdPart",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/URLPlayer/Classes/MacroDef/MacroPch.pch";
 				INFOPLIST_FILE = URLPlayer/Info.plist;
@@ -1148,6 +1156,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/URLPLayer/Classes/ThirdPart",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/URLPlayer/Classes/MacroDef/MacroPch.pch";
 				INFOPLIST_FILE = URLPlayer/Info.plist;
