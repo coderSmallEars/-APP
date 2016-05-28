@@ -41,8 +41,10 @@
 #import "SqliteTool.h"
 #import "DownloadTool.h"
 #import "NSString+Hash.h"
+#import <Masonry.h>
 
-
+//Tools
+#import "UPInlineMethod.h"
 // 缓存主目录
 #define ZFCachesDirectory [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"Video"]
 

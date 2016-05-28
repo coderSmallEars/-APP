@@ -18,7 +18,6 @@
     [super viewDidLoad];
     self.navigationBarHidden = YES;
     self.hidesBottomBarWhenPushed = YES;
-    
 }
 
 - (void)didReceiveMemoryWarning {

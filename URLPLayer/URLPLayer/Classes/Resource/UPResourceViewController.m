@@ -7,52 +7,100 @@
 //
 
 #import "UPResourceViewController.h"
-#import "SearchUrlPlayVC.h"
+#import "UPResourceCagetoryTableView.h"
+#import "UPResourceSubCategoryCollectionView.h"
 @interface UPResourceViewController ()
+
+@property (nonatomic, strong) UPResourceCagetoryTableView *categoryTableView;
+@property (nonatomic, strong) UPResourceSubCategoryCollectionView *subCategoryCollectionView;
+@property (nonatomic, strong) NSArray *categoryArray;
 
 @end
 
 @implementation UPResourceViewController
--(void)loadView{
-    [super loadView];
-    _resourceView = [[UPResourceView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.view = _resourceView;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _resourceView.delegate = self;
-    [_resourceView updateCycleScrollViewImages:nil titles:nil];
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self loadMatchEvent];
+}
+#pragma mark -加载赛事分类
+- (void)loadMatchEvent{
+
+    [self requestData];
+    [self refreshCategoryTableView];
 }
 
--(void)uiview:(UIView *)view collectionEventType:(id)type params:(id)params
-{
-    [super uiview:view collectionEventType:type params:params];
+- (void)requestData{
     
-    if ([type isEqualToString:@"navbar_search_icon-"]) {
+}
+
+- (void)refreshCategoryTableView{
+    self.categoryArray = @[@1,@1];
+    [self.categoryTableView refreshAllMatchCategoryTableView:self.categoryArray];
+    if (self.categoryArray.count > 0) {
+        [self.categoryTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+        [self.categoryTableView scrollToTopAnimated:NO];
+        [self refreshSubCategoryCollectionView:@[]];
+    }
+}
+
+- (void)refreshSubCategoryCollectionView:(NSArray*)subCategoryArray{
+    [self.subCategotyCollectionView refreshSubCatagoryCollectionView:subCategoryArray];
+    [self.subCategotyCollectionView scrollToTop];
+}
+
+- (void)pushMatchItemDetailController{
+
+}
+
+- (UPResourceCagetoryTableView *)categoryTableView{
+    if (!_categoryTableView) {
+        _categoryTableView = [[UPResourceCagetoryTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        [self.view addSubview:_categoryTableView];
         
-        SearchUrlPlayVC * searchUrlPlay = [SearchUrlPlayVC new];
-        
-        [self presentViewController:searchUrlPlay animated:YES completion:^{
-            
+        WS(weakSelf)
+        _categoryTableView.cellClickBlock = ^(id item){
+            [weakSelf refreshSubCategoryCollectionView:@[]];
+        };
+        [_categoryTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.left.bottom.equalTo(weakSelf.view);
+            make.width.mas_equalTo(kUPScreenWidth - ALD(264));
         }];
     }
-
-
+    return _categoryTableView;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (UPResourceSubCategoryCollectionView *)subCategotyCollectionView{
+    if (!_subCategoryCollectionView) {
+        _subCategoryCollectionView = [[UPResourceSubCategoryCollectionView alloc] initWithFrame:CGRectZero];
+        [self.view addSubview:_subCategoryCollectionView];
+        
+        WS(weakSelf)
+        _subCategoryCollectionView.cellClickBlock = ^(id item){
+            [weakSelf pushMatchItemDetailController];
+        };
+        [ _subCategoryCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.right.bottom.equalTo(weakSelf.view);
+            make.width.mas_equalTo(ALD(264));
+        }];
+    }
+    return _subCategoryCollectionView;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UIViewControllerRotation
+- (BOOL)shouldAutorotate
+{
+    return NO;
 }
-*/
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationPortrait;
+}
 @end

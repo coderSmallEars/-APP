@@ -24,8 +24,30 @@
 #define kNavigationBarHeight        44.0f
 
 #define kTabSwitchHeight            39
-
+//Screen Fit
 #define ALD(x)      (x * kUPScreenWidth/375.0)
 #define ALDHeight(y)      ((y) * kUPScreenHeight/667.0)
+
+
+/**
+ *  iPhone6以下设备
+ */
+#define IPHONELESS6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? 640 == [[UIScreen mainScreen] currentMode].size.width : NO)
+/**
+ *  判断iphone6
+ */
+#define IPHONE6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+/**
+ *  判断iphone6+
+ */
+#define IPHONE6PLUS ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define WS(weakSelf) __weak typeof(*&self)weakSelf = self;
+//Macro Color
+#define UPHexColor(colorHex) [UIColor colorWithHexString:(colorHex)]
+//System Font
+#define UPSystemFont(size) [UIFont systemFontOfSize:size]
+//Macro Block
+typedef void(^UPGeneralBlock)(id object);
 
 #endif /* MacroDef_h */
