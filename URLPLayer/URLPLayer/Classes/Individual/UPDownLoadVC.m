@@ -6,16 +6,16 @@
 //  Copyright © 2016年 Player. All rights reserved.
 //
 
-#import "DownLoadVC.h"
-#import "DownLoadView.h"
+#import "UPDownLoadVC.h"
+#import "UPDownLoadView.h"
 
-@interface DownLoadVC ()
+@interface UPDownLoadVC ()
 
 
-@property (nonatomic , strong) DownLoadView * downLoadView;
+@property (nonatomic , strong) UPDownLoadView * downLoadView;
 @end
 
-@implementation DownLoadVC
+@implementation UPDownLoadVC
 
 -(void)loadView
 {
@@ -33,11 +33,11 @@
     // Do any additional setup after loading the view.
 }
 
--(DownLoadView *)downLoadView
+-(UPDownLoadView *)downLoadView
 {
     if (!_downLoadView) {
         
-        _downLoadView = [[DownLoadView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        _downLoadView = [[UPDownLoadView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     }
     
     return  _downLoadView;

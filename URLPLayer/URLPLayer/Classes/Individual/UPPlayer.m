@@ -1,20 +1,20 @@
 //
-//  BMPlayer.m
+//  UPPlayer.m
 //  URLPlayer
 //
 //  Created by wubing on 16/5/28.
 //  Copyright © 2016年 Player. All rights reserved.
 //
 
-#import "BMPlayer.h"
-#import "BMplayerView.h"
+#import "UPPlayer.h"
+#import "UPPlayerView.h"
 
-@interface BMPlayer ()
-@property (nonatomic , strong) BMplayerView * playerView;
+@interface UPPlayer ()
+@property (nonatomic , strong) UPPlayerView * playerView;
 
 @end
 
-@implementation BMPlayer
+@implementation UPPlayer
 
 
 -(void)loadView
@@ -42,11 +42,11 @@
 
 
 #pragma mark - 懒加载
--(BMplayerView *)playerView
+-(UPPlayerView *)playerView
 {
     if (!_playerView) {
         
-        _playerView  = [BMplayerView new];
+        _playerView  = [UPPlayerView new];
         
         _playerView.frame =[UIScreen mainScreen].bounds;
     }

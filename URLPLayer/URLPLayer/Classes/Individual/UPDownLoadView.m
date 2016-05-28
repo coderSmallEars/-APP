@@ -6,14 +6,14 @@
 //  Copyright © 2016年 Player. All rights reserved.
 //
 
-#import "DownLoadView.h"
+#import "UPDownLoadView.h"
 #import "UPNavigationView.h"
 
-@interface DownLoadView ()
+@interface UPDownLoadView ()
 @property (nonatomic, strong)UPNavigationView * nav;
 @end
 
-@implementation DownLoadView
+@implementation UPDownLoadView
 
 
 

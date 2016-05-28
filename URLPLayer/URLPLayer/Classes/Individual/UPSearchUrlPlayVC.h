@@ -1,5 +1,5 @@
 //
-//  DownLoadVC.h
+//  UPSearchUrlPlayVC.h
 //  URLPlayer
 //
 //  Created by wubing on 16/5/28.
@@ -8,6 +8,6 @@
 
 #import "UPViewController.h"
 
-@interface DownLoadVC : UPViewController
+@interface UPSearchUrlPlayVC : UPViewController
 
 @end

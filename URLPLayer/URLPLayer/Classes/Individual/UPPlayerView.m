@@ -1,12 +1,12 @@
 //
-//  BMplayerView.m
+//  UPPlayerView.m
 //  URLPlayer
 //
 //  Created by wubing on 16/5/28.
 //  Copyright © 2016年 Player. All rights reserved.
 //
 
-#import "BMplayerView.h"
+#import "UPPlayerView.h"
 
 static inline NSURL *URLNotNull(NSURL *url){
     if (url == nil || [url isKindOfClass:[NSNull class]]) {
@@ -18,11 +18,11 @@ static inline NSURL *URLNotNull(NSURL *url){
 }
 
 
-@interface BMplayerView ()
+@interface UPPlayerView ()
 
 @end
 
-@implementation BMplayerView
+@implementation UPPlayerView
 
 -(instancetype)initWithFrame:(CGRect)frame
 {

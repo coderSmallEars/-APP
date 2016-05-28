@@ -1,13 +1,13 @@
 //
-//  SearchUrlPlayVC.h
+//  DownLoadView.h
 //  URLPlayer
 //
 //  Created by wubing on 16/5/28.
 //  Copyright © 2016年 Player. All rights reserved.
 //
 
-#import "UPViewController.h"
+#import "UPView.h"
 
-@interface SearchUrlPlayVC : UPViewController
+@interface UPDownLoadView : UPView
 
 @end

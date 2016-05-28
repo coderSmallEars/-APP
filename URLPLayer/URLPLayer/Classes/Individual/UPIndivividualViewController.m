@@ -8,8 +8,8 @@
 //
 
 #import "UPIndivividualViewController.h"
-#import "SearchUrlPlayVC.h"
-#import "DownLoadVC.h"
+#import "UPSearchUrlPlayVC.h"
+#import "UPDownLoadVC.h"
 @interface UPIndivividualViewController ()
 
 @end
@@ -33,7 +33,7 @@
     }
     if ([type isEqualToString:@"下载管理"]) {
         
-        DownLoadVC * downLoadVC = [DownLoadVC new];
+        UPDownLoadVC * downLoadVC = [UPDownLoadVC new];
         downLoadVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:downLoadVC animated:YES];
     }
@@ -46,7 +46,7 @@
     //搜索按钮
     if ([type isEqualToString:@"navbar_search_icon-"]) {
         
-        SearchUrlPlayVC * searchUrlPlay = [SearchUrlPlayVC new];
+        UPSearchUrlPlayVC * searchUrlPlay = [UPSearchUrlPlayVC new];
         
         [self presentViewController:searchUrlPlay animated:YES completion:^{
             

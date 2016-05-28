@@ -1,5 +1,5 @@
 //
-//  BMplayerView.h
+//  UPPlayerView.h
 //  URLPlayer
 //
 //  Created by wubing on 16/5/28.
@@ -9,7 +9,7 @@
 #import "UPView.h"
 #import <IJKMediaFramework/IJKMediaFramework.h>
 
-@interface BMplayerView : UPView
+@interface UPPlayerView : UPView
 
 
 @property (nonatomic, strong)NSURL *url;

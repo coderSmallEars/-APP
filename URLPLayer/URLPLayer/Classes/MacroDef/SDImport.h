@@ -28,7 +28,7 @@
 #import "UPDrawerViewController.h"
 
 //播放器
-#import "BMPlayer.h"
+#import "UPPlayer.h"
 
 //Third Part
 #import "YYKit.h"

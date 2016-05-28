@@ -1,14 +1,14 @@
 //
-//  SearchUrlPlayView.m
+//  UPSearchUrlPlayView.m
 //  URLPlayer
 //
 //  Created by wubing on 16/5/28.
 //  Copyright © 2016年 Player. All rights reserved.
 //
 
-#import "SearchUrlPlayView.h"
+#import "UPSearchUrlPlayView.h"
 
-@interface SearchUrlPlayView ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface UPSearchUrlPlayView ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic , strong) UISearchBar * search;
 
@@ -16,12 +16,12 @@
 
 @property (nonatomic , strong) UITableView * tableView;
 
-@property (nonatomic , strong) BMPlayer * bmplayer;
+@property (nonatomic , strong) UPPlayer * bmplayer;
 
 
 @end
 
-@implementation SearchUrlPlayView
+@implementation UPSearchUrlPlayView
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
@@ -112,11 +112,11 @@
 
 
 
--(BMPlayer *)bmplayer
+-(UPPlayer *)bmplayer
 {
     if (!_bmplayer) {
         
-        _bmplayer  = [BMPlayer new];
+        _bmplayer  = [UPPlayer new];
         
     }
     
