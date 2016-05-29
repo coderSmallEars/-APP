@@ -36,6 +36,6 @@
 #import "NSString+Hash.h"
 #import <Masonry.h>
 #import "Toast+UIView.h"
-
+#import "StoreSetting.h"
 
 #endif /* SDImport_h */

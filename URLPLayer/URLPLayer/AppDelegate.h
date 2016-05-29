@@ -14,6 +14,6 @@
 
 @property (strong,nonatomic ) MMDrawerController * mmDrawer;
 @property (nonatomic, assign) BOOL inNightMode;
--(void)exchageColor:(UIColor *)color;
+
 @end
 

@@ -35,20 +35,27 @@
     
     self.window.rootViewController = self.mmDrawer;
     
-    AppDelegate * app  =  [UIApplication sharedApplication].delegate
-    ;
-    [app exchageColor:[UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1]];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(exchageColorOfDeleagte:)
+                                                 name:@"exchagecolor" object:nil];
     
     [self.window makeKeyAndVisible];
     
     return YES;
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"exchagecolor" object:nil];
+}
+
 
 
 #pragma mark - 主题色外观控制
--(void)exchageColor:(UIColor *)color
+-(void)exchageColorOfDeleagte:(NSNotification *)info
 {
+    
+    UIColor * color = [info.userInfo objectForKey:@"color"];
     /************ 控件外观设置 **************/
     [[UIApplication sharedApplication] keyWindow].tintColor = color;
     
@@ -72,6 +79,8 @@
     
     //TabBar的背景颜色
     [[UITabBar appearance] setBarTintColor:color];
+    
+    NSLog(@"%@",[UITabBar appearance].subviews[0]);
     
     [UISearchBar appearance].tintColor =color;
     //当某个class被包含在另外一个class内时，才修改外观。

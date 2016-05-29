@@ -28,7 +28,7 @@
         [deleteBtn setImage:deleteImg forState:UIControlStateNormal];
         [deleteBtn addTarget:self action:@selector(clickDeleteBtn) forControlEvents:UIControlEventTouchUpInside];
         deleteBtn.frame = CGRectMake(self.navigationView.rightBtn.left - 20.f - deleteImg.size.width, 0, deleteImg.size.width +20.f, deleteImg.size.height +20.f);
-        deleteBtn.centerY = self.navigationView.height/2.0;
+        deleteBtn.centerY = self.navigationView.height/2.0 + 10.f;
         [self.navigationView addSubview:deleteBtn];
         [self layoutCycleScrollView];
         [self layoutHistoryWatchTableView];
@@ -78,7 +78,7 @@
 }
 -(UPNavigationView*)navigationView{
     if (!_navigationView) {
-        _navigationView = [[UPNavigationView alloc]initWithFrame:CGRectMake(0, 20.f, kScreenWidth, kNavigationBarHeight)];
+        _navigationView = [[UPNavigationView alloc]initWithFrame:CGRectMake(0, 0.f, kScreenWidth, kNavigationBarHeight+20)];
         [self addSubview:_navigationView];
     }
     return _navigationView;

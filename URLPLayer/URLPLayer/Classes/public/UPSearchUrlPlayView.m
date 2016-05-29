@@ -7,7 +7,7 @@
 //
 
 #import "UPSearchUrlPlayView.h"
-
+#import "UPNavigationView.h"
 @interface UPSearchUrlPlayView ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic , strong) UISearchBar * search;
@@ -16,6 +16,7 @@
 
 @property (nonatomic , strong) UITableView * tableView;
 
+@property (nonatomic, strong) UPNavigationView * nav;
 
 @end
 
@@ -24,10 +25,10 @@
 -(instancetype)initWithFrame:(CGRect)frame
 {
     if (self == [super initWithFrame:frame]) {
+        [self addSubview:self.nav];
+        [self.nav addSubview:self.search];
         
-        [self addSubview:self.search];
-        
-        [self addSubview:self.cancel];
+        [self.nav addSubview:self.cancel];
         
         [self addSubview:self.tableView];
         
@@ -87,7 +88,13 @@
     return _search;
     
 }
-
+-(UPNavigationView *)nav{
+    if (_nav == nil) {
+        _nav = [[UPNavigationView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64.f)];
+        
+    }
+    return _nav;
+}
 -(UIButton *)cancel
 {
     

@@ -9,6 +9,8 @@
 #import "UPDrawerViewController.h"
 #import "AppDelegate.h"
 
+#define color [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1]
+
 @interface UPDrawerViewController ()
 
 @end
@@ -16,6 +18,7 @@
 @implementation UPDrawerViewController
 
 -(void)loadView{
+   
     [super loadView];
     _drawerView = [[UPDrawerView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.view = _drawerView;
@@ -33,11 +36,13 @@
     
     if ([type isEqualToString:@"切换主题色"]) {
         
-        [app exchageColor:[UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1]];
+        [self postNotification];
         
         [app.mmDrawer closeDrawerAnimated:YES completion:^(BOOL finished) {
             
         }];
+        
+        
 
     }
     if ([type isEqualToString:@"加密模式"]) {
@@ -53,6 +58,20 @@
 
 }
 
+#pragma mark - 发出通知改变颜色
+-(void)postNotification
+{
+    NSNotificationCenter * not = [NSNotificationCenter defaultCenter];
+    
+    [not postNotificationName:@"exchagecolor" object:nil userInfo:@{@"color":color}];
+    
+
+    
+    
+ //[StoreSetting setUserInfoDic:@{@"loadcolor":[]}];
+    
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

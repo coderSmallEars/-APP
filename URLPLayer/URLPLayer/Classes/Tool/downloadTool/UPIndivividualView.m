@@ -26,7 +26,7 @@
 }
 -(UPNavigationView*)navigationView{
     if (!_navigationView) {
-        _navigationView = [[UPNavigationView alloc]initWithFrame:CGRectMake(0, 20.f, kScreenWidth, kNavigationBarHeight)];
+        _navigationView = [[UPNavigationView alloc]initWithFrame:CGRectMake(0, 0.f, kScreenWidth, kNavigationBarHeight + 20.f)];
         [self addSubview:_navigationView];
     }
     return _navigationView;

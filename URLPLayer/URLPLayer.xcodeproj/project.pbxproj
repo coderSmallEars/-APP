@@ -48,6 +48,8 @@
 		630B05EF1CF5AA42008733E6 /* UPHistoryWatchtTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 630B05EE1CF5AA42008733E6 /* UPHistoryWatchtTableView.m */; };
 		630B05F21CF5AF89008733E6 /* UPBaseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 630B05F11CF5AF89008733E6 /* UPBaseTableCell.m */; };
 		630B05F51CF5B037008733E6 /* UPHistoryWatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 630B05F41CF5B037008733E6 /* UPHistoryWatchCell.m */; };
+		631F239F1CFA89C700A2905B /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 631F239B1CFA89C700A2905B /* SSKeychain.m */; };
+		631F23A01CFA89C700A2905B /* StoreSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 631F239E1CFA89C700A2905B /* StoreSetting.m */; };
 		637978691CF6D08100B44F7C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 637978681CF6D08100B44F7C /* libsqlite3.0.tbd */; };
 		6379786D1CF6D36300B44F7C /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6379786C1CF6D36300B44F7C /* VideoModel.m */; };
 		637978711CF6D65B00B44F7C /* SqliteTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 637978701CF6D65B00B44F7C /* SqliteTool.m */; };
@@ -69,6 +71,7 @@
 		6381752E1CFA36E800A63B35 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6381752D1CFA36E800A63B35 /* libz.tbd */; };
 		638175301CFA36F200A63B35 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6381752F1CFA36F200A63B35 /* libc++.tbd */; };
 		638175781CFA3CFF00A63B35 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 638175771CFA3CFF00A63B35 /* libicucore.tbd */; };
+		6381757E1CFA72BE00A63B35 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6381757D1CFA72BE00A63B35 /* BmobSDK.framework */; };
 		638E0BFB1CF9C32D002B0F06 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638E0BFA1CF9C32D002B0F06 /* IJKMediaFramework.framework */; };
 		63B1DE001CF67F60001B9A54 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B1DDFC1CF67F60001B9A54 /* MGSwipeButton.m */; };
 		63B1DE011CF67F60001B9A54 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B1DDFE1CF67F60001B9A54 /* MGSwipeTableCell.m */; };
@@ -188,6 +191,10 @@
 		630B05F11CF5AF89008733E6 /* UPBaseTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPBaseTableCell.m; path = URLPLayer/Classes/SuperClasses/UPBaseTableCell.m; sourceTree = SOURCE_ROOT; };
 		630B05F31CF5B037008733E6 /* UPHistoryWatchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPHistoryWatchCell.h; path = URLPLayer/Classes/SuperClasses/UPHistoryWatchCell.h; sourceTree = SOURCE_ROOT; };
 		630B05F41CF5B037008733E6 /* UPHistoryWatchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPHistoryWatchCell.m; path = URLPLayer/Classes/SuperClasses/UPHistoryWatchCell.m; sourceTree = SOURCE_ROOT; };
+		631F239A1CFA89C700A2905B /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		631F239B1CFA89C700A2905B /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		631F239D1CFA89C700A2905B /* StoreSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreSetting.h; sourceTree = "<group>"; };
+		631F239E1CFA89C700A2905B /* StoreSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreSetting.m; sourceTree = "<group>"; };
 		637978681CF6D08100B44F7C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		6379786B1CF6D36300B44F7C /* VideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoModel.h; path = URLPLayer/Classes/Local/VideoModel.h; sourceTree = SOURCE_ROOT; };
 		6379786C1CF6D36300B44F7C /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoModel.m; path = URLPLayer/Classes/Local/VideoModel.m; sourceTree = SOURCE_ROOT; };
@@ -222,6 +229,7 @@
 		6381752D1CFA36E800A63B35 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		6381752F1CFA36F200A63B35 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		638175771CFA3CFF00A63B35 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		6381757D1CFA72BE00A63B35 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
 		638E0BFA1CF9C32D002B0F06 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		63B1DDFB1CF67F60001B9A54 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
 		63B1DDFC1CF67F60001B9A54 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
@@ -289,6 +297,7 @@
 				6381752A1CFA36C700A63B35 /* CoreTelephony.framework in Frameworks */,
 				638175281CFA36BE00A63B35 /* CoreLocation.framework in Frameworks */,
 				638175261CFA36AF00A63B35 /* SystemConfiguration.framework in Frameworks */,
+				6381757E1CFA72BE00A63B35 /* BmobSDK.framework in Frameworks */,
 				638E0BFB1CF9C32D002B0F06 /* IJKMediaFramework.framework in Frameworks */,
 				637978691CF6D08100B44F7C /* libsqlite3.0.tbd in Frameworks */,
 				E2E44723429A8F455E214273 /* libPods.a in Frameworks */,
@@ -388,6 +397,9 @@
 		630B05661CF58822008733E6 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				631F23991CFA89C700A2905B /* SSKeychain */,
+				631F239C1CFA89C700A2905B /* StoreSetting */,
+				6381757C1CFA72BE00A63B35 /* Bmod */,
 				63F0B54F1CFA09C1002954B9 /* ToastView */,
 				638E0BFA1CF9C32D002B0F06 /* IJKMediaFramework.framework */,
 				637978761CF6E02600B44F7C /* Security */,
@@ -466,6 +478,24 @@
 				630B05D31CF59CBC008733E6 /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		631F23991CFA89C700A2905B /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				631F239A1CFA89C700A2905B /* SSKeychain.h */,
+				631F239B1CFA89C700A2905B /* SSKeychain.m */,
+			);
+			path = SSKeychain;
+			sourceTree = "<group>";
+		};
+		631F239C1CFA89C700A2905B /* StoreSetting */ = {
+			isa = PBXGroup;
+			children = (
+				631F239D1CFA89C700A2905B /* StoreSetting.h */,
+				631F239E1CFA89C700A2905B /* StoreSetting.m */,
+			);
+			path = StoreSetting;
 			sourceTree = "<group>";
 		};
 		637978641CF6D03000B44F7C /* Tool */ = {
@@ -576,6 +606,14 @@
 				6381751E1CFA2EDE00A63B35 /* UIColor+Util.m */,
 			);
 			path = Categroies;
+			sourceTree = "<group>";
+		};
+		6381757C1CFA72BE00A63B35 /* Bmod */ = {
+			isa = PBXGroup;
+			children = (
+				6381757D1CFA72BE00A63B35 /* BmobSDK.framework */,
+			);
+			path = Bmod;
 			sourceTree = "<group>";
 		};
 		63B1DDF91CF67F60001B9A54 /* MGSwipeTableCell */ = {
@@ -1098,6 +1136,7 @@
 				630B05AC1CF59AA1008733E6 /* TAAnimatedDotView.m in Sources */,
 				638175231CFA32C800A63B35 /* UIView+Util.m in Sources */,
 				630B05DA1CF59CBC008733E6 /* SDWebImageDownloaderOperation.m in Sources */,
+				631F239F1CFA89C700A2905B /* SSKeychain.m in Sources */,
 				630B05F51CF5B037008733E6 /* UPHistoryWatchCell.m in Sources */,
 				630B05D41CF59CBC008733E6 /* MKAnnotationView+WebCache.m in Sources */,
 				8A85F94C1CF0B2A5006E89F9 /* UPDrawerViewController.m in Sources */,
@@ -1107,6 +1146,7 @@
 				8A0175CA1CF9C6D400737797 /* UPResourceView.m in Sources */,
 				8ACAF9581CF0C17C002981E4 /* UPViewController.m in Sources */,
 				630B05D91CF59CBC008733E6 /* SDWebImageDownloader.m in Sources */,
+				631F23A01CFA89C700A2905B /* StoreSetting.m in Sources */,
 				8AB1D0C71CF0573A00C47609 /* UPNavigationController.m in Sources */,
 				637978751CF6D67F00B44F7C /* DownloadTool.m in Sources */,
 				63F0B5521CFA09C1002954B9 /* Toast+UIView.m in Sources */,
@@ -1262,6 +1302,8 @@
 					"$(PROJECT_DIR)/URLPLayer/Classes/ThirdPart/Bmod/BmobMessageSDK_iOS_v1.0.2",
 					"$(PROJECT_DIR)/URLPLayer/Classes/ThirdPart/Bmod/BmobMessageSDK_iOS_v1.0.2/BmobMsgSDKDemo/BmobMsgSDKDemo",
 					"$(PROJECT_DIR)/URLPLayer/Classes/ThirdPart/Bmod/BmobPay_V1.0.6",
+					"$(PROJECT_DIR)/URLPLayer/Classes/Tool/Bmod",
+					"$(PROJECT_DIR)/URLPLayer/Classes/ThirdPart/Bmod",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/URLPlayer/Classes/MacroDef/MacroPch.pch";
@@ -1289,6 +1331,8 @@
 					"$(PROJECT_DIR)/URLPLayer/Classes/ThirdPart/Bmod/BmobMessageSDK_iOS_v1.0.2",
 					"$(PROJECT_DIR)/URLPLayer/Classes/ThirdPart/Bmod/BmobMessageSDK_iOS_v1.0.2/BmobMsgSDKDemo/BmobMsgSDKDemo",
 					"$(PROJECT_DIR)/URLPLayer/Classes/ThirdPart/Bmod/BmobPay_V1.0.6",
+					"$(PROJECT_DIR)/URLPLayer/Classes/Tool/Bmod",
+					"$(PROJECT_DIR)/URLPLayer/Classes/ThirdPart/Bmod",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/URLPlayer/Classes/MacroDef/MacroPch.pch";

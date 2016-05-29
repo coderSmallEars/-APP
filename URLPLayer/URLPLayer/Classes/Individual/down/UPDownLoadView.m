@@ -25,7 +25,7 @@
 {
     if (self = [super initWithFrame:frame]) {
         
-        self.nav= [[UPNavigationView alloc]initWithFrame:CGRectMake(0, 20, kScreenWidth, 44)];
+        self.nav= [[UPNavigationView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];
         
         [_nav creatNavigitionViewWithLeftImgName:@"navbar_backarrow_icon" titleName:@"下载管理" rightImgName:@""];
         

@@ -35,6 +35,32 @@
     
     self.viewControllers = @[localNavi, resourceNavi, individualNavi];
 }
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    NSLog(@"==%@",self.view.subviews);
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(exchageColorOfTabBar:)
+                                                 name:@"exchagecolor" object:nil];
+    
+    
+}
+
+-(void)exchageColorOfTabBar:(NSNotification *)info
+{
+    NSLog(@"----%@",self.tabBar.subviews);
+    
+    UIColor * color = [info.userInfo objectForKey:@"color"];
+    
+    self.tabBar.backgroundImage = [UIImage imageWithColor:color];
+    
+    self.tabBar.opaque = YES;
+
+}
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"exchagecolor" object:nil];
+}
 
 - (BOOL)shouldAutorotate{
     return self.selectedViewController.shouldAutorotate;
