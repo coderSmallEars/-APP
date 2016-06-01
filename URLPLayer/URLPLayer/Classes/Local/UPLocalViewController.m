@@ -9,6 +9,7 @@
 #import "UPLocalViewController.h"
 #import "UPSearchUrlPlayVC.h"
 #import "VideoModel.h"
+#import "ScorllModel.h"
 @interface UPLocalViewController ()<UIAlertViewDelegate>
 
 @end
@@ -24,8 +25,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.localView.delegate = self;
-    [_localView updateCycleScrollViewImages:nil titles:nil];
-    //查找GameScore表
+    
+    
+    //查找轮播图表
+    BmobQuery   *scroBquery = [BmobQuery queryWithClassName:@"advertisements"];
+    //
+    [scroBquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        NSMutableArray * scoArr = [NSMutableArray array];
+        for (BmobObject *obj in array) {
+            ScorllModel * scrollModel = [[ScorllModel alloc]init];
+            
+            
+            scrollModel.title = [obj objectForKey:@"title"];
+            scrollModel.pic_url = [obj objectForKey:@"pic_url"];
+            scrollModel.web_url = [obj objectForKey:@"web_url"];
+            
+            [scoArr addObject:scrollModel];
+            
+        }
+        
+        [_localView updateCycleScrollView:scoArr];
+    }];
+    
+    //查找表
     BmobQuery   *bquery = [BmobQuery queryWithClassName:@"urlPlay_neidi"];
     //
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
@@ -40,10 +62,13 @@
             model.video_type = [obj objectForKey:@"video_type"];
             model.updatedAt = [obj objectForKey:@"updatedAt"];
             [modelArr addObject:model];
-           
+            
         }
-         [_localView updateHistoryWatchTableView:modelArr];
+        [_localView updateHistoryWatchTableView:modelArr];
     }];
+
+    
+
     
 }
 -(void)uiview:(UIView *)view collectionEventType:(id)type params:(id)params{
@@ -72,7 +97,7 @@
     }
     
     if ([type isEqualToString:@"点击了轮播图"]) {
-        
+        ScorllModel * model = params;
     }
     if ([type isEqualToString:@"搜索本地视频"]) {
         

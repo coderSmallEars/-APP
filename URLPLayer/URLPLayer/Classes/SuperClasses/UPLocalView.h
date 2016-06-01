@@ -28,7 +28,7 @@
 /**
  更新轮播图
  */
--(void)updateCycleScrollViewImages:(id)images titles:(id)titles;
+-(void)updateCycleScrollView:(id)datas;
 
 /**
  更新历史浏览列表
