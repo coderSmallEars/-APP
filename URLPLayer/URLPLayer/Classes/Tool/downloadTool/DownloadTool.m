@@ -26,16 +26,6 @@
 
 @property (nonatomic, strong) VideoModel *currentModel;
 
-///  当未过加密区时已请求数据的总大小
-@property (nonatomic, assign) NSInteger bufferLength;
-///  是否已过加密区的标志
-@property (nonatomic, assign) BOOL status;
-///  下载代理执行的次数
-@property (nonatomic, assign) NSInteger downloadNum;
-///  截取后的钥匙字符串
-@property (nonatomic, copy) NSString *keyString;
-
-@property (nonatomic, assign) NSInteger downLoadingOffset;
 
 
 @end

@@ -37,7 +37,7 @@
 }
 -(void)viewDidLoad{
     [super viewDidLoad];
-    NSLog(@"==%@",self.view.subviews);
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(exchageColorOfTabBar:)
