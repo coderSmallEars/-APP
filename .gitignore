@@ -1,2 +1,10 @@
 
-URLPLayer/URLPLayer/Info.plist
+
+.DS_Store
+URLPLayer/URLPLayer.xcodeproj/project.xcworkspace/xcuserdata
+URLPLayer/URLPLayer.xcodeproj/xcuserdata
+URLPLayer/Pods/Pods.xcodeproj/xcuserdata
+URLPLayer/URLPLayer.xcworkspace/xcuserdata
+*.xccheckout
+build
+URLPLayer/URLPLayer.xcodeproj/xcshareddata/xcschemes
