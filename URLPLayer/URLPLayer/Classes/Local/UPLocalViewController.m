@@ -8,6 +8,7 @@
 
 #import "UPLocalViewController.h"
 #import "UPSearchUrlPlayVC.h"
+#import "AdvertisementController.h"
 #import "VideoModel.h"
 #import "ScorllModel.h"
 @interface UPLocalViewController ()<UIAlertViewDelegate>
@@ -98,6 +99,10 @@
     
     if ([type isEqualToString:@"点击了轮播图"]) {
         ScorllModel * model = params;
+        AdvertisementController * advertisementVC = [[AdvertisementController alloc]init];
+        advertisementVC.hidesBottomBarWhenPushed = YES;
+        advertisementVC.model = params;
+        [self.navigationController pushViewController:advertisementVC animated:YES];
     }
     if ([type isEqualToString:@"搜索本地视频"]) {
         
