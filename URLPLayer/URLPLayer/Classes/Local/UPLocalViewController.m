@@ -98,7 +98,7 @@
     }
     
     if ([type isEqualToString:@"点击了轮播图"]) {
-        ScorllModel * model = params;
+
         AdvertisementController * advertisementVC = [[AdvertisementController alloc]init];
         advertisementVC.hidesBottomBarWhenPushed = YES;
         advertisementVC.model = params;

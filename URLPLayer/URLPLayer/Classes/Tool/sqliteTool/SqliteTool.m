@@ -22,7 +22,7 @@ static FMDatabaseQueue *queue;
     [queue inDatabase:^(FMDatabase *dealDB) {
         
         //创建Video表
-        NSString * sqlClassesStr = @"create table if not exists Video (Id integer PRIMARY KEY AUTOINCREMENT,fileName text,totalSize text, video_name text,video_img blob,video_des text,video_type text,video_url text,downloadState text,currentSize text,lastSize text);";
+        NSString * sqlClassesStr = @"create table if not exists Video (Id integer PRIMARY KEY AUTOINCREMENT,fileName text,totalSize text, video_name text,video_img blob,video_des text,video_type text,video_url text,downloadState text,currentSize text,lastSize text,updatedAt text);";
         if(![dealDB executeUpdate:sqlClassesStr])
         {
             NSLog(@"Video表创建失败");
@@ -31,7 +31,7 @@ static FMDatabaseQueue *queue;
         }
         
         //创建播放历史History表
-        NSString * sqlHistoryStr = @"create table if not exists History (Id integer PRIMARY KEY AUTOINCREMENT,fileName text,totalSize text, video_name text,video_img blob,video_des text,video_type text,video_url text,downloadState text,currentSize text,lastSize text);";
+        NSString * sqlHistoryStr = @"create table if not exists History (Id integer PRIMARY KEY AUTOINCREMENT,fileName text,totalSize text, video_name text,video_img blob,video_des text,video_type text,video_url text,downloadState text,currentSize text,lastSize text,updatedAt text);";
         if(![dealDB executeUpdate:sqlHistoryStr])
         {
             NSLog(@"History表创建失败");
@@ -50,7 +50,7 @@ static FMDatabaseQueue *queue;
  */
 +(void)addVideo:(VideoModel *)model{
     
-    NSString *sql=[NSString stringWithFormat:@"INSERT INTO Video (fileName,totalSize,video_name,video_img,video_des,video_type,video_url,downloadState,currentSize,lastSize) VALUES('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",model.fileName,model.totalSize,model.video_name,model.video_img,model.video_des,model.video_type,model.video_url,model.downloadState,model.currentSize,model.lastSize];
+    NSString *sql=[NSString stringWithFormat:@"INSERT INTO Video (fileName,totalSize,video_name,video_img,video_des,video_type,video_url,downloadState,currentSize,lastSize,updatedAt) VALUES('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",model.fileName,model.totalSize,model.video_name,model.video_img,model.video_des,model.video_type,model.video_url,model.downloadState,model.currentSize,model.lastSize,model.updatedAt];
     [queue inDatabase:^(FMDatabase *dealDB) {
         
         if (![dealDB executeUpdate:sql])
@@ -106,7 +106,7 @@ static FMDatabaseQueue *queue;
  *  @param model 视频对象
  */
 +(void)modifyVideoModel:(VideoModel *)model{
-    NSString *sql=[NSString stringWithFormat:@"UPDATE Video SET fileName='%@',totalSize='%@',video_name='%@',video_img='%@',video_des='%@',video_type='%@',video_url='%@',downloadState='%@',currentSize='%@',lastSize='%@'",model.fileName,model.totalSize,model.video_name,model.video_img,model.video_des,model.video_type,model.video_url,model.downloadState,model.currentSize,model.lastSize];
+    NSString *sql=[NSString stringWithFormat:@"UPDATE Video SET fileName='%@',totalSize='%@',video_name='%@',video_img='%@',video_des='%@',video_type='%@',video_url='%@',downloadState='%@',currentSize='%@',lastSize='%@',updatedAt='%@'",model.fileName,model.totalSize,model.video_name,model.video_img,model.video_des,model.video_type,model.video_url,model.downloadState,model.currentSize,model.lastSize,model.updatedAt];
     [queue inDatabase:^(FMDatabase *dealDB) {
         
         if (![dealDB executeUpdate:sql])
@@ -128,7 +128,7 @@ static FMDatabaseQueue *queue;
 +(VideoModel *)modelgetVideoByVideo_url:(NSString *)video_url{
     NSMutableArray *array=[NSMutableArray array];
     VideoModel *model=[[VideoModel alloc]init];
-    NSString *sql=[NSString stringWithFormat:@"SELECT fileName,totalSize,video_name,video_img,video_des,video_type,downloadState,currentSize,lastSize FROM Video WHERE video_url='%@'",video_url];
+    NSString *sql=[NSString stringWithFormat:@"SELECT fileName,totalSize,video_name,video_img,video_des,video_type,downloadState,currentSize,lastSize,updatedAt FROM Video WHERE video_url='%@'",video_url];
     [queue inDatabase:^(FMDatabase *dealDB) {
         //执行查询sql语句
         FMResultSet *result= [dealDB executeQuery:sql];
@@ -175,6 +175,7 @@ static FMDatabaseQueue *queue;
             model.downloadState = [rs stringForColumn:@"downloadState"];
             model.currentSize = [rs stringForColumn:@"currentSize"];
             model.lastSize = [rs stringForColumn:@"lastSize"];
+            model.updatedAt = [rs stringForColumn:@"updatedAt"];
             [modelArr addObject:model];
         }
         
@@ -206,6 +207,7 @@ static FMDatabaseQueue *queue;
             model.video_des = [rs stringForColumn:@"video_des"];
             model.currentSize = [rs stringForColumn:@"currentSize"];
             model.lastSize = [rs stringForColumn:@"lastSize"];
+            model.updatedAt = [rs stringForColumn:@"updatedAt"];
             [modelArr addObject:model];
         }
         
@@ -237,6 +239,7 @@ static FMDatabaseQueue *queue;
             model.downloadState = [rs stringForColumn:@"downloadState"];
             model.currentSize = [rs stringForColumn:@"currentSize"];
             model.lastSize = [rs stringForColumn:@"lastSize"];
+            model.updatedAt = [rs stringForColumn:@"updatedAt"];
             [modelArr addObject:model];
         }
         [rs close];
@@ -270,7 +273,7 @@ static FMDatabaseQueue *queue;
  */
 +(void)addHistory:(VideoModel *)model{
     
-    NSString *sql=[NSString stringWithFormat:@"INSERT INTO Video (fileName,totalSize,video_name,video_img,video_des,video_type,video_url,downloadState,currentSize,lastSize) VALUES('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",model.fileName,model.totalSize,model.video_name,model.video_img,model.video_des,model.video_type,model.video_url,model.downloadState,model.currentSize,model.lastSize];
+    NSString *sql=[NSString stringWithFormat:@"INSERT INTO Video (fileName,totalSize,video_name,video_img,video_des,video_type,video_url,downloadState,currentSize,lastSize,updatedAt) VALUES('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",model.fileName,model.totalSize,model.video_name,model.video_img,model.video_des,model.video_type,model.video_url,model.downloadState,model.currentSize,model.lastSize,model.updatedAt];
     [queue inDatabase:^(FMDatabase *dealDB) {
         
         if (![dealDB executeUpdate:sql])
@@ -324,6 +327,7 @@ static FMDatabaseQueue *queue;
             model.downloadState = [rs stringForColumn:@"downloadState"];
             model.currentSize = [rs stringForColumn:@"currentSize"];
             model.lastSize = [rs stringForColumn:@"lastSize"];
+            model.updatedAt = [rs stringForColumn:@"updatedAt"];
             [modelArr addObject:model];
         }
         
