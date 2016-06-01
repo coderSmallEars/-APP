@@ -7,7 +7,7 @@
 //
 
 #import "UPHistoryWatchCell.h"
-
+#import "VideoModel.h"
 @implementation UPHistoryWatchCell
 /**
  height ALDHeight(114.5)
@@ -37,9 +37,10 @@
    
 }
 -(void)updateView:(id)datas{
-    [_picImgView sd_setImageWithURL:[NSURL URLWithString:@"http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg"] placeholderImage:[UIImage imageNamed:@""]];
-    _titleLab.text = @"dnskmamdlsmdl";
-    _descriptLab.text = @"ahsiskjdlsadldmsldasl;,sdl;s,a";
+    VideoModel * model = datas;
+    [_picImgView sd_setImageWithURL:[NSURL URLWithString:model.video_img] placeholderImage:[UIImage imageNamed:@""]];
+    _titleLab.text = model.video_name;
+    _descriptLab.text = model.video_des;
      CGSize titleSize = [_titleLab.text boundingRectWithSize:CGSizeMake(kScreenWidth - _picImgView.right - ALD(29.5f), 18.f) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0]} context:nil].size;
     _titleLab.frame = CGRectMake(_picImgView.right + ALD(10.f),ALDHeight(15.f), kScreenWidth - _picImgView.right -ALD(29.5f), titleSize.height);
     

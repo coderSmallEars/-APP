@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface VideoModel : NSObject
+/**
+ 更新时间
+ */
+@property (nonatomic,strong) NSString *updatedAt;
 
 /**
  文件名

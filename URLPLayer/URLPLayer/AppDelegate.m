@@ -17,6 +17,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Bmob registerWithAppKey:@"60b8b8347c38fff0515c5b4c988da4b1"];
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     UPTabBarController *tabbar = [[UPTabBarController alloc] init];

@@ -37,5 +37,6 @@
 #import <Masonry.h>
 #import "Toast+UIView.h"
 #import "StoreSetting.h"
+#import <BmobSDK/Bmob.h>
 
 #endif /* SDImport_h */

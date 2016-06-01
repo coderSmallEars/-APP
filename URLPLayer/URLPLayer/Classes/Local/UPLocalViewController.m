@@ -8,7 +8,7 @@
 
 #import "UPLocalViewController.h"
 #import "UPSearchUrlPlayVC.h"
-
+#import "VideoModel.h"
 @interface UPLocalViewController ()<UIAlertViewDelegate>
 
 @end
@@ -25,7 +25,26 @@
     [super viewDidLoad];
     self.localView.delegate = self;
     [_localView updateCycleScrollViewImages:nil titles:nil];
-    [_localView updateHistoryWatchTableView:@[@"",@"",@"",@""]];
+    //查找GameScore表
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"urlPlay_neidi"];
+    //
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        NSMutableArray * modelArr = [NSMutableArray array];
+        for (BmobObject *obj in array) {
+            VideoModel *model = [[VideoModel  alloc]init];
+            
+            model.video_name = [obj objectForKey:@"video_name"];
+            model.video_des = [obj objectForKey:@"video_des"];
+            model.video_img = [obj objectForKey:@"video_img"];
+            model.video_url = [obj objectForKey:@"video_url"];
+            model.video_type = [obj objectForKey:@"video_type"];
+            model.updatedAt = [obj objectForKey:@"updatedAt"];
+            [modelArr addObject:model];
+           
+        }
+         [_localView updateHistoryWatchTableView:modelArr];
+    }];
+    
 }
 -(void)uiview:(UIView *)view collectionEventType:(id)type params:(id)params{
     [super uiview:view collectionEventType:type params:params];
