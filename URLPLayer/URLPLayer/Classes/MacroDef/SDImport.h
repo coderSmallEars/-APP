@@ -18,7 +18,7 @@
 
 //Resource
 #import "UPResourceViewController.h"
-
+#import "UPPlayerController.h"
 //Individual
 #import "UPIndivividualViewController.h"
 
@@ -38,5 +38,6 @@
 #import "Toast+UIView.h"
 #import "StoreSetting.h"
 #import <BmobSDK/Bmob.h>
+#import <IJKMediaFramework/IJKMediaFramework.h>
 
 #endif /* SDImport_h */

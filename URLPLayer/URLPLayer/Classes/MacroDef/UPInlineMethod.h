@@ -8,7 +8,7 @@
 
 static inline NSString *StringNotNull(NSString *string) {
     
-    if (string == nil || string == NULL || [string isKindOfClass:[NSNull class]]){
+    if (string == nil || string == NULL || ![string isKindOfClass:[NSString class]]){
         return @"";
     }else {
         return string;

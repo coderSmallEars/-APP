@@ -20,6 +20,8 @@
 #import "SDImport.h"
 //Tools
 #import "UPInlineMethod.h"
+#import "MacroDef.h"
+
 // 缓存主目录
 #define ZFCachesDirectory [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"Video"]
 

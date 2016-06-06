@@ -13,13 +13,13 @@
 - (instancetype)init{
     if (self = [super init]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
-        self.view.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 -(void)uiview:(UIView*)view collectionEventType:(id)type params:(id)params{

@@ -89,6 +89,18 @@
 		8A85F9461CF0B1F7006E89F9 /* UPIndivividualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85F9451CF0B1F7006E89F9 /* UPIndivividualViewController.m */; };
 		8A85F94C1CF0B2A5006E89F9 /* UPDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85F94B1CF0B2A5006E89F9 /* UPDrawerViewController.m */; };
 		8A85F94D1CF0BAAE006E89F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AB1D09C1CF054C300C47609 /* Assets.xcassets */; };
+		8A88CDD91D03EB2400DD1E97 /* UPPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A88CDD81D03EB2400DD1E97 /* UPPlayerController.m */; };
+		8A88CDDB1D03ED4600DD1E97 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A88CDDA1D03ED4600DD1E97 /* VideoToolbox.framework */; };
+		8A88CDDD1D03ED4D00DD1E97 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A88CDDC1D03ED4D00DD1E97 /* UIKit.framework */; };
+		8A88CDDF1D03ED6300DD1E97 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A88CDDE1D03ED6300DD1E97 /* libbz2.tbd */; };
+		8A88CDE11D03ED6F00DD1E97 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A88CDE01D03ED6F00DD1E97 /* QuartzCore.framework */; };
+		8A88CDE31D03ED7700DD1E97 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A88CDE21D03ED7700DD1E97 /* OpenGLES.framework */; };
+		8A88CDE51D03ED7F00DD1E97 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A88CDE41D03ED7F00DD1E97 /* MediaPlayer.framework */; };
+		8A88CDE71D03ED8800DD1E97 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A88CDE61D03ED8800DD1E97 /* CoreMedia.framework */; };
+		8A88CDE91D03ED8E00DD1E97 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A88CDE81D03ED8E00DD1E97 /* CoreGraphics.framework */; };
+		8A88CDEB1D03EDA000DD1E97 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A88CDEA1D03EDA000DD1E97 /* AVFoundation.framework */; };
+		8A88CDED1D03EDA800DD1E97 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A88CDEC1D03EDA800DD1E97 /* AudioToolbox.framework */; };
+		8A88CDF01D03F70F00DD1E97 /* UPControlPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A88CDEF1D03F70F00DD1E97 /* UPControlPanel.m */; };
 		8AB1D0921CF054C300C47609 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB1D0911CF054C300C47609 /* main.m */; };
 		8AB1D0951CF054C300C47609 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB1D0941CF054C300C47609 /* AppDelegate.m */; };
 		8AB1D0A01CF054C300C47609 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AB1D09E1CF054C300C47609 /* LaunchScreen.storyboard */; };
@@ -267,6 +279,20 @@
 		8A85F9451CF0B1F7006E89F9 /* UPIndivividualViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPIndivividualViewController.m; path = URLPlayer/Classes/Individual/UPIndivividualViewController.m; sourceTree = SOURCE_ROOT; };
 		8A85F94A1CF0B2A5006E89F9 /* UPDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPDrawerViewController.h; sourceTree = "<group>"; };
 		8A85F94B1CF0B2A5006E89F9 /* UPDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPDrawerViewController.m; sourceTree = "<group>"; };
+		8A88CDD71D03EB2400DD1E97 /* UPPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPPlayerController.h; path = URLPLayer/Classes/Resource/UPPlayerController.h; sourceTree = SOURCE_ROOT; };
+		8A88CDD81D03EB2400DD1E97 /* UPPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPPlayerController.m; path = URLPLayer/Classes/Resource/UPPlayerController.m; sourceTree = SOURCE_ROOT; };
+		8A88CDDA1D03ED4600DD1E97 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		8A88CDDC1D03ED4D00DD1E97 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8A88CDDE1D03ED6300DD1E97 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		8A88CDE01D03ED6F00DD1E97 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8A88CDE21D03ED7700DD1E97 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8A88CDE41D03ED7F00DD1E97 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		8A88CDE61D03ED8800DD1E97 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		8A88CDE81D03ED8E00DD1E97 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8A88CDEA1D03EDA000DD1E97 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8A88CDEC1D03EDA800DD1E97 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		8A88CDEE1D03F70F00DD1E97 /* UPControlPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPControlPanel.h; sourceTree = "<group>"; };
+		8A88CDEF1D03F70F00DD1E97 /* UPControlPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPControlPanel.m; sourceTree = "<group>"; };
 		8AB1D08D1CF054C300C47609 /* URLPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB1D0911CF054C300C47609 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8AB1D0931CF054C300C47609 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -299,6 +325,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A88CDED1D03EDA800DD1E97 /* AudioToolbox.framework in Frameworks */,
+				8A88CDEB1D03EDA000DD1E97 /* AVFoundation.framework in Frameworks */,
+				8A88CDE91D03ED8E00DD1E97 /* CoreGraphics.framework in Frameworks */,
+				8A88CDE71D03ED8800DD1E97 /* CoreMedia.framework in Frameworks */,
+				8A88CDE51D03ED7F00DD1E97 /* MediaPlayer.framework in Frameworks */,
+				8A88CDE31D03ED7700DD1E97 /* OpenGLES.framework in Frameworks */,
+				8A88CDE11D03ED6F00DD1E97 /* QuartzCore.framework in Frameworks */,
+				8A88CDDF1D03ED6300DD1E97 /* libbz2.tbd in Frameworks */,
+				8A88CDDD1D03ED4D00DD1E97 /* UIKit.framework in Frameworks */,
+				8A88CDDB1D03ED4600DD1E97 /* VideoToolbox.framework in Frameworks */,
 				638175781CFA3CFF00A63B35 /* libicucore.tbd in Frameworks */,
 				638175301CFA36F200A63B35 /* libc++.tbd in Frameworks */,
 				6381752E1CFA36E800A63B35 /* libz.tbd in Frameworks */,
@@ -650,6 +686,16 @@
 		83E8834899B6A90B42ECE259 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A88CDEC1D03EDA800DD1E97 /* AudioToolbox.framework */,
+				8A88CDEA1D03EDA000DD1E97 /* AVFoundation.framework */,
+				8A88CDE81D03ED8E00DD1E97 /* CoreGraphics.framework */,
+				8A88CDE61D03ED8800DD1E97 /* CoreMedia.framework */,
+				8A88CDE41D03ED7F00DD1E97 /* MediaPlayer.framework */,
+				8A88CDE21D03ED7700DD1E97 /* OpenGLES.framework */,
+				8A88CDE01D03ED6F00DD1E97 /* QuartzCore.framework */,
+				8A88CDDE1D03ED6300DD1E97 /* libbz2.tbd */,
+				8A88CDDC1D03ED4D00DD1E97 /* UIKit.framework */,
+				8A88CDDA1D03ED4600DD1E97 /* VideoToolbox.framework */,
 				638175771CFA3CFF00A63B35 /* libicucore.tbd */,
 				6381752F1CFA36F200A63B35 /* libc++.tbd */,
 				6381752D1CFA36E800A63B35 /* libz.tbd */,
@@ -708,6 +754,8 @@
 				8A0175D91CF9CF0500737797 /* UPResourceSubCategoryCell.m */,
 				8A0175C81CF9C6D400737797 /* UPResourceView.h */,
 				8A0175C91CF9C6D400737797 /* UPResourceView.m */,
+				8A88CDEE1D03F70F00DD1E97 /* UPControlPanel.h */,
+				8A88CDEF1D03F70F00DD1E97 /* UPControlPanel.m */,
 			);
 			name = View;
 			path = URLPLayer/Classes/Resource/View;
@@ -901,6 +949,8 @@
 				8A85F9381CF0B0C9006E89F9 /* View */,
 				8A85F9411CF0B1E7006E89F9 /* UPResourceViewController.h */,
 				8A85F9421CF0B1E7006E89F9 /* UPResourceViewController.m */,
+				8A88CDD71D03EB2400DD1E97 /* UPPlayerController.h */,
+				8A88CDD81D03EB2400DD1E97 /* UPPlayerController.m */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1127,6 +1177,7 @@
 				638175111CFA26C800A63B35 /* UPIndivividualTableView.m in Sources */,
 				630B05B11CF59AA1008733E6 /* UIView+SDExtension.m in Sources */,
 				63B1DE011CF67F60001B9A54 /* MGSwipeTableCell.m in Sources */,
+				8A88CDF01D03F70F00DD1E97 /* UPControlPanel.m in Sources */,
 				637978791CF6E02600B44F7C /* NSString+Hash.m in Sources */,
 				8A0175D31CF9C8D700737797 /* UPResourceCategoryCell.m in Sources */,
 				638175181CFA2B3300A63B35 /* UPSearchUrlPlayView.m in Sources */,
@@ -1176,6 +1227,7 @@
 				6303A9D01CF7DD91008AD4EF /* UPDrawerTableView.m in Sources */,
 				8AB1D0921CF054C300C47609 /* main.m in Sources */,
 				630B05AF1CF59AA1008733E6 /* SDCollectionViewCell.m in Sources */,
+				8A88CDD91D03EB2400DD1E97 /* UPPlayerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
