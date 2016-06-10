@@ -101,6 +101,7 @@
 		8A88CDEB1D03EDA000DD1E97 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A88CDEA1D03EDA000DD1E97 /* AVFoundation.framework */; };
 		8A88CDED1D03EDA800DD1E97 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A88CDEC1D03EDA800DD1E97 /* AudioToolbox.framework */; };
 		8A88CDF01D03F70F00DD1E97 /* UPControlPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A88CDEF1D03F70F00DD1E97 /* UPControlPanel.m */; };
+		8AA47BCC1D0AA44600B82E8E /* UPBmobManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA47BCB1D0AA44600B82E8E /* UPBmobManager.m */; };
 		8AB1D0921CF054C300C47609 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB1D0911CF054C300C47609 /* main.m */; };
 		8AB1D0951CF054C300C47609 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB1D0941CF054C300C47609 /* AppDelegate.m */; };
 		8AB1D0A01CF054C300C47609 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AB1D09E1CF054C300C47609 /* LaunchScreen.storyboard */; };
@@ -110,6 +111,8 @@
 		8AB1D0CA1CF0574F00C47609 /* UPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB1D0C91CF0574F00C47609 /* UPTabBarController.m */; };
 		8ACAF9581CF0C17C002981E4 /* UPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACAF9571CF0C17C002981E4 /* UPViewController.m */; };
 		8ACAF95B1CF0C7B2002981E4 /* UPRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACAF95A1CF0C7B2002981E4 /* UPRefreshTableView.m */; };
+		8AE116891D0AADD800390DEF /* UPUrlCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE116881D0AADD800390DEF /* UPUrlCategoryModel.m */; };
+		8AE1168C1D0AB50E00390DEF /* UPUrlSubCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE1168B1D0AB50E00390DEF /* UPUrlSubCategoryModel.m */; };
 		E2E44723429A8F455E214273 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79ADE0A8CF9C83141812247D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -293,6 +296,9 @@
 		8A88CDEC1D03EDA800DD1E97 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8A88CDEE1D03F70F00DD1E97 /* UPControlPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPControlPanel.h; sourceTree = "<group>"; };
 		8A88CDEF1D03F70F00DD1E97 /* UPControlPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPControlPanel.m; sourceTree = "<group>"; };
+		8AA47BCA1D0AA44600B82E8E /* UPBmobManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPBmobManager.h; sourceTree = "<group>"; };
+		8AA47BCB1D0AA44600B82E8E /* UPBmobManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPBmobManager.m; sourceTree = "<group>"; };
+		8AA47BCD1D0AA47800B82E8E /* UPBmobSourceList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPBmobSourceList.h; sourceTree = "<group>"; };
 		8AB1D08D1CF054C300C47609 /* URLPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB1D0911CF054C300C47609 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8AB1D0931CF054C300C47609 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -316,6 +322,10 @@
 		8ACAF9571CF0C17C002981E4 /* UPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPViewController.m; sourceTree = "<group>"; };
 		8ACAF9591CF0C7B2002981E4 /* UPRefreshTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPRefreshTableView.h; sourceTree = "<group>"; };
 		8ACAF95A1CF0C7B2002981E4 /* UPRefreshTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPRefreshTableView.m; sourceTree = "<group>"; };
+		8AE116871D0AADD800390DEF /* UPUrlCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPUrlCategoryModel.h; sourceTree = "<group>"; };
+		8AE116881D0AADD800390DEF /* UPUrlCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPUrlCategoryModel.m; sourceTree = "<group>"; };
+		8AE1168A1D0AB50E00390DEF /* UPUrlSubCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPUrlSubCategoryModel.h; sourceTree = "<group>"; };
+		8AE1168B1D0AB50E00390DEF /* UPUrlSubCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPUrlSubCategoryModel.m; sourceTree = "<group>"; };
 		F7888C8B858D47324C8FDBAF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F8F580D40DACAB41A810FF91 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -546,6 +556,7 @@
 		637978641CF6D03000B44F7C /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				8AA47BC91D0AA43500B82E8E /* BombManager */,
 				637978721CF6D66600B44F7C /* downloadTool */,
 				6379786E1CF6D65B00B44F7C /* sqliteTool */,
 			);
@@ -736,6 +747,10 @@
 		8A85F9371CF0B0C9006E89F9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8AE116871D0AADD800390DEF /* UPUrlCategoryModel.h */,
+				8AE116881D0AADD800390DEF /* UPUrlCategoryModel.m */,
+				8AE1168A1D0AB50E00390DEF /* UPUrlSubCategoryModel.h */,
+				8AE1168B1D0AB50E00390DEF /* UPUrlSubCategoryModel.m */,
 			);
 			name = Core;
 			path = URLPLayer/Classes/Resource/Core;
@@ -809,6 +824,16 @@
 				6303A9D21CF7E175008AD4EF /* UPDrawerCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8AA47BC91D0AA43500B82E8E /* BombManager */ = {
+			isa = PBXGroup;
+			children = (
+				8AA47BCD1D0AA47800B82E8E /* UPBmobSourceList.h */,
+				8AA47BCA1D0AA44600B82E8E /* UPBmobManager.h */,
+				8AA47BCB1D0AA44600B82E8E /* UPBmobManager.m */,
+			);
+			path = BombManager;
 			sourceTree = "<group>";
 		};
 		8AB1D0841CF054C300C47609 = {
@@ -1184,6 +1209,7 @@
 				630B05AB1CF59AA1008733E6 /* TAAbstractDotView.m in Sources */,
 				6381751F1CFA2EDE00A63B35 /* NSString+Util.m in Sources */,
 				630B05E01CF59CBC008733E6 /* UIImage+WebP.m in Sources */,
+				8AA47BCC1D0AA44600B82E8E /* UPBmobManager.m in Sources */,
 				6303A9CD1CF7DCCF008AD4EF /* UPDrawerView.m in Sources */,
 				8A85F9401CF0B1DF006E89F9 /* UPLocalViewController.m in Sources */,
 				8A85F9431CF0B1E7006E89F9 /* UPResourceViewController.m in Sources */,
@@ -1201,6 +1227,7 @@
 				6381750C1CFA266C00A63B35 /* UPDownLoadVC.m in Sources */,
 				8A0175CD1CF9C73400737797 /* UPResourceCagetoryTableView.m in Sources */,
 				630B05D51CF59CBC008733E6 /* NSData+ImageContentType.m in Sources */,
+				8AE1168C1D0AB50E00390DEF /* UPUrlSubCategoryModel.m in Sources */,
 				630B05AC1CF59AA1008733E6 /* TAAnimatedDotView.m in Sources */,
 				638175231CFA32C800A63B35 /* UIView+Util.m in Sources */,
 				630B05DA1CF59CBC008733E6 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -1218,6 +1245,7 @@
 				8AB1D0C71CF0573A00C47609 /* UPNavigationController.m in Sources */,
 				637978751CF6D67F00B44F7C /* DownloadTool.m in Sources */,
 				63F0B5521CFA09C1002954B9 /* Toast+UIView.m in Sources */,
+				8AE116891D0AADD800390DEF /* UPUrlCategoryModel.m in Sources */,
 				630B05AD1CF59AA1008733E6 /* TADotView.m in Sources */,
 				8AB1D0951CF054C300C47609 /* AppDelegate.m in Sources */,
 				6379786D1CF6D36300B44F7C /* VideoModel.m in Sources */,

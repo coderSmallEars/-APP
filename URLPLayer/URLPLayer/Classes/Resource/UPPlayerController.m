@@ -19,7 +19,7 @@
 - (instancetype)initWithURL:(NSURL *)url {
     if (self = [super init]) {
         self.url = url;
-        NSLog(@"%@",url);
+        NSLog(@"url ----------------- %@",url);
     }
     return self;
 }

@@ -10,6 +10,6 @@
 
 @interface UPResourceSubCategoryCell : UICollectionViewCell
 
-- (void)refreshSubCategoryCollectionCell;
+- (void)refreshSubCategoryCollectionCell:(UPUrlSubCategoryModel *)model;
 
 @end

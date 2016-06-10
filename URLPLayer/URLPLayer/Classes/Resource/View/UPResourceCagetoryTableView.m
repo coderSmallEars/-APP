@@ -11,7 +11,7 @@
 
 @interface UPResourceCagetoryTableView()<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic, copy)NSArray *matchCategoryArray;
+@property (nonatomic, copy)NSArray *categoryArray;
 
 @end
 
@@ -33,23 +33,23 @@
     
 }
 
-- (void)refreshAllMatchCategoryTableView:(NSArray *)array{
-    self.matchCategoryArray = [array copy];
+- (void)refreshAllCategoryTableView:(NSArray *)array{
+    self.categoryArray = [array copy];
     [self reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    return self.matchCategoryArray.count;
-    return 20;
+    return self.categoryArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UPUrlCategoryModel *model = self.categoryArray[indexPath.row];
     static NSString *identifier = @"cell";
     UPResourceCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[UPResourceCategoryCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
     }
-    cell.categoryNameLabel.text = @"呵呵";
+    cell.categoryNameLabel.text = model.titleClass;
     CGSize size = SizeForString(cell.categoryNameLabel.text, UPSystemFont(15),CGSizeMake(kUPScreenWidth - ALD(264) - 10, 1000));
     if(size.height + 5 > ALD(57)){
         cell.categoryNameLabel.height = size.height + 5;
@@ -70,8 +70,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+    UPUrlCategoryModel *model = self.categoryArray[indexPath.row];
     if (self.cellClickBlock) {
-        self.cellClickBlock(nil);
+        self.cellClickBlock(model.tableTitle);
     }
 }
 @end

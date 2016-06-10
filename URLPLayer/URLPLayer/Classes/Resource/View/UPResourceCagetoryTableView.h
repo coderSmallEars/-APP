@@ -12,6 +12,6 @@
 
 @property (nonatomic, copy)UPGeneralBlock cellClickBlock;
 
-- (void)refreshAllMatchCategoryTableView:(NSArray *)array;
+- (void)refreshAllCategoryTableView:(NSArray *)array;
 
 @end

@@ -42,19 +42,20 @@ static NSString *const subCategoryReuseIdentifier = @"LESubCategoryCollectionCel
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-//    return self.subCatogoryArray.count;
-    return 10;
+    return self.subCatogoryArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     UPResourceSubCategoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:subCategoryReuseIdentifier forIndexPath:indexPath];
-    [cell refreshSubCategoryCollectionCell];
+    UPUrlSubCategoryModel *model = self.subCatogoryArray[indexPath.row];
+    [cell refreshSubCategoryCollectionCell:model];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    UPUrlSubCategoryModel *model = self.subCatogoryArray[indexPath.row];
     if (self.cellClickBlock) {
-        self.cellClickBlock(nil);
+        self.cellClickBlock(model.video_url);
     }
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }

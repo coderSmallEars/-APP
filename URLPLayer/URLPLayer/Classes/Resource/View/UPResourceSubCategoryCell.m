@@ -27,10 +27,9 @@
     return self;
 }
 
-- (void)refreshSubCategoryCollectionCell{
-    NSString *urlString = StringNotNull(@"");
-    [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:[UIImage imageNamed:@"share_wechat_session"]];
-    self.subCategoryNameLabel.text = @"呵呵";
+- (void)refreshSubCategoryCollectionCell:(UPUrlSubCategoryModel *)model{
+    [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:model.video_img] placeholderImage:[UIImage imageNamed:@"share_wechat_session"]];
+    self.subCategoryNameLabel.text = model.video_name;
 }
 
 -  (UIImageView *)logoImageView{

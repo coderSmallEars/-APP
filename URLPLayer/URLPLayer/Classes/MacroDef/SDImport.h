@@ -9,9 +9,13 @@
 #ifndef SDImport_h
 #define SDImport_h
 
+//SuperClass
 #import "UPNavigationController.h"
 #import "UPTabBarController.h"
 #import "UPViewController.h"
+//tools
+#import <BmobSDK/Bmob.h>
+#import "UPBmobManager.h"
 
 //Local
 #import "UPLocalViewController.h"
@@ -40,4 +44,7 @@
 #import <BmobSDK/Bmob.h>
 #import <IJKMediaFramework/IJKMediaFramework.h>
 
+//Model
+#import "UPUrlCategoryModel.h"
+#import "UPUrlSubCategoryModel.h"
 #endif /* SDImport_h */
