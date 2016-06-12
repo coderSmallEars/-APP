@@ -23,6 +23,7 @@
 
 + (void)loadDataWithList:(NSString *)list result:(BmobObjectArrayResultBlock)result{
     BmobQuery *bquery = [BmobQuery queryWithClassName:list];
+    bquery.cachePolicy = kBmobCachePolicyCacheThenNetwork;
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         if (error) {//请求错误不返回数据,调用此方法获取数据不用每个list单独做错误处理
             NSLog(@"%@",error.description);

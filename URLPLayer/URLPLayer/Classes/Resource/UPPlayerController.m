@@ -70,7 +70,7 @@
     self.player.view.backgroundColor = [UIColor blackColor];
     self.player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     self.player.view.frame = playerRect;
-    self.player.scalingMode = IJKMPMovieScalingModeAspectFit;
+    self.player.scalingMode = IJKMPMovieScalingModeFill;
     self.player.shouldAutoplay = YES;
     self.view.autoresizesSubviews = YES;
     [self.view addSubview:self.player.view];
