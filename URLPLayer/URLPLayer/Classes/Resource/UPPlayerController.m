@@ -73,7 +73,11 @@
     self.player.scalingMode = IJKMPMovieScalingModeFill;
     self.player.shouldAutoplay = YES;
     self.view.autoresizesSubviews = YES;
-    [self.view addSubview:self.player.view];
+    
+    UIView *plaverBgView = [[UIView alloc] initWithFrame:playerRect];
+    plaverBgView.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:plaverBgView];
+    [plaverBgView addSubview:self.player.view];
 }
 
 #pragma mark - NOTIFICATION
