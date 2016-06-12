@@ -29,11 +29,11 @@
     
     self.mmDrawer = [[MMDrawerController alloc] initWithCenterViewController:tabbar leftDrawerViewController:drawerNC];
     
-    self.mmDrawer.maximumLeftDrawerWidth = kUPScreenWidth/2;
+    self.mmDrawer.maximumLeftDrawerWidth = kUPScreenWidth * (1-0.618);
     
     self.mmDrawer.openDrawerGestureModeMask = MMOpenDrawerGestureModeBezelPanningCenterView;
     
-    self.mmDrawer.closeDrawerGestureModeMask = MMCloseDrawerGestureModeCustom;
+    self.mmDrawer.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll;
     
     self.window.rootViewController = self.mmDrawer;
     
