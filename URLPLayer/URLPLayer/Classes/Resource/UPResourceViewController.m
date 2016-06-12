@@ -59,6 +59,14 @@
     [self.subCategoryCollectionView refreshSubCatagoryCollectionView:subCategoryArray];
 }
 
+- (void)playBySubCategoryModel:(UPUrlSubCategoryModel *)model{
+    NSLog(@"playurl -------------------------%@",model.video_url);
+    UPPlayerController *playerCtrl = [[UPPlayerController alloc] initWithURL:[NSURL URLWithString:kReadJsonList ? originStr : model.video_url]];
+    playerCtrl.title = model.video_name;
+    playerCtrl.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:playerCtrl animated:YES];
+}
+
 - (void)playByUrlString:(NSString *)urlString{
     NSLog(@"playurl -------------------------%@",urlString);
     UPPlayerController *playerCtrl = [[UPPlayerController alloc] initWithURL:[NSURL URLWithString:kReadJsonList ? originStr : urlString]];
@@ -92,8 +100,8 @@
         [self.view addSubview:_subCategoryCollectionView];
         
         WS(weakSelf)
-        _subCategoryCollectionView.cellClickBlock = ^(id url){
-            [weakSelf playByUrlString:url];
+        _subCategoryCollectionView.cellClickBlock = ^(id model){
+            [weakSelf playBySubCategoryModel:model];
         };
         
         [ _subCategoryCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {

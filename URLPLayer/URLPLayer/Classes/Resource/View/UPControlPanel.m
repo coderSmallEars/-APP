@@ -206,6 +206,7 @@
     if (!_currentTimeLabel) {
         _currentTimeLabel = [UILabel new];
         _currentTimeLabel.textColor = [UIColor whiteColor];
+        [_currentTimeLabel setAdjustsFontSizeToFitWidth:YES];
         _currentTimeLabel.text = @"cTime;";
     }
     return _currentTimeLabel;
@@ -224,6 +225,7 @@
     if (!_totalDurationLabel) {
         _totalDurationLabel = [UILabel new];
         _totalDurationLabel.textColor = [UIColor whiteColor];
+        [_totalDurationLabel setAdjustsFontSizeToFitWidth:YES];
         _totalDurationLabel.text = @"aTime";
     }
     return _totalDurationLabel;

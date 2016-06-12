@@ -31,6 +31,9 @@ static NSString *const subCategoryReuseIdentifier = @"LESubCategoryCollectionCel
 }
 
 - (void)refreshSubCatagoryCollectionView:(NSArray *)subCategoryArray{
+    if (![self.subCatogoryArray isEqual:subCategoryArray]) {
+        self.subCatogoryArray = [subCategoryArray copy];
+    }
     self.subCatogoryArray = [subCategoryArray copy];
     if (_subCatogoryArray && [_subCatogoryArray isKindOfClass:[NSArray class]]) {
         [self reloadData];
@@ -55,7 +58,7 @@ static NSString *const subCategoryReuseIdentifier = @"LESubCategoryCollectionCel
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     UPUrlSubCategoryModel *model = self.subCatogoryArray[indexPath.row];
     if (self.cellClickBlock) {
-        self.cellClickBlock(model.video_url);
+        self.cellClickBlock(model);
     }
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
