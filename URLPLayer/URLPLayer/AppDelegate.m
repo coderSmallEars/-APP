@@ -31,16 +31,15 @@
     
     self.mmDrawer.maximumLeftDrawerWidth = kUPScreenWidth/2;
     
-    self.mmDrawer.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
+    self.mmDrawer.openDrawerGestureModeMask = MMOpenDrawerGestureModeBezelPanningCenterView;
     
-    self.mmDrawer.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll;
+    self.mmDrawer.closeDrawerGestureModeMask = MMCloseDrawerGestureModeCustom;
     
     self.window.rootViewController = self.mmDrawer;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(exchageColorOfDeleagte:)
                                                  name:@"exchagecolor" object:nil];
-    
     [self.window makeKeyAndVisible];
     
     return YES;

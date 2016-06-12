@@ -27,7 +27,7 @@
 //Screen Fit
 #define ALD(x)      (x * kUPScreenWidth/375.0)
 #define ALDHeight(y)      ((y) * kUPScreenHeight/667.0)
-
+#define UPAppDelegate [UIApplication sharedApplication].delegate
 
 /**
  *  iPhone6以下设备

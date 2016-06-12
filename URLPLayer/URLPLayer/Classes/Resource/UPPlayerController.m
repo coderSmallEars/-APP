@@ -13,7 +13,7 @@
 #define playerRect CGRectMake(0, 0, kUPScreenWidth, playerHeight)
 @interface UPPlayerController()
 
-@property (atomic, strong)IJKFFMoviePlayerController *player;
+@property (atomic, strong)IJKFFMoviePlayerController<IJKMediaPlayback> *player;
 @property (nonatomic, strong)UPControlPanel *panel;
 @property (nonatomic, strong)NSURL *url;
 @end
@@ -34,13 +34,13 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     if (self.player.playbackState == IJKMPMoviePlaybackStatePaused) {
-        [self.player play];
+        [self.panel play];
     }
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.player pause];
+    [self.panel pause];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -74,8 +74,6 @@
     self.player.shouldAutoplay = YES;
     self.view.autoresizesSubviews = YES;
     [self.view addSubview:self.player.view];
-    UITapGestureRecognizer *mainTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickMediaControl:)];
-    [self.player.view addGestureRecognizer:mainTap];
 }
 
 #pragma mark - NOTIFICATION
@@ -91,17 +89,12 @@
 }
 
 #pragma mark- RESPONSE
-- (void)onClickMediaControl:(UIGestureRecognizer *)GR{
-    _player.shouldShowHudView = !_player.shouldShowHudView;
-}
-
-- (void)changePlayStatus:(UIButton *)button{
-    if (button.isSelected && self.player.playbackState == IJKMPMoviePlaybackStatePaused) {
-        [self.player play];
+- (void)onClickPlayerControl:(UIControl *)GR{
+    if (self.panel.bottomPanel.alpha == 0) {
+        [self.panel showNoFade];
     }else{
-        [self.player pause];
+        [self.panel hide];
     }
-    button.selected = !button.isSelected;
 }
 #pragma MARK - NOTIFICATION RESPONSE
 
@@ -161,11 +154,10 @@
 #pragma mark - SETTER AND GETTER
 - (UPControlPanel *)panel{
     if (!_panel) {
-        _panel = [[UPControlPanel alloc] initWithFrame:CGRectMake(0,playerHeight, kUPScreenWidth, 44)];
-        __weak typeof(self)weakSelf = self;
-        _panel.playButtonCLick = ^(UIButton *button){
-            [weakSelf changePlayStatus:button];
-        };
+        _panel = [[UPControlPanel alloc] initWithFrame:playerRect];
+        _panel.delegatePlayer = self.player;
+        [_panel showAndFade];
+        [_panel addTarget:self action:@selector(onClickPlayerControl:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _panel;
 }

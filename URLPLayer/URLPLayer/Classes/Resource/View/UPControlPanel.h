@@ -7,9 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol IJKMediaPlayback;
 
 @interface UPControlPanel : UIControl
 
 @property (nonatomic, copy)UPGeneralBlock playButtonCLick;
+
+- (void)showNoFade;
+- (void)showAndFade;
+- (void)hide;
+- (void)refreshPlayerControl;
+
+- (void)beginDragPlayerSlider;
+- (void)endDragPlayerSlider;
+- (void)continueDragPlayerSlider;
+
+- (void)play;
+- (void)pause;
+
+@property (nonatomic, weak) IJKFFMoviePlayerController<IJKMediaPlayback> *delegatePlayer;
+@property (nonatomic, strong) UIView *bottomPanel;
 
 @end
