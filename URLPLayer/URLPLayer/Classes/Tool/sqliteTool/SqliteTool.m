@@ -48,7 +48,7 @@ static FMDatabaseQueue *queue;
  *
  *  @param model 视频对象
  */
-+(void)addVideo:(VideoModel *)model{
++(void)addVideo:(UPUrlSubCategoryModel *)model{
     
     NSString *sql=[NSString stringWithFormat:@"INSERT INTO Video (fileName,totalSize,video_name,video_img,video_des,video_type,video_url,downloadState,currentSize,lastSize,updatedAt) VALUES('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",model.fileName,model.totalSize,model.video_name,model.video_img,model.video_des,model.video_type,model.video_url,model.downloadState,model.currentSize,model.lastSize,model.updatedAt];
     [queue inDatabase:^(FMDatabase *dealDB) {
@@ -69,7 +69,7 @@ static FMDatabaseQueue *queue;
  *
  *  @param model 视频对象
  */
-+(void)removeVideo:(VideoModel *)model{
++(void)removeVideo:(UPUrlSubCategoryModel *)model{
     NSString *sql=[NSString stringWithFormat:@"DELETE FROM Video WHERE video_url='%@'",model.video_url];
     [queue inDatabase:^(FMDatabase *dealDB) {
         
@@ -105,7 +105,7 @@ static FMDatabaseQueue *queue;
  *
  *  @param model 视频对象
  */
-+(void)modifyVideoModel:(VideoModel *)model{
++(void)modifyVideoModel:(UPUrlSubCategoryModel *)model{
     NSString *sql=[NSString stringWithFormat:@"UPDATE Video SET fileName='%@',totalSize='%@',video_name='%@',video_img='%@',video_des='%@',video_type='%@',video_url='%@',downloadState='%@',currentSize='%@',lastSize='%@',updatedAt='%@'",model.fileName,model.totalSize,model.video_name,model.video_img,model.video_des,model.video_type,model.video_url,model.downloadState,model.currentSize,model.lastSize,model.updatedAt];
     [queue inDatabase:^(FMDatabase *dealDB) {
         
@@ -125,9 +125,9 @@ static FMDatabaseQueue *queue;
  *
  *  @return 视频对象
  */
-+(VideoModel *)modelgetVideoByVideo_url:(NSString *)video_url{
++(UPUrlSubCategoryModel *)modelgetVideoByVideo_url:(NSString *)video_url{
     NSMutableArray *array=[NSMutableArray array];
-    VideoModel *model=[[VideoModel alloc]init];
+    UPUrlSubCategoryModel *model=[[UPUrlSubCategoryModel alloc]init];
     NSString *sql=[NSString stringWithFormat:@"SELECT fileName,totalSize,video_name,video_img,video_des,video_type,downloadState,currentSize,lastSize,updatedAt FROM Video WHERE video_url='%@'",video_url];
     [queue inDatabase:^(FMDatabase *dealDB) {
         //执行查询sql语句
@@ -164,7 +164,7 @@ static FMDatabaseQueue *queue;
         
         FMResultSet *rs = [dealDB executeQuery:@"select * from Video"];
         while ([rs next]) {
-            VideoModel * model = [[VideoModel alloc]init];
+            UPUrlSubCategoryModel * model = [[UPUrlSubCategoryModel alloc]init];
             model.fileName = [rs stringForColumn:@"fileName"];
             model.totalSize = [rs stringForColumn:@"totalSize"];
             model.video_name = [rs stringForColumn:@"video_name"];
@@ -197,7 +197,7 @@ static FMDatabaseQueue *queue;
         
         FMResultSet *rs = [dealDB executeQuery:@"select * from Video where downloadState!='downloaded'"];
         while ([rs next]) {
-            VideoModel * model = [[VideoModel alloc]init];
+            UPUrlSubCategoryModel * model = [[UPUrlSubCategoryModel alloc]init];
             model.fileName = [rs stringForColumn:@"fileName"];
             model.totalSize = [rs stringForColumn:@"totalSize"];
             model.video_name = [rs stringForColumn:@"video_name"];
@@ -228,7 +228,7 @@ static FMDatabaseQueue *queue;
         // 1.查询数据
         FMResultSet *rs = [dealDB executeQuery:@"select * from History order by id desc"];
         while ([rs next]) {
-            VideoModel * model = [[VideoModel alloc]init];
+            UPUrlSubCategoryModel * model = [[UPUrlSubCategoryModel alloc]init];
             model.fileName = [rs stringForColumn:@"fileName"];
             model.totalSize = [rs stringForColumn:@"totalSize"];
             model.video_name = [rs stringForColumn:@"video_name"];
@@ -271,9 +271,9 @@ static FMDatabaseQueue *queue;
  *
  *  @param model 视频对象
  */
-+(void)addHistory:(VideoModel *)model{
++(void)addHistory:(UPUrlSubCategoryModel *)model{
     
-    NSString *sql=[NSString stringWithFormat:@"INSERT INTO Video (fileName,totalSize,video_name,video_img,video_des,video_type,video_url,downloadState,currentSize,lastSize,updatedAt) VALUES('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",model.fileName,model.totalSize,model.video_name,model.video_img,model.video_des,model.video_type,model.video_url,model.downloadState,model.currentSize,model.lastSize,model.updatedAt];
+    NSString *sql=[NSString stringWithFormat:@"INSERT INTO History (fileName,totalSize,video_name,video_img,video_des,video_type,video_url,downloadState,currentSize,lastSize,updatedAt) VALUES('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",model.fileName,model.totalSize,model.video_name,model.video_img,model.video_des,model.video_type,model.video_url,model.downloadState,model.currentSize,model.lastSize,model.updatedAt];
     [queue inDatabase:^(FMDatabase *dealDB) {
         
         if (![dealDB executeUpdate:sql])
@@ -290,7 +290,7 @@ static FMDatabaseQueue *queue;
  *
  *  @param model 视频对象
  */
-+(void)removeHistory:(VideoModel *)model{
++(void)removeHistory:(UPUrlSubCategoryModel *)model{
     NSString *sql=[NSString stringWithFormat:@"DELETE FROM History WHERE video_url='%@'",model.video_url];
     [queue inDatabase:^(FMDatabase *dealDB) {
         
@@ -316,7 +316,7 @@ static FMDatabaseQueue *queue;
         
         FMResultSet *rs = [dealDB executeQuery:@"select * from Video where downloadState = 'wait'"];
         while ([rs next]) {
-            VideoModel * model = [[VideoModel alloc]init];
+            UPUrlSubCategoryModel * model = [[UPUrlSubCategoryModel alloc]init];
             model.fileName = [rs stringForColumn:@"fileName"];
             model.totalSize = [rs stringForColumn:@"totalSize"];
             model.video_name = [rs stringForColumn:@"video_name"];
@@ -336,6 +336,51 @@ static FMDatabaseQueue *queue;
     
     return modelArr;
 }
+/**
+ 根据视频url获取播放历史模型
+ */
++(UPUrlSubCategoryModel *)historyModelGetByVideo_url:(NSString*)video_url{
+    NSMutableArray *array=[NSMutableArray array];
+    UPUrlSubCategoryModel *model=[[UPUrlSubCategoryModel alloc]init];
+    NSString *sql=[NSString stringWithFormat:@"SELECT fileName,totalSize,video_name,video_img,video_des,video_type,downloadState,currentSize,lastSize,updatedAt FROM History WHERE video_url='%@'",video_url];
+    [queue inDatabase:^(FMDatabase *dealDB) {
+        //执行查询sql语句
+        FMResultSet *result= [dealDB executeQuery:sql];
+        while (result.next) {
+            NSMutableDictionary *dic=[NSMutableDictionary dictionary];
+            for (int i=0; i<result.columnCount; ++i) {
+                dic[[result columnNameForIndex:i]]=[result stringForColumnIndex:i];
+            }
+            [array addObject:dic];
+        }
+        [result close];
+        
+    }];
+    
+    if (array&&array.count>0) {
+        [model setValuesForKeysWithDictionary:array[0]];
+        return model;
+    }
+    return nil;
 
+
+}
+
+/**
+ 清空播放历史
+ */
++(void)deleteAllHistoryModel{
+    NSString *sql=[NSString stringWithFormat:@"DELETE FROM History WHERE  1=1"];
+    [queue inDatabase:^(FMDatabase *dealDB) {
+        
+        if (![dealDB executeUpdate:sql])
+        {
+            NSLog(@"model删除失败!");
+            
+        }
+        
+    }];
+    
+}
 @end
 

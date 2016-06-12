@@ -24,7 +24,7 @@
 
 @property (nonatomic, strong) NSOutputStream *stream;
 
-@property (nonatomic, strong) VideoModel *currentModel;
+@property (nonatomic, strong) UPUrlSubCategoryModel *currentModel;
 
 
 
@@ -62,7 +62,7 @@ static DownloadTool *_downloadManager;
 ///  判断某个模型数组中是否有某种状态
 - (BOOL)isSomeStateWithNSArray:(NSMutableArray *)dataArr andState:(NSString *)state {
     for (NSInteger i = 0; i < dataArr.count; i ++) {
-        VideoModel *model = [dataArr objectAtIndex:i];
+        UPUrlSubCategoryModel *model = [dataArr objectAtIndex:i];
         if ([model.downloadState isEqualToString:state]) {
             return YES;
             break;
@@ -85,7 +85,7 @@ static DownloadTool *_downloadManager;
 /**
  *  开启任务下载资源
  */
-- (void)addTaskWithVideoPlayModel:(VideoModel * )videoPlayModel
+- (void)addTaskWithVideoPlayModel:(UPUrlSubCategoryModel * )videoPlayModel
 {
     
     NSMutableArray *dataArr = [SqliteTool getAllVideoModels];
@@ -152,14 +152,14 @@ static DownloadTool *_downloadManager;
     }
 }
 
-- (void)suspendOrBeginWithVideoPlayModel:(VideoModel *)videoPlayModel {
+- (void)suspendOrBeginWithVideoPlayModel:(UPUrlSubCategoryModel *)videoPlayModel {
     
     NSMutableArray *sqliteArr = [SqliteTool getAllVideoModels];
     if (sqliteArr.count == 0) {
         return;
     }
     for (NSInteger i = 0; i < sqliteArr.count; ++i) {
-        VideoModel *videoModel = [sqliteArr objectAtIndex:i];
+        UPUrlSubCategoryModel *videoModel = [sqliteArr objectAtIndex:i];
         if ([videoPlayModel.video_url isEqualToString:videoModel.video_url]) {
             if ([videoModel.downloadState isEqualToString:@"pause"]) {
                 NSMutableArray *videoArr = [SqliteTool getAllVideoModels];
@@ -219,7 +219,7 @@ static DownloadTool *_downloadManager;
                     return;
                 }
                 
-                VideoModel *model = [waitArr firstObject];
+                UPUrlSubCategoryModel *model = [waitArr firstObject];
                 NSURL *url = [NSURL URLWithString:model.video_url];
                 NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[[NSOperationQueue alloc] init]];
                 self.downLoadSession = session;
@@ -253,7 +253,7 @@ static DownloadTool *_downloadManager;
     if (videoArr.count == 0) {
         return;
     }
-    VideoModel *video = videoArr.firstObject;
+    UPUrlSubCategoryModel *video = videoArr.firstObject;
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([fileManager fileExistsAtPath:kResumeDataPath(video.video_url)]) {
@@ -287,7 +287,7 @@ static DownloadTool *_downloadManager;
         return;
     }
     for (NSInteger i = 1; i < videoArr.count; ++i) {
-        VideoModel *videoModel = [videoArr objectAtIndex:i];
+        UPUrlSubCategoryModel *videoModel = [videoArr objectAtIndex:i];
         videoModel.downloadState = @"wait";
         [SqliteTool modifyVideoModel:videoModel];
     }
@@ -300,7 +300,7 @@ static DownloadTool *_downloadManager;
         return;
     }
     for (NSInteger i = 0; i < videoArr.count; ++i) {
-        VideoModel *videoModel = [videoArr objectAtIndex:i];
+        UPUrlSubCategoryModel *videoModel = [videoArr objectAtIndex:i];
         if ([videoModel.downloadState isEqualToString:@"downloading"]) {
             [self.downLoadTask suspend];
             videoModel.downloadState = @"pause";
@@ -335,7 +335,7 @@ static DownloadTool *_downloadManager;
     }
     // 删除数据库中的该model
     NSMutableArray * modelArr = [SqliteTool getAllVideoModels];
-    for ( VideoModel * model in modelArr) {
+    for ( UPUrlSubCategoryModel * model in modelArr) {
         if ([model.video_url isEqualToString:url]) {
             [SqliteTool removeVideo:model];
             break;
@@ -355,7 +355,7 @@ static DownloadTool *_downloadManager;
         // 删除沙盒中所有资源
         [fileManager removeItemAtPath:ZFCachesDirectory error:nil];
         // 删除资源总长度
-        for (VideoModel * model in [SqliteTool getAllVideoModels]) {
+        for (UPUrlSubCategoryModel * model in [SqliteTool getAllVideoModels]) {
             [SqliteTool removeVideo:model];
         }
     }
@@ -387,7 +387,7 @@ didFinishDownloadingToURL:(NSURL *)location{
     if (waitArr.count == 0) {
         return;
     }
-    VideoModel *model = [waitArr firstObject];
+    UPUrlSubCategoryModel *model = [waitArr firstObject];
     if ([fileManager fileExistsAtPath:kResumeDataPath(model.video_url)]) {
         NSData *data = [NSData dataWithContentsOfFile:kResumeDataPath(model.video_url)];
         self.downLoadTask = [self.downLoadSession downloadTaskWithResumeData:data];

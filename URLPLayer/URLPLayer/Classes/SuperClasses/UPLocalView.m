@@ -117,7 +117,7 @@
  更新历史浏览列表
  */
 -(void)updateHistoryWatchTableView:(id)datas{
-    if (datas == nil) {
+    if ([(NSMutableArray *)datas count] == 0) {
         self.showNoticeLab.hidden = NO;
         self.searchLocalBtn.hidden = NO;
     }else{

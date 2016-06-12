@@ -8,6 +8,7 @@
 
 #import "UPResourceSubCategoryCollectionView.h"
 #import "UPResourceSubCategoryCell.h"
+#import "SqliteTool.h"
 static NSString *const subCategoryReuseIdentifier = @"LESubCategoryCollectionCell";
 @interface UPResourceSubCategoryCollectionView ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -57,6 +58,17 @@ static NSString *const subCategoryReuseIdentifier = @"LESubCategoryCollectionCel
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     UPUrlSubCategoryModel *model = self.subCatogoryArray[indexPath.row];
+    //播放记录插入数据库
+   UPUrlSubCategoryModel * sqliteModel = [SqliteTool historyModelGetByVideo_url:model.video_url];
+    if (sqliteModel == nil) {
+        
+    }else{
+        [SqliteTool removeHistory:sqliteModel];
+        
+    }
+    [SqliteTool addHistory:model];
+
+    
     if (self.cellClickBlock) {
         self.cellClickBlock(model);
     }
