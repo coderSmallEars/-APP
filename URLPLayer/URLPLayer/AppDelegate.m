@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "UIView+Util.h"
+#import "UPDrawerController.h"
 
 @interface AppDelegate ()
 
@@ -27,7 +28,7 @@
     
     UPNavigationController *drawerNC = [[UPNavigationController alloc] initWithRootViewController:drawerVC];
     
-    self.mmDrawer = [[MMDrawerController alloc] initWithCenterViewController:tabbar leftDrawerViewController:drawerNC];
+    self.mmDrawer = [[UPDrawerController alloc] initWithCenterViewController:tabbar leftDrawerViewController:drawerNC];
     
     self.mmDrawer.maximumLeftDrawerWidth = kUPScreenWidth * (1-0.618);
     
