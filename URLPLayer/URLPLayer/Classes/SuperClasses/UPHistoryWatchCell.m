@@ -7,7 +7,7 @@
 //
 
 #import "UPHistoryWatchCell.h"
-#import "VideoModel.h"
+#import "UPUrlSubCategoryModel.h"
 @implementation UPHistoryWatchCell
 /**
  height ALDHeight(114.5)
@@ -37,7 +37,7 @@
    
 }
 -(void)updateView:(id)datas{
-    VideoModel * model = datas;
+    UPUrlSubCategoryModel * model = datas;
     [_picImgView sd_setImageWithURL:[NSURL URLWithString:model.video_img] placeholderImage:[UIImage imageNamed:@""]];
     _titleLab.text = model.video_name;
     _descriptLab.text = model.video_des;

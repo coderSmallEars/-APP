@@ -75,6 +75,10 @@
             model.video_name = StringNotNull([obj objectForKey:@"video_name"]);
             model.video_img = StringNotNull([obj objectForKey:@"video_img"]);
             model.video_url = StringNotNull([obj objectForKey:@"video_url"]);
+           
+            model.video_des = StringNotNull([obj objectForKey:@"video_des"]);
+            model.video_type = StringNotNull([obj objectForKey:@"video_type"]);
+            model.updatedAt = StringNotNull([obj objectForKey:@"updatedAt"]);
             [tmpArray addObject:model];
         }
         if (result) {

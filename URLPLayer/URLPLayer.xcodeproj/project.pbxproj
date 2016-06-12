@@ -51,7 +51,6 @@
 		631F239F1CFA89C700A2905B /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 631F239B1CFA89C700A2905B /* SSKeychain.m */; };
 		631F23A01CFA89C700A2905B /* StoreSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 631F239E1CFA89C700A2905B /* StoreSetting.m */; };
 		637978691CF6D08100B44F7C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 637978681CF6D08100B44F7C /* libsqlite3.0.tbd */; };
-		6379786D1CF6D36300B44F7C /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6379786C1CF6D36300B44F7C /* VideoModel.m */; };
 		637978711CF6D65B00B44F7C /* SqliteTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 637978701CF6D65B00B44F7C /* SqliteTool.m */; };
 		637978751CF6D67F00B44F7C /* DownloadTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 637978741CF6D67F00B44F7C /* DownloadTool.m */; };
 		637978791CF6E02600B44F7C /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 637978781CF6E02600B44F7C /* NSString+Hash.m */; };
@@ -215,8 +214,6 @@
 		631F239D1CFA89C700A2905B /* StoreSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreSetting.h; sourceTree = "<group>"; };
 		631F239E1CFA89C700A2905B /* StoreSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreSetting.m; sourceTree = "<group>"; };
 		637978681CF6D08100B44F7C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		6379786B1CF6D36300B44F7C /* VideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoModel.h; path = URLPLayer/Classes/Local/VideoModel.h; sourceTree = SOURCE_ROOT; };
-		6379786C1CF6D36300B44F7C /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoModel.m; path = URLPLayer/Classes/Local/VideoModel.m; sourceTree = SOURCE_ROOT; };
 		6379786F1CF6D65B00B44F7C /* SqliteTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteTool.h; sourceTree = "<group>"; };
 		637978701CF6D65B00B44F7C /* SqliteTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteTool.m; sourceTree = "<group>"; };
 		637978731CF6D67F00B44F7C /* DownloadTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadTool.h; sourceTree = "<group>"; };
@@ -570,8 +567,6 @@
 		6379786A1CF6D33100B44F7C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6379786B1CF6D36300B44F7C /* VideoModel.h */,
-				6379786C1CF6D36300B44F7C /* VideoModel.m */,
 				63FC65491CFEB97E009A8064 /* ScorllModel.h */,
 				63FC654A1CFEB97E009A8064 /* ScorllModel.m */,
 			);
@@ -1254,7 +1249,6 @@
 				8AE116891D0AADD800390DEF /* UPUrlCategoryModel.m in Sources */,
 				630B05AD1CF59AA1008733E6 /* TADotView.m in Sources */,
 				8AB1D0951CF054C300C47609 /* AppDelegate.m in Sources */,
-				6379786D1CF6D36300B44F7C /* VideoModel.m in Sources */,
 				638175171CFA2B3300A63B35 /* UPSearchUrlPlayVC.m in Sources */,
 				63FC654E1CFEBFB2009A8064 /* AdvertisementController.m in Sources */,
 				630B05E21CF59CBC008733E6 /* UIImageView+WebCache.m in Sources */,

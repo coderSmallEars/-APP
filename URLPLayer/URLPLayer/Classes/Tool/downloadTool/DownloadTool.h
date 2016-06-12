@@ -7,16 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VideoModel.h"
+#import "UPUrlSubCategoryModel.h"
 
 
 @protocol DownloadDelegate <NSObject>
 /** 下载中的回调 */
-- (void)downloadResponse:(VideoModel *)videoPlayModel progress:(CGFloat) progress speed:(NSInteger)speed writtenSize:( NSString *)writtenSize totalSize:(NSString *)totalSize;
+- (void)downloadResponse:(UPUrlSubCategoryModel *)videoPlayModel progress:(CGFloat) progress speed:(NSInteger)speed writtenSize:( NSString *)writtenSize totalSize:(NSString *)totalSize;
 @optional
-- (void)downloadFinished:(VideoModel *)videoPlayModel;
+- (void)downloadFinished:(UPUrlSubCategoryModel *)videoPlayModel;
 @optional
--(void)beginNewDownload:(VideoModel*)videoPlayModel;
+-(void)beginNewDownload:(UPUrlSubCategoryModel*)videoPlayModel;
 
 @end
 
@@ -38,12 +38,12 @@
 /**
  *  开启任务下载资源
  */
-- (void)addTaskWithVideoPlayModel:(VideoModel * )videoPlayModel;
+- (void)addTaskWithVideoPlayModel:(UPUrlSubCategoryModel * )videoPlayModel;
 
 /**
  暂停或开始下载任务
  */
-- (void)suspendOrBeginWithVideoPlayModel:(VideoModel * )videoPlayModel;
+- (void)suspendOrBeginWithVideoPlayModel:(UPUrlSubCategoryModel * )videoPlayModel;
 
 
 

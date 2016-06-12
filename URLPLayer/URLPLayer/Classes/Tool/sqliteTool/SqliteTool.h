@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 #import "FMDB.h"
-#import "VideoModel.h"
+#import "UPUrlSubCategoryModel.h"
 
 @interface SqliteTool : NSObject
 /**
@@ -17,14 +17,14 @@
  *
  *  @param model 视频对象
  */
-+(void)addVideo:(VideoModel *)model;
++(void)addVideo:(UPUrlSubCategoryModel *)model;
 
 /**
  *  删除视频对象
  *
  *  @param model 视频对象
  */
-+(void)removeVideo:(VideoModel *)model;
++(void)removeVideo:(UPUrlSubCategoryModel *)model;
 
 /**
  *  根据video_url删除视频
@@ -38,7 +38,7 @@
  *
  *  @param model 视频对象
  */
-+(void)modifyVideoModel:(VideoModel *)model;
++(void)modifyVideoModel:(UPUrlSubCategoryModel *)model;
 
 
 
@@ -49,7 +49,7 @@
  *
  *  @return 视频对象
  */
-+(VideoModel *)modelgetVideoByVideo_url:(NSString*)video_url;
++(UPUrlSubCategoryModel *)modelgetVideoByVideo_url:(NSString*)video_url;
 
 /**
  查询所有下载视频模型
@@ -87,14 +87,22 @@
 /**
  添加播放历史模型
  */
-+(void)addHistory:(VideoModel *)model;
++(void)addHistory:(UPUrlSubCategoryModel *)model;
 
 /**
  移除历史视频模型
  */
-+(void)removeHistory:(VideoModel *)model;
++(void)removeHistory:(UPUrlSubCategoryModel *)model;
 
+/**
+ 根据视频url获取播放历史模型
+ */
++(UPUrlSubCategoryModel *)historyModelGetByVideo_url:(NSString*)video_url;
 
+/**
+ 清空播放历史
+ */
++(void)deleteAllHistoryModel;
 
 
 @end

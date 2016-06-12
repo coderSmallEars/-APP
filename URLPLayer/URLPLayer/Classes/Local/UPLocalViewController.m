@@ -9,8 +9,10 @@
 #import "UPLocalViewController.h"
 #import "UPSearchUrlPlayVC.h"
 #import "AdvertisementController.h"
-#import "VideoModel.h"
+#import "SqliteTool.h"
 #import "ScorllModel.h"
+#import "UPPlayerController.h"
+#import "UPUrlSubCategoryModel.h"
 @interface UPLocalViewController ()<UIAlertViewDelegate>
 
 @end
@@ -32,38 +34,32 @@
         [_localView updateCycleScrollView:resultArray];
     }];
     
-    //查找表
-    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"urlPlay_neidi"];
-    //
-    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-        NSMutableArray * modelArr = [NSMutableArray array];
-        for (BmobObject *obj in array) {
-            VideoModel *model = [[VideoModel  alloc]init];
-            
-            model.video_name = [obj objectForKey:@"video_name"];
-            model.video_des = [obj objectForKey:@"video_des"];
-            model.video_img = [obj objectForKey:@"video_img"];
-            model.video_url = [obj objectForKey:@"video_url"];
-            model.video_type = [obj objectForKey:@"video_type"];
-            model.updatedAt = [obj objectForKey:@"updatedAt"];
-            [modelArr addObject:model];
-            
-        }
-        [_localView updateHistoryWatchTableView:modelArr];
-    }];
+
+    
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    NSMutableArray * historyArr = [SqliteTool getAllHistoryModels];
+    [_localView updateHistoryWatchTableView:historyArr];
+
+
 }
 -(void)uiview:(UIView *)view collectionEventType:(id)type params:(id)params{
     [super uiview:view collectionEventType:type params:params];
     if ([type isEqualToString:@"点击删除按钮"]) {
         //清空,先看数据库有内容否
-        if (YES) {
+         NSMutableArray * historyArr = [SqliteTool getAllHistoryModels];
+        if (historyArr.count > 0) {
             UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"" message:@"是否全部清空?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
             [alert show];
         }
         
     }
     if ([type isEqualToString:@"点击历史观看cell"]) {
-        
+        UPUrlSubCategoryModel * model = params;
+        UPPlayerController *playerCtrl = [[UPPlayerController alloc] initWithURL:[NSURL URLWithString:model.video_url]];
+        playerCtrl.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:playerCtrl animated:YES];
     }
     //搜索
     if ([type isEqualToString:@"navbar_search_icon-"]) {
@@ -95,6 +91,7 @@
         
     }else{
      //清空数据库数据
+        [SqliteTool deleteAllHistoryModel];
      [_localView updateHistoryWatchTableView:nil];
     }
     
