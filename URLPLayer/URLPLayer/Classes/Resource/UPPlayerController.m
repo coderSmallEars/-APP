@@ -147,7 +147,8 @@
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    _player.view.frame = playerRect;
+    self.player.view.frame = playerRect;
+    self.panel.frame = playerRect;
     if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) {
         [self.navigationController setNavigationBarHidden:NO animated:YES];
     }else{
