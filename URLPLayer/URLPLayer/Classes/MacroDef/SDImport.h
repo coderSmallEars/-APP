@@ -47,4 +47,5 @@
 //Model
 #import "UPUrlCategoryModel.h"
 #import "UPUrlSubCategoryModel.h"
+#import "ScorllModel.h"
 #endif /* SDImport_h */

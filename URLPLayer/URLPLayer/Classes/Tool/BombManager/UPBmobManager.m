@@ -22,9 +22,9 @@
 }
 
 + (void)loadDataWithList:(NSString *)list result:(BmobObjectArrayResultBlock)result{
-    BmobQuery *bquery = [BmobQuery queryWithClassName:list];
-    bquery.cachePolicy = kBmobCachePolicyCacheThenNetwork;
-    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+    BmobQuery *bmobQuery = [BmobQuery queryWithClassName:list];
+    bmobQuery.cachePolicy = kBmobCachePolicyCacheThenNetwork;
+    [bmobQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         if (error) {//请求错误不返回数据,调用此方法获取数据不用每个list单独做错误处理
             NSLog(@"%@",error.description);
         }else{
@@ -34,6 +34,23 @@
         }
     }];
 }
+
++ (void)loadScrollPicList:(UPBmobResultBlock)result{
+    [UPBmobManager loadDataWithList:UPScrollPic result:^(NSArray *array, NSError *error) {
+        NSMutableArray *tmpArray = [NSMutableArray array];
+        for (BmobObject *obj in array) {
+            ScorllModel *model = [ScorllModel new];
+            model.title = [obj objectForKey:@"title"];
+            model.pic_url = [obj objectForKey:@"pic_url"];
+            model.web_url = [obj objectForKey:@"web_url"];
+            [tmpArray addObject:model];
+        }
+        if (result) {
+            result([tmpArray copy]);
+        }
+    }];
+}
+
 
 + (void)loadCategoryList:(UPBmobResultBlock)result{
     [UPBmobManager loadDataWithList:UPCategoryList result:^(NSArray *resultArray, NSError *error) {

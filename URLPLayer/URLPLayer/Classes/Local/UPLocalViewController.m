@@ -27,25 +27,9 @@
     [super viewDidLoad];
     self.localView.delegate = self;
     
-    
     //查找轮播图表
-    BmobQuery   *scroBquery = [BmobQuery queryWithClassName:@"advertisements"];
-    //
-    [scroBquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-        NSMutableArray * scoArr = [NSMutableArray array];
-        for (BmobObject *obj in array) {
-            ScorllModel * scrollModel = [[ScorllModel alloc]init];
-            
-            
-            scrollModel.title = [obj objectForKey:@"title"];
-            scrollModel.pic_url = [obj objectForKey:@"pic_url"];
-            scrollModel.web_url = [obj objectForKey:@"web_url"];
-            
-            [scoArr addObject:scrollModel];
-            
-        }
-        
-        [_localView updateCycleScrollView:scoArr];
+    [UPBmobManager loadScrollPicList:^(NSArray *resultArray) {
+        [_localView updateCycleScrollView:resultArray];
     }];
     
     //查找表
@@ -67,10 +51,6 @@
         }
         [_localView updateHistoryWatchTableView:modelArr];
     }];
-
-    
-
-    
 }
 -(void)uiview:(UIView *)view collectionEventType:(id)type params:(id)params{
     [super uiview:view collectionEventType:type params:params];

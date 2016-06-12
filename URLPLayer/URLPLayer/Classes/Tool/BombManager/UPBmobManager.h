@@ -17,6 +17,7 @@ typedef void (^UPBmobResultBlock)(NSArray *resultArray);
 //按表查询,未知表名和model类型时用此项,数据请求,错误处理
 + (void)loadDataWithList:(NSString *)list result:(BmobObjectArrayResultBlock)result;
 
++ (void)loadScrollPicList:(UPBmobResultBlock)result;
 //电影分类
 + (void)loadCategoryList:(UPBmobResultBlock)result;
 //电影子类
