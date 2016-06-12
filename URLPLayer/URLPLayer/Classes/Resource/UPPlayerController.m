@@ -8,6 +8,9 @@
 
 #import "UPPlayerController.h"
 #import "UPControlPanel.h"
+
+#define playerHeight (kUPScreenWidth *9.f / 16.f)
+#define playerRect CGRectMake(0, 0, kUPScreenWidth, playerHeight)
 @interface UPPlayerController()
 
 @property (atomic, strong)IJKFFMoviePlayerController *player;
@@ -26,7 +29,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self addNotifications];
     [self.player prepareToPlay];
 }
 
@@ -44,7 +46,6 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [self.player shutdown];
-    [self removeNotifications];
 }
 
 
@@ -55,14 +56,20 @@
     [IJKFFMoviePlayerController setLogLevel:k_IJK_LOG_INFO];
     
     [IJKFFMoviePlayerController checkIfFFmpegVersionMatch:YES];
+    [self addNotifications];
     [self initPlayer];
     [self.view addSubview:self.panel];
+}
+
+- (void)dealloc{
+    [self removeNotifications];
 }
 #pragma mark - Private Method
 - (void)initPlayer{
     self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:self.url withOptions:[IJKFFOptions optionsByDefault]];
+    self.player.view.backgroundColor = [UIColor blackColor];
     self.player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    self.player.view.frame = self.view.bounds;
+    self.player.view.frame = playerRect;
     self.player.scalingMode = IJKMPMovieScalingModeAspectFit;
     self.player.shouldAutoplay = YES;
     self.view.autoresizesSubviews = YES;
@@ -143,7 +150,7 @@
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    _player.view.frame = self.view.bounds;
+    _player.view.frame = playerRect;
     if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) {
         [self.navigationController setNavigationBarHidden:NO animated:YES];
     }else{
@@ -154,7 +161,7 @@
 #pragma mark - SETTER AND GETTER
 - (UPControlPanel *)panel{
     if (!_panel) {
-        _panel = [[UPControlPanel alloc] initWithFrame:CGRectMake(0,0, kScreenWidth, 44)];
+        _panel = [[UPControlPanel alloc] initWithFrame:CGRectMake(0,playerHeight, kUPScreenWidth, 44)];
         __weak typeof(self)weakSelf = self;
         _panel.playButtonCLick = ^(UIButton *button){
             [weakSelf changePlayStatus:button];

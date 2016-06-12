@@ -34,7 +34,7 @@
 - (UIButton *)playButton{
     if (!_playButton) {
         _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _playButton.frame = CGRectMake((kScreenWidth - 70) / 2,0, 70,44);
+        _playButton.frame = CGRectMake(0,0, 70,44);
         [_playButton setTitle:@"暂停" forState:UIControlStateNormal];
         [_playButton setTitle:@"播放" forState:UIControlStateSelected];
         [_playButton setBackgroundColor:[UIColor whiteColor]];
