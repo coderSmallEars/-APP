@@ -30,6 +30,21 @@
     [super uiview:view collectionEventType:type params:params];
     if ([type isEqualToString:@"吐槽"]) {
         
+        //往urlPlay_feedback表添加一条吐槽数据
+        BmobObject *gameScore = [BmobObject objectWithClassName:@"urlPlay_feedback"];
+        [gameScore setObject:[params objectForKey:@"content"] forKey:@"content"];
+        [gameScore setObject:[params objectForKey:@"contactWay"] forKey:@"contact_way"];
+        [gameScore setObject:[NSNumber numberWithBool:YES] forKey:@"cheatMode"];
+        [gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+            //进行操作
+            if(!error){
+            //评论成功
+                [_indivividualView clearFeedbackContent];
+            }else{
+                NSLog(@"评论失败");
+            }
+                
+        }];
     }
     if ([type isEqualToString:@"下载管理"]) {
         

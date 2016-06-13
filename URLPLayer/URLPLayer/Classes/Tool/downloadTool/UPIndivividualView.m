@@ -37,4 +37,9 @@
     _indivividualTV.delegate  = self.delegate;
 
 }
+//清空吐槽内容
+-(void)clearFeedbackContent{
+    [_indivividualTV clearFeedbackContent];
+
+}
 @end

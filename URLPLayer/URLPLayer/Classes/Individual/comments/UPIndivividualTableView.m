@@ -14,7 +14,9 @@
      键盘高度
      */
     CGFloat kbEndHeight;
-
+    UITextField * contactWayField;
+    //键盘是否弹出
+    BOOL keyBoardIsShow;
 }
 @end
 
@@ -71,12 +73,21 @@
     UILabel *noticeLab = [[UILabel alloc]initWithFrame:CGRectMake(10.f, 10.f, kScreenWidth - 20.f, 60.f)];
     [backView addSubview:noticeLab];
     noticeLab.numberOfLines = 0;
-    noticeLab.text = @"您的建议内容,将会显示在我们的公众微信号上,对我们有利建议的用户有奖励哦!";
+    noticeLab.text = @"您的建议内容,将会显示在我们的公众微信号上,对我们有利建议的用户有奖励哦!输入正确的微信号或者qq才能看到哦!";
     noticeLab.font = [UIFont systemFontOfSize:13.0];
     noticeLab.textColor = [UIColor colorWithHexString:@"000000"];
+    contactWayField  = [[UITextField alloc]initWithFrame:CGRectMake(10.f, noticeLab.bottom, 180.f, 28.f)];
+    contactWayField.placeholder = @" 请输入QQ或者微信号";
+    contactWayField.layer.borderColor = [UIColor colorWithHexString:@"dddddd"].CGColor;
+    contactWayField.layer.borderWidth = 1.f;
+    contactWayField.layer.cornerRadius = 6.0f;
+    contactWayField.backgroundColor = [UIColor whiteColor];
+    [contactWayField setValue:[UIFont systemFontOfSize:13.0] forKeyPath:@"_placeholderLabel.font"];
+    [contactWayField setValue:[UIColor colorWithHexString:@"b1b1b1"] forKeyPath:@"_placeholderLabel.textColor"];
+    [backView addSubview:contactWayField];
     UIImageView * inputBackView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bg_Input-panel"]];
     inputBackView.userInteractionEnabled = YES;
-    inputBackView.frame = CGRectMake(5.f, noticeLab.bottom, kScreenWidth - 10.f, 200.f);
+    inputBackView.frame = CGRectMake(5.f, contactWayField.bottom + 10.f, kScreenWidth - 10.f, 200.f);
     [backView addSubview:inputBackView];
     self.inputTextView  = [[UITextView alloc]initWithFrame:CGRectMake(5.f, 5.f, inputBackView.width - 10.f, 190.f)];
     [inputBackView addSubview:self.inputTextView];
@@ -97,33 +108,43 @@
     return backView;
 }
 -(void)clickToCommit{
+    if ([contactWayField.text isEqualToString:@""]) {
+        NSLog(@"请输入联系方式");
+        return;
+    }
     if ([self.inputTextView.text isEqualToString:@""]) {
         
     }else{
-    [self uiview:nil collectionEventType:@"吐槽" params:self.inputTextView.text];
+        [self uiview:nil collectionEventType:@"吐槽" params:@{@"content":self.inputTextView.text,@"contactWay":contactWayField.text}];
     }
 
     [self.inputTextView resignFirstResponder];
 }
 #pragma mark--- 键盘显示时会触发的方法
 -(void)keyBoardWillShow:(NSNotification*)notif{
-    
-    //1.获取键盘的高度
-    // 1)获取键盘活动结束时的位置
-    CGRect kbEndFrame=  [notif.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    kbEndHeight = kbEndFrame.size.height;
-    self.top = self.top - kbEndHeight + kTabbarHeight;
-    
-    //添加动画
-    [UIView animateWithDuration:0.25 animations:^{
-        [self layoutIfNeeded];
+    if (keyBoardIsShow == NO) {
+        //1.获取键盘的高度
+        // 1)获取键盘活动结束时的位置
+        CGRect kbEndFrame=  [notif.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+        kbEndHeight = kbEndFrame.size.height;
+        self.top = self.top - kbEndHeight + kTabbarHeight;
         
-    }];
+        //添加动画
+        [UIView animateWithDuration:0.25 animations:^{
+            [self layoutIfNeeded];
+            
+        }];
+    }
+    
+    keyBoardIsShow = YES;
 }
 #pragma mark--- 键盘隐藏时会触发的方法
 -(void)keyBoardWillHidden:(NSNotification*)notif{
-    //1.inputView恢复原位
-    self.top = self.top + kbEndHeight - kTabbarHeight;
+    if (keyBoardIsShow == YES) {
+        //1.inputView恢复原位
+        self.top = self.top + kbEndHeight - kTabbarHeight;
+    }
+    keyBoardIsShow = NO;
 }
 -(void)dealloc{
     
@@ -131,5 +152,12 @@
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     [self.inputTextView resignFirstResponder];
+}
+//清空吐槽内容
+-(void)clearFeedbackContent{
+    contactWayField.text = @"";
+    self.inputTextView.text = @"";
+[self.inputTextView resignFirstResponder];
+
 }
 @end

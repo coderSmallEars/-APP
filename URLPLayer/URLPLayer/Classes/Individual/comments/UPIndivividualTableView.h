@@ -11,4 +11,6 @@
 @interface UPIndivividualTableView : UPBaseTableView
 @property (nonatomic, strong)UITextView *inputTextView;
 @property (nonatomic, strong)UIButton * commitBtn;
+//清空吐槽内容
+-(void)clearFeedbackContent;
 @end
