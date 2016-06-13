@@ -75,6 +75,10 @@
  */
 +(NSMutableArray *)getAllHistoryModels;
 
+/**
+ 获取所有未加密的视频模型
+ */
++(NSMutableArray *)getAllNotEncryptHistoryModels;
 
 /**
  *
@@ -100,9 +104,13 @@
 +(UPUrlSubCategoryModel *)historyModelGetByVideo_url:(NSString*)video_url;
 
 /**
- 清空播放历史
+ 清空所有播放历史
  */
 +(void)deleteAllHistoryModel;
 
+/**
+  清空所有未加密的播放历史
+ */
++(void)deleteAllNotEncryptHistoryModel;
 
 @end

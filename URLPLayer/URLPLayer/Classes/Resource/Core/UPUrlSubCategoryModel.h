@@ -65,6 +65,10 @@
 
 @property (nonatomic, copy) NSString *lastSize;
 
+/**
+ 加密 0:未加密 1:加密
+ */
+@property (nonatomic, assign)int   encrypt;
 
 
 

@@ -31,7 +31,7 @@ static FMDatabaseQueue *queue;
         }
         
         //创建播放历史History表
-        NSString * sqlHistoryStr = @"create table if not exists History (Id integer PRIMARY KEY AUTOINCREMENT,fileName text,totalSize text, video_name text,video_img blob,video_des text,video_type text,video_url text,downloadState text,currentSize text,lastSize text,updatedAt text);";
+        NSString * sqlHistoryStr = @"create table if not exists History (Id integer PRIMARY KEY AUTOINCREMENT,fileName text,totalSize text, video_name text,video_img blob,video_des text,video_type text,video_url text,downloadState text,currentSize text,lastSize text,updatedAt text,encrypt integer);";
         if(![dealDB executeUpdate:sqlHistoryStr])
         {
             NSLog(@"History表创建失败");
@@ -240,6 +240,7 @@ static FMDatabaseQueue *queue;
             model.currentSize = [rs stringForColumn:@"currentSize"];
             model.lastSize = [rs stringForColumn:@"lastSize"];
             model.updatedAt = [rs stringForColumn:@"updatedAt"];
+            model.encrypt = [rs intForColumn:@"encrypt"];
             [modelArr addObject:model];
         }
         [rs close];
@@ -247,6 +248,36 @@ static FMDatabaseQueue *queue;
     return modelArr;
 }
 
+/**
+ 获取所有未加密的视频模型
+ */
++(NSMutableArray *)getAllNotEncryptHistoryModels{
+    NSMutableArray * modelArr = [NSMutableArray array];
+    [queue inDatabase:^(FMDatabase *dealDB) {
+        // 1.查询数据
+        FMResultSet *rs = [dealDB executeQuery:@"select * from History where encrypt = 0 order by id desc"];
+        while ([rs next]) {
+            UPUrlSubCategoryModel * model = [[UPUrlSubCategoryModel alloc]init];
+            model.fileName = [rs stringForColumn:@"fileName"];
+            model.totalSize = [rs stringForColumn:@"totalSize"];
+            model.video_name = [rs stringForColumn:@"video_name"];
+            model.video_img = [rs stringForColumn:@"video_img"];
+            model.video_url = [rs stringForColumn:@"video_url"];
+            model.video_type = [rs stringForColumn:@"video_type"];
+            model.video_des = [rs stringForColumn:@"video_des"];
+            model.downloadState = [rs stringForColumn:@"downloadState"];
+            model.currentSize = [rs stringForColumn:@"currentSize"];
+            model.lastSize = [rs stringForColumn:@"lastSize"];
+            model.updatedAt = [rs stringForColumn:@"updatedAt"];
+            model.encrypt = [rs intForColumn:@"encrypt"];
+            [modelArr addObject:model];
+        }
+        [rs close];
+    }];
+    return modelArr;
+
+
+}
 /**
  *  根据video_url删除视频
  *
@@ -273,7 +304,7 @@ static FMDatabaseQueue *queue;
  */
 +(void)addHistory:(UPUrlSubCategoryModel *)model{
     
-    NSString *sql=[NSString stringWithFormat:@"INSERT INTO History (fileName,totalSize,video_name,video_img,video_des,video_type,video_url,downloadState,currentSize,lastSize,updatedAt) VALUES('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",model.fileName,model.totalSize,model.video_name,model.video_img,model.video_des,model.video_type,model.video_url,model.downloadState,model.currentSize,model.lastSize,model.updatedAt];
+    NSString *sql=[NSString stringWithFormat:@"INSERT INTO History (fileName,totalSize,video_name,video_img,video_des,video_type,video_url,downloadState,currentSize,lastSize,updatedAt,encrypt) VALUES('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%d')",model.fileName,model.totalSize,model.video_name,model.video_img,model.video_des,model.video_type,model.video_url,model.downloadState,model.currentSize,model.lastSize,model.updatedAt,model.encrypt];
     [queue inDatabase:^(FMDatabase *dealDB) {
         
         if (![dealDB executeUpdate:sql])
@@ -342,7 +373,7 @@ static FMDatabaseQueue *queue;
 +(UPUrlSubCategoryModel *)historyModelGetByVideo_url:(NSString*)video_url{
     NSMutableArray *array=[NSMutableArray array];
     UPUrlSubCategoryModel *model=[[UPUrlSubCategoryModel alloc]init];
-    NSString *sql=[NSString stringWithFormat:@"SELECT fileName,totalSize,video_name,video_img,video_des,video_type,downloadState,currentSize,lastSize,updatedAt FROM History WHERE video_url='%@'",video_url];
+    NSString *sql=[NSString stringWithFormat:@"SELECT fileName,totalSize,video_name,video_img,video_des,video_type,downloadState,currentSize,lastSize,updatedAt,encrypt FROM History WHERE video_url='%@'",video_url];
     [queue inDatabase:^(FMDatabase *dealDB) {
         //执行查询sql语句
         FMResultSet *result= [dealDB executeQuery:sql];
@@ -381,6 +412,25 @@ static FMDatabaseQueue *queue;
         
     }];
     
+}
+
+
+/**
+ 清空所有未加密的播放历史
+ */
++(void)deleteAllNotEncryptHistoryModel{
+    NSString *sql=[NSString stringWithFormat:@"DELETE FROM History WHERE encrypt = 0"];
+    [queue inDatabase:^(FMDatabase *dealDB) {
+        
+        if (![dealDB executeUpdate:sql])
+        {
+            NSLog(@"model删除失败!");
+            
+        }
+        
+    }];
+
+
 }
 @end
 

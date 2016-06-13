@@ -61,8 +61,9 @@ static NSString *const subCategoryReuseIdentifier = @"LESubCategoryCollectionCel
     //播放记录插入数据库
    UPUrlSubCategoryModel * sqliteModel = [SqliteTool historyModelGetByVideo_url:model.video_url];
     if (sqliteModel == nil) {
-        
+        model.encrypt = 0;
     }else{
+        model.encrypt = sqliteModel.encrypt;
         [SqliteTool removeHistory:sqliteModel];
         
     }

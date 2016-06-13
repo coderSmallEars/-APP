@@ -39,10 +39,17 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+   
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] == nil || [[[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] integerValue] == 0){
+    //未加密
+        NSMutableArray * historyArr = [SqliteTool getAllNotEncryptHistoryModels];
+        [_localView updateHistoryWatchTableView:historyArr];
+    }else{
+        //所有
     NSMutableArray * historyArr = [SqliteTool getAllHistoryModels];
     [_localView updateHistoryWatchTableView:historyArr];
 
-
+    }
 }
 -(void)uiview:(UIView *)view collectionEventType:(id)type params:(id)params{
     [super uiview:view collectionEventType:type params:params];
@@ -91,7 +98,14 @@
         
     }else{
      //清空数据库数据
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] == nil || [[[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] integerValue] == 0){
+        //未加密列表
+            [SqliteTool deleteAllNotEncryptHistoryModel];
+        }
+        else{
+            //加密列表
         [SqliteTool deleteAllHistoryModel];
+        }
      [_localView updateHistoryWatchTableView:nil];
     }
     
