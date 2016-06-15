@@ -74,6 +74,7 @@
 		638E0BFB1CF9C32D002B0F06 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638E0BFA1CF9C32D002B0F06 /* IJKMediaFramework.framework */; };
 		63B1DE001CF67F60001B9A54 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B1DDFC1CF67F60001B9A54 /* MGSwipeButton.m */; };
 		63B1DE011CF67F60001B9A54 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B1DDFE1CF67F60001B9A54 /* MGSwipeTableCell.m */; };
+		63CD9E9B1D112011009E14C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CD9E9A1D112011009E14C2 /* Images.xcassets */; };
 		63F0B5521CFA09C1002954B9 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B5511CFA09C1002954B9 /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		63FC654B1CFEB97E009A8064 /* ScorllModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FC654A1CFEB97E009A8064 /* ScorllModel.m */; };
 		63FC654E1CFEBFB2009A8064 /* AdvertisementController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FC654D1CFEBFB2009A8064 /* AdvertisementController.m */; };
@@ -251,6 +252,7 @@
 		63B1DDFC1CF67F60001B9A54 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
 		63B1DDFD1CF67F60001B9A54 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
 		63B1DDFE1CF67F60001B9A54 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
+		63CD9E9A1D112011009E14C2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		63F0B5481CFA0820002954B9 /* SDImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDImport.h; path = URLPLayer/Classes/MacroDef/SDImport.h; sourceTree = SOURCE_ROOT; };
 		63F0B5501CFA09C1002954B9 /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
 		63F0B5511CFA09C1002954B9 /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
@@ -866,6 +868,7 @@
 				8AB1D09E1CF054C300C47609 /* LaunchScreen.storyboard */,
 				8AB1D0A11CF054C300C47609 /* Info.plist */,
 				630B051F1CF54E82008733E6 /* image */,
+				63CD9E9A1D112011009E14C2 /* Images.xcassets */,
 				8AB1D0901CF054C300C47609 /* Supporting Files */,
 			);
 			path = URLPlayer;
@@ -1104,6 +1107,7 @@
 				630B052F1CF572CA008733E6 /* navbar_delete_icon@2x.png in Resources */,
 				630B052A1CF55219008733E6 /* navbar_search_icon-@2x.png in Resources */,
 				630B05311CF572D4008733E6 /* navbar_delete_icon@3x.png in Resources */,
+				63CD9E9B1D112011009E14C2 /* Images.xcassets in Resources */,
 				6303A9CA1CF7CDA8008AD4EF /* bg_Input-panel@3x.png in Resources */,
 				8A85F94D1CF0BAAE006E89F9 /* Assets.xcassets in Resources */,
 				6303A9C91CF7CDA8008AD4EF /* bg_Input-panel@2x.png in Resources */,
@@ -1389,6 +1393,7 @@
 			baseConfigurationReference = F7888C8B858D47324C8FDBAF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				ENABLE_BITCODE = NO;
@@ -1418,6 +1423,7 @@
 			baseConfigurationReference = F8F580D40DACAB41A810FF91 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				ENABLE_BITCODE = NO;
