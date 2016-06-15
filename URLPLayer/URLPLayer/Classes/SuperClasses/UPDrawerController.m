@@ -10,23 +10,20 @@
 
 @implementation UPDrawerController
 
-- (BOOL)shouldAutorotate{
+- (UINavigationController *)currentCenterController{
     UITabBarController *tabbar = (UITabBarController *)self.centerViewController;
-    UINavigationController *navi = tabbar.selectedViewController;
-    return navi.shouldAutorotate;
+    return  tabbar.selectedViewController;
+}
+
+- (BOOL)shouldAutorotate{
+    return [[self currentCenterController] shouldAutorotate];
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations{
-    UITabBarController *tabbar = (UITabBarController *)self.centerViewController;
-    UINavigationController *navi = tabbar.selectedViewController;
-    return navi.supportedInterfaceOrientations;
+    return [[self currentCenterController] supportedInterfaceOrientations];
 }
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
-    UITabBarController *tabbar = (UITabBarController *)self.centerViewController;
-    UINavigationController *navi = tabbar.selectedViewController;
-    return navi.preferredInterfaceOrientationForPresentation;
+    return [[self currentCenterController] preferredInterfaceOrientationForPresentation];
 }
-
-
 @end
