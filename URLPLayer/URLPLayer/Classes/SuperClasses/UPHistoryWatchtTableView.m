@@ -80,12 +80,20 @@
 
         }
         else{
-        UPUrlSubCategoryModel * model = self.datas[encryptPath.row];
-        model.encrypt = 1;
-        [SqliteTool removeHistory:model];
-        [SqliteTool addHistory:model];
-        [self.datas removeObjectAtIndex:encryptPath.row];
-        [self.tableView deleteRowsAtIndexPaths:@[encryptPath] withRowAnimation:UITableViewRowAnimationNone];
+            UPUrlSubCategoryModel * model = self.datas[encryptPath.row];
+            if (model.encrypt == 0) {
+                
+                model.encrypt = 1;
+                [SqliteTool removeHistory:model];
+                [SqliteTool addHistory:model];
+                [self.datas removeObjectAtIndex:encryptPath.row];
+                [self.tableView deleteRowsAtIndexPaths:@[encryptPath] withRowAnimation:UITableViewRowAnimationNone];
+            }else{
+                [SqliteTool removeHistory:model];
+                model.encrypt = 0;
+                [SqliteTool addHistory:model];
+            
+            }
         }
     }
     if (direction == MGSwipeDirectionRightToLeft && index == 0) {
