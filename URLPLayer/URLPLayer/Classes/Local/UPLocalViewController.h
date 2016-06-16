@@ -10,4 +10,6 @@
 #import "UPLocalView.h"
 @interface UPLocalViewController : UPViewController
 @property (nonatomic, strong)UPLocalView * localView;
+
+-(void)changeLocalVideos;
 @end

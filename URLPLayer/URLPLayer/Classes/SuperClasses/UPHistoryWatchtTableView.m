@@ -45,7 +45,7 @@
 {
     NSMutableArray * result = [NSMutableArray array];
     NSArray * titles;
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] == nil || [[[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt]integerValue] == 0){
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] == nil || [[[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] isEqualToString:@"2"]){
     titles = @[@"删除", @"加密"];
     
     }else{
@@ -135,6 +135,7 @@
     }
     NSUserDefaults * ud = [NSUserDefaults standardUserDefaults];
     [ud setObject:passWord forKey:User_Secret];
+    [ud setObject:@"2" forKey:User_Encrypt];
     [ud synchronize];
     
         UPUrlSubCategoryModel * model = self.datas[encryptPath.row];

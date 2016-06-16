@@ -50,7 +50,7 @@
 //Macro Block
 typedef void(^UPGeneralBlock)(id object);
 
-//加密与否的标志key
+//加密与否的标志key @"1" 加密  @"2" 未加密
 #define User_Encrypt @"user_encrypt"
 
 //密码key

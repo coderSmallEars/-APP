@@ -60,14 +60,16 @@ static NSString *const subCategoryReuseIdentifier = @"LESubCategoryCollectionCel
     UPUrlSubCategoryModel *model = self.subCatogoryArray[indexPath.row];
     //播放记录插入数据库
    UPUrlSubCategoryModel * sqliteModel = [SqliteTool historyModelGetByVideo_url:model.video_url];
+    
     if (sqliteModel == nil) {
         model.encrypt = 0;
+        [SqliteTool addHistory:model];
     }else{
         model.encrypt = sqliteModel.encrypt;
         [SqliteTool removeHistory:sqliteModel];
-        
+        [SqliteTool addHistory:model];
     }
-    [SqliteTool addHistory:model];
+    
 
     
     if (self.cellClickBlock) {

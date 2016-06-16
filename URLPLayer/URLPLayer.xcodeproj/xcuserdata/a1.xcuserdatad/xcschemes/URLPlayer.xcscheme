@@ -17,7 +17,7 @@
                BlueprintIdentifier = "8AB1D08C1CF054C300C47609"
                BuildableName = "URLPlayer.app"
                BlueprintName = "URLPlayer"
-               ReferencedContainer = "container:URLPlayer.xcodeproj">
+               ReferencedContainer = "container:URLPLayer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "8AB1D0A51CF054C300C47609"
                BuildableName = "URLPlayerTests.xctest"
                BlueprintName = "URLPlayerTests"
-               ReferencedContainer = "container:URLPlayer.xcodeproj">
+               ReferencedContainer = "container:URLPLayer.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "8AB1D0B01CF054C300C47609"
                BuildableName = "URLPlayerUITests.xctest"
                BlueprintName = "URLPlayerUITests"
-               ReferencedContainer = "container:URLPlayer.xcodeproj">
+               ReferencedContainer = "container:URLPLayer.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "8AB1D08C1CF054C300C47609"
             BuildableName = "URLPlayer.app"
             BlueprintName = "URLPlayer"
-            ReferencedContainer = "container:URLPlayer.xcodeproj">
+            ReferencedContainer = "container:URLPLayer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "8AB1D08C1CF054C300C47609"
             BuildableName = "URLPlayer.app"
             BlueprintName = "URLPlayer"
-            ReferencedContainer = "container:URLPlayer.xcodeproj">
+            ReferencedContainer = "container:URLPLayer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,7 +97,7 @@
             BlueprintIdentifier = "8AB1D08C1CF054C300C47609"
             BuildableName = "URLPlayer.app"
             BlueprintName = "URLPlayer"
-            ReferencedContainer = "container:URLPlayer.xcodeproj">
+            ReferencedContainer = "container:URLPLayer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

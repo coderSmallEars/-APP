@@ -22,7 +22,7 @@ static FMDatabaseQueue *queue;
     [queue inDatabase:^(FMDatabase *dealDB) {
         
         //创建Video表
-        NSString * sqlClassesStr = @"create table if not exists Video (Id integer PRIMARY KEY AUTOINCREMENT,fileName text,totalSize text, video_name text,video_img blob,video_des text,video_type text,video_url text,downloadState text,currentSize text,lastSize text,updatedAt text);";
+        NSString * sqlClassesStr = @"create table if not exists Video (Id integer PRIMARY KEY AUTOINCREMENT,fileName text,totalSize text, video_name text,video_img text,video_des text,video_type text,video_url text,downloadState text,currentSize text,lastSize text,updatedAt text);";
         if(![dealDB executeUpdate:sqlClassesStr])
         {
             NSLog(@"Video表创建失败");
@@ -31,7 +31,7 @@ static FMDatabaseQueue *queue;
         }
         
         //创建播放历史History表
-        NSString * sqlHistoryStr = @"create table if not exists History (Id integer PRIMARY KEY AUTOINCREMENT,fileName text,totalSize text, video_name text,video_img blob,video_des text,video_type text,video_url text,downloadState text,currentSize text,lastSize text,updatedAt text,encrypt integer);";
+        NSString * sqlHistoryStr = @"create table if not exists History (Id integer PRIMARY KEY AUTOINCREMENT,fileName text,totalSize text, video_name text,video_img text,video_des text,video_type text,video_url text,downloadState text,currentSize text,lastSize text,updatedAt text,encrypt integer);";
         if(![dealDB executeUpdate:sqlHistoryStr])
         {
             NSLog(@"History表创建失败");
@@ -390,6 +390,7 @@ static FMDatabaseQueue *queue;
     
     if (array&&array.count>0) {
         [model setValuesForKeysWithDictionary:array[0]];
+        model.video_url = video_url;
         return model;
     }
     return nil;
