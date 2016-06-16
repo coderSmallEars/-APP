@@ -21,7 +21,39 @@
     return manager;
 }
 
-+ (void)loadDataWithList:(NSString *)list result:(BmobObjectArrayResultBlock)result{
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+#pragma mark - Notification
+- (void)registBmob{
+    
+    [Bmob registerWithAppKey:@"60b8b8347c38fff0515c5b4c988da4b1"];
+    [Bmob setBmobRequestTimeOut:20];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bmobRegistNoti:) name:kBmobInitSuccessNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bmobRegistNoti:) name:kBmobInitFailNotification object:nil];
+    });
+}
+
+- (void)bmobRegistNoti:(NSNotification *)noti{
+    NSLog(@"%@",noti.name);
+    if ([noti.name isEqualToString:kBmobInitFailNotification]) {
+        NSLog(@"Failure-------------------------Bmob 初始化失败");
+        self.isInitSuccess = NO;
+    }else if([noti.name isEqualToString:kBmobInitSuccessNotification]){
+        NSLog(@"Success-------------------------Bmob 初始化成功");
+        self.isInitSuccess = YES;
+    }
+}
+
+#pragma mark - API Method
+- (void)loadDataWithList:(NSString *)list result:(BmobObjectArrayResultBlock)result{
+    if (!self.isInitSuccess) {
+        //初始化失败,重新注册
+        [self registBmob];
+        return;
+    }
     BmobQuery *bmobQuery = [BmobQuery queryWithClassName:list];
     bmobQuery.cachePolicy = kBmobCachePolicyCacheThenNetwork;
     [bmobQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
@@ -35,8 +67,8 @@
     }];
 }
 
-+ (void)loadScrollPicList:(UPBmobResultBlock)result{
-    [UPBmobManager loadDataWithList:UPScrollPic result:^(NSArray *array, NSError *error) {
+- (void)loadScrollPicList:(UPBmobResultBlock)result{
+    [self loadDataWithList:UPScrollPic result:^(NSArray *array, NSError *error) {
         NSMutableArray *tmpArray = [NSMutableArray array];
         for (BmobObject *obj in array) {
             ScorllModel *model = [ScorllModel new];
@@ -52,8 +84,8 @@
 }
 
 
-+ (void)loadCategoryList:(UPBmobResultBlock)result{
-    [UPBmobManager loadDataWithList:UPCategoryList result:^(NSArray *resultArray, NSError *error) {
+- (void)loadCategoryList:(UPBmobResultBlock)result{
+    [self loadDataWithList:UPCategoryList result:^(NSArray *resultArray, NSError *error) {
         NSMutableArray *tmpArray = [NSMutableArray array];
         for (BmobObject *obj in resultArray) {
             UPUrlCategoryModel *model = [UPUrlCategoryModel new];
@@ -67,8 +99,8 @@
     }];
 }
 
-+ (void)loadSubCategotyList:(NSString *)listName result:(UPBmobResultBlock)result{
-    [UPBmobManager loadDataWithList:listName result:^(NSArray *resultArray, NSError *error) {
+- (void)loadSubCategotyList:(NSString *)listName result:(UPBmobResultBlock)result{
+    [self loadDataWithList:listName result:^(NSArray *resultArray, NSError *error) {
         NSMutableArray *tmpArray = [NSMutableArray array];
         for (BmobObject *obj in resultArray) {
             UPUrlSubCategoryModel *model = [UPUrlSubCategoryModel new];

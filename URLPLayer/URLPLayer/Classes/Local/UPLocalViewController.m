@@ -30,7 +30,7 @@
     self.localView.delegate = self;
     
     //查找轮播图表
-    [UPBmobManager loadScrollPicList:^(NSArray *resultArray) {
+    [UPBmobSingetonManager loadScrollPicList:^(NSArray *resultArray) {
         [_localView updateCycleScrollView:resultArray];
     }];
     

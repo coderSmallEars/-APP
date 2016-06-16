@@ -36,7 +36,7 @@
 - (void)requestData{
     //查找轮播图表
     WS(weakSelf)
-    [UPBmobManager loadCategoryList:^(NSArray *array) {
+    [UPBmobSingetonManager loadCategoryList:^(NSArray *array) {
         weakSelf.categoryArray = array;
         [weakSelf refreshCategoryTableView];
     }];
@@ -49,7 +49,7 @@
         [self.categoryTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
         [self.categoryTableView scrollToTopAnimated:NO];
         UPUrlCategoryModel *model = self.categoryArray.firstObject;
-        [UPBmobManager loadSubCategotyList:model.tableTitle result:^(NSArray *resultArray) {
+        [UPBmobSingetonManager loadSubCategotyList:model.tableTitle result:^(NSArray *resultArray) {
             [weakSelf refreshSubCategoryCollectionView:resultArray];
         }];
     }
@@ -81,7 +81,7 @@
         
         WS(weakSelf)
         _categoryTableView.cellClickBlock = ^(id listUrl){
-            [UPBmobManager loadSubCategotyList:listUrl result:^(NSArray *resultArray) {
+            [UPBmobSingetonManager loadSubCategotyList:listUrl result:^(NSArray *resultArray) {
                 [weakSelf refreshSubCategoryCollectionView:resultArray];
             }];
         };
