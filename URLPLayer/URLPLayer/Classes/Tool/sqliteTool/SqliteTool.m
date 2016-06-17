@@ -433,5 +433,37 @@ static FMDatabaseQueue *queue;
 
 
 }
+/**
+ 获取所有加密的视频模型
+ */
++(NSMutableArray *)getAllEncryptHistoryModels{
+    NSMutableArray * modelArr = [NSMutableArray array];
+    [queue inDatabase:^(FMDatabase *dealDB) {
+        // 1.查询数据
+        FMResultSet *rs = [dealDB executeQuery:@"select * from History where encrypt = 1 order by id desc"];
+        while ([rs next]) {
+            UPUrlSubCategoryModel * model = [[UPUrlSubCategoryModel alloc]init];
+            model.fileName = [rs stringForColumn:@"fileName"];
+            model.totalSize = [rs stringForColumn:@"totalSize"];
+            model.video_name = [rs stringForColumn:@"video_name"];
+            model.video_img = [rs stringForColumn:@"video_img"];
+            model.video_url = [rs stringForColumn:@"video_url"];
+            model.video_type = [rs stringForColumn:@"video_type"];
+            model.video_des = [rs stringForColumn:@"video_des"];
+            model.downloadState = [rs stringForColumn:@"downloadState"];
+            model.currentSize = [rs stringForColumn:@"currentSize"];
+            model.lastSize = [rs stringForColumn:@"lastSize"];
+            model.updatedAt = [rs stringForColumn:@"updatedAt"];
+            model.encrypt = [rs intForColumn:@"encrypt"];
+            [modelArr addObject:model];
+        }
+        [rs close];
+    }];
+    return modelArr;
+    
+    
+}
+
+
 @end
 

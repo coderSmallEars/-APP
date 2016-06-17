@@ -58,16 +58,16 @@
             [alertView textFieldAtIndex:0].keyboardType = UIKeyboardTypeEmailAddress;
             [alertView show];
 
-        }else if ( [[ud objectForKey:User_Encrypt] isEqualToString:@"2"]){
-        //未加密 --- >切换为加密
-            [ud setObject:@"1" forKey:User_Encrypt];
+        }else if ( [[ud objectForKey:User_Encrypt] isEqualToString:@"1"]){
+        //加密 --- >切换为未加密
+            [ud setObject:@"0" forKey:User_Encrypt];
             [ud synchronize];
             UPTabBarController* tabBar =  app.mmDrawer.centerViewController.childViewControllers[0];
             UPLocalViewController * localC =   tabBar.viewControllers[0];
             [localC changeLocalVideos];
         
         }else{
-        //加密 -- >切换为不加密
+        //未加密 -- >切换为加密
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"请输入密码" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定" ,nil];
             alertView.tag = 10087;
             alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
@@ -114,7 +114,7 @@
     }
     else{
         if ([passWord isEqualToString:[ud objectForKey:User_Secret]]) {
-            [ud setObject:@"2" forKey:User_Encrypt];
+            [ud setObject:@"1" forKey:User_Encrypt];
             [ud synchronize];
         }else{
         

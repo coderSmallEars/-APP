@@ -38,13 +38,13 @@
     
 }
 -(void)changeLocalVideos{
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] == nil || [[[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] isEqualToString:@"1"]){
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] == nil || [[[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] isEqualToString:@"0"]){
         //未加密
         NSMutableArray * historyArr = [SqliteTool getAllNotEncryptHistoryModels];
         [_localView updateHistoryWatchTableView:historyArr];
     }else{
-        //所有
-        NSMutableArray * historyArr = [SqliteTool getAllHistoryModels];
+        //加密
+        NSMutableArray * historyArr = [SqliteTool getAllEncryptHistoryModels];
         [_localView updateHistoryWatchTableView:historyArr];
         
     }
@@ -101,7 +101,7 @@
         
     }else{
      //清空数据库数据
-        if ([[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] == nil || [[[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] isEqualToString:@"2"]){
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] == nil || [[[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] isEqualToString:@"0"]){
         //未加密列表
             [SqliteTool deleteAllNotEncryptHistoryModel];
         }

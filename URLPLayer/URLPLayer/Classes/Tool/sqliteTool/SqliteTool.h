@@ -113,4 +113,9 @@
  */
 +(void)deleteAllNotEncryptHistoryModel;
 
+/**
+ 获取所有加密的视频模型
+ */
++(NSMutableArray *)getAllEncryptHistoryModels;
+
 @end

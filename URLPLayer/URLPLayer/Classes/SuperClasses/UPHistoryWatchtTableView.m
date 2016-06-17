@@ -45,7 +45,7 @@
 {
     NSMutableArray * result = [NSMutableArray array];
     NSArray * titles;
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] == nil || [[[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] isEqualToString:@"2"]){
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] == nil || [[[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] isEqualToString:@"0"]){
     titles = @[@"删除", @"加密"];
     
     }else{
@@ -81,7 +81,8 @@
         }
         else{
             UPUrlSubCategoryModel * model = self.datas[encryptPath.row];
-            if (model.encrypt == 0) {
+            UPUrlSubCategoryModel * sqlModel = [SqliteTool historyModelGetByVideo_url:model.video_url];
+            if (sqlModel.encrypt == 0) {
                 
                 model.encrypt = 1;
                 [SqliteTool removeHistory:model];
@@ -89,9 +90,12 @@
                 [self.datas removeObjectAtIndex:encryptPath.row];
                 [self.tableView deleteRowsAtIndexPaths:@[encryptPath] withRowAnimation:UITableViewRowAnimationNone];
             }else{
-                [SqliteTool removeHistory:model];
+                
                 model.encrypt = 0;
+                [SqliteTool removeHistory:model];
                 [SqliteTool addHistory:model];
+                [self.datas removeObjectAtIndex:encryptPath.row];
+                [self.tableView deleteRowsAtIndexPaths:@[encryptPath] withRowAnimation:UITableViewRowAnimationNone];
             
             }
         }
@@ -143,7 +147,7 @@
     }
     NSUserDefaults * ud = [NSUserDefaults standardUserDefaults];
     [ud setObject:passWord forKey:User_Secret];
-    [ud setObject:@"2" forKey:User_Encrypt];
+    [ud setObject:@"0" forKey:User_Encrypt];
     [ud synchronize];
     
         UPUrlSubCategoryModel * model = self.datas[encryptPath.row];
