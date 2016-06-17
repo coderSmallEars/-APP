@@ -399,10 +399,10 @@ static FMDatabaseQueue *queue;
 }
 
 /**
- 清空播放历史
+ 清空加密的播放历史
  */
-+(void)deleteAllHistoryModel{
-    NSString *sql=[NSString stringWithFormat:@"DELETE FROM History WHERE  1=1"];
++(void)deleteAllEncryptHistoryModel{
+    NSString *sql=[NSString stringWithFormat:@"DELETE FROM History WHERE encrypt = 1"];
     [queue inDatabase:^(FMDatabase *dealDB) {
         
         if (![dealDB executeUpdate:sql])

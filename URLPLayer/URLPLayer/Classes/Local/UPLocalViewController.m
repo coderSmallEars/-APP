@@ -107,7 +107,7 @@
         }
         else{
             //加密列表
-        [SqliteTool deleteAllHistoryModel];
+        [SqliteTool deleteAllEncryptHistoryModel];
         }
      [_localView updateHistoryWatchTableView:nil];
     }

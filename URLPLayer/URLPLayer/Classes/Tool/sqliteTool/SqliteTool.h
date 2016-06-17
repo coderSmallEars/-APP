@@ -104,9 +104,9 @@
 +(UPUrlSubCategoryModel *)historyModelGetByVideo_url:(NSString*)video_url;
 
 /**
- 清空所有播放历史
+ 清空加密的播放历史
  */
-+(void)deleteAllHistoryModel;
++(void)deleteAllEncryptHistoryModel;
 
 /**
   清空所有未加密的播放历史
