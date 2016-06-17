@@ -16,6 +16,7 @@
     dispatch_once(&onceToken, ^{
         if (!manager) {
             manager = [UPBmobManager new];
+            manager.isInitSuccess = YES;//默认yes,解决notication返回初始化成功慢问题
         }
     });
     return manager;
