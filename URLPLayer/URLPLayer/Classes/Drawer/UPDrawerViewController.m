@@ -47,8 +47,8 @@
     }
     if ([type isEqualToString:@"加密模式"]) {
         NSUserDefaults * ud = [NSUserDefaults standardUserDefaults];
-        
-        if([ud objectForKey:User_Encrypt] == nil ){
+        NSLog(@"%@",[ud objectForKey:User_Encrypt] );
+        if([ud objectForKey:User_Secret] == nil ){
         //未设置加密密码
             //未设置密码
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"添加密码" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定" ,nil];
@@ -66,7 +66,7 @@
             UPLocalViewController * localC =   tabBar.viewControllers[0];
             [localC changeLocalVideos];
         
-        }else{
+        }else if ([[ud objectForKey:User_Encrypt] isEqualToString:@"0"]){
         //未加密 -- >切换为加密
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"请输入密码" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定" ,nil];
             alertView.tag = 10087;
@@ -110,6 +110,7 @@
     }
     
     [ud setObject:passWord forKey:User_Secret];
+        [ud setObject:@"1" forKey:User_Encrypt];
     [ud synchronize];
     }
     else{
