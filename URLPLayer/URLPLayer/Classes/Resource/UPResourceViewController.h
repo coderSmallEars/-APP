@@ -7,7 +7,7 @@
 //
 
 #import "UPViewController.h"
-#import "UPResourceView.h"
+
 @interface UPResourceViewController : UPViewController
-@property (nonatomic, strong) UPResourceView *resourceView;
+
 @end

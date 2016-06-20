@@ -13,7 +13,6 @@
 		6303A9D01CF7DD91008AD4EF /* UPDrawerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6303A9CF1CF7DD91008AD4EF /* UPDrawerTableView.m */; };
 		6303A9D31CF7E175008AD4EF /* UPDrawerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6303A9D21CF7E175008AD4EF /* UPDrawerCell.m */; };
 		630B051B1CF542EF008733E6 /* UPView.m in Sources */ = {isa = PBXBuildFile; fileRef = 630B051A1CF542EF008733E6 /* UPView.m */; };
-		630B051E1CF548D4008733E6 /* UPNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 630B051D1CF548D4008733E6 /* UPNavigationView.m */; };
 		630B05251CF54E82008733E6 /* navbar_backarrow_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 630B05221CF54E82008733E6 /* navbar_backarrow_icon@2x.png */; };
 		630B05261CF54E82008733E6 /* navbar_backarrow_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 630B05241CF54E82008733E6 /* navbar_backarrow_icon@3x.png */; };
 		630B05281CF55208008733E6 /* navbar_search_icon-@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 630B05271CF55208008733E6 /* navbar_search_icon-@3x.png */; };
@@ -79,7 +78,6 @@
 		63FC654B1CFEB97E009A8064 /* ScorllModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FC654A1CFEB97E009A8064 /* ScorllModel.m */; };
 		63FC654E1CFEBFB2009A8064 /* AdvertisementController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FC654D1CFEBFB2009A8064 /* AdvertisementController.m */; };
 		63FC65511CFEC0CF009A8064 /* AdvertisementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FC65501CFEC0CF009A8064 /* AdvertisementView.m */; };
-		8A0175CA1CF9C6D400737797 /* UPResourceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0175C91CF9C6D400737797 /* UPResourceView.m */; };
 		8A0175CD1CF9C73400737797 /* UPResourceCagetoryTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0175CC1CF9C73400737797 /* UPResourceCagetoryTableView.m */; };
 		8A0175D01CF9C76000737797 /* UPResourceSubCategoryCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0175CF1CF9C76000737797 /* UPResourceSubCategoryCollectionView.m */; };
 		8A0175D31CF9C8D700737797 /* UPResourceCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0175D21CF9C8D700737797 /* UPResourceCategoryCell.m */; };
@@ -145,8 +143,6 @@
 		6303A9D21CF7E175008AD4EF /* UPDrawerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPDrawerCell.m; path = URLPLayer/image/UPDrawerCell.m; sourceTree = SOURCE_ROOT; };
 		630B05191CF542EF008733E6 /* UPView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPView.h; path = URLPLayer/Classes/SuperClasses/UPView.h; sourceTree = SOURCE_ROOT; };
 		630B051A1CF542EF008733E6 /* UPView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPView.m; path = URLPLayer/Classes/SuperClasses/UPView.m; sourceTree = SOURCE_ROOT; };
-		630B051C1CF548D4008733E6 /* UPNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPNavigationView.h; path = URLPLayer/Classes/SuperClasses/UPNavigationView.h; sourceTree = SOURCE_ROOT; };
-		630B051D1CF548D4008733E6 /* UPNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPNavigationView.m; path = URLPLayer/Classes/SuperClasses/UPNavigationView.m; sourceTree = SOURCE_ROOT; };
 		630B05221CF54E82008733E6 /* navbar_backarrow_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_backarrow_icon@2x.png"; sourceTree = "<group>"; };
 		630B05241CF54E82008733E6 /* navbar_backarrow_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_backarrow_icon@3x.png"; sourceTree = "<group>"; };
 		630B05271CF55208008733E6 /* navbar_search_icon-@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_search_icon-@3x.png"; sourceTree = "<group>"; };
@@ -263,8 +259,6 @@
 		63FC654F1CFEC0CF009A8064 /* AdvertisementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdvertisementView.h; path = URLPLayer/Classes/Local/AdvertisementView.h; sourceTree = SOURCE_ROOT; };
 		63FC65501CFEC0CF009A8064 /* AdvertisementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdvertisementView.m; path = URLPLayer/Classes/Local/AdvertisementView.m; sourceTree = SOURCE_ROOT; };
 		79ADE0A8CF9C83141812247D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A0175C81CF9C6D400737797 /* UPResourceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPResourceView.h; sourceTree = "<group>"; };
-		8A0175C91CF9C6D400737797 /* UPResourceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPResourceView.m; sourceTree = "<group>"; };
 		8A0175CB1CF9C73400737797 /* UPResourceCagetoryTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPResourceCagetoryTableView.h; sourceTree = "<group>"; };
 		8A0175CC1CF9C73400737797 /* UPResourceCagetoryTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPResourceCagetoryTableView.m; sourceTree = "<group>"; };
 		8A0175CE1CF9C76000737797 /* UPResourceSubCategoryCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPResourceSubCategoryCollectionView.h; sourceTree = "<group>"; };
@@ -767,8 +761,6 @@
 				8A0175CF1CF9C76000737797 /* UPResourceSubCategoryCollectionView.m */,
 				8A0175D81CF9CF0500737797 /* UPResourceSubCategoryCell.h */,
 				8A0175D91CF9CF0500737797 /* UPResourceSubCategoryCell.m */,
-				8A0175C81CF9C6D400737797 /* UPResourceView.h */,
-				8A0175C91CF9C6D400737797 /* UPResourceView.m */,
 				8A88CDEE1D03F70F00DD1E97 /* UPControlPanel.h */,
 				8A88CDEF1D03F70F00DD1E97 /* UPControlPanel.m */,
 			);
@@ -932,8 +924,6 @@
 				8ACAF95A1CF0C7B2002981E4 /* UPRefreshTableView.m */,
 				630B05191CF542EF008733E6 /* UPView.h */,
 				630B051A1CF542EF008733E6 /* UPView.m */,
-				630B051C1CF548D4008733E6 /* UPNavigationView.h */,
-				630B051D1CF548D4008733E6 /* UPNavigationView.m */,
 				630B05EA1CF5A744008733E6 /* UPBaseTableView.h */,
 				630B05EB1CF5A744008733E6 /* UPBaseTableView.m */,
 				630B05F01CF5AF89008733E6 /* UPBaseTableCell.h */,
@@ -1226,7 +1216,6 @@
 				630B05B01CF59AA1008733E6 /* SDCycleScrollView.m in Sources */,
 				630B05F21CF5AF89008733E6 /* UPBaseTableCell.m in Sources */,
 				63FC654B1CFEB97E009A8064 /* ScorllModel.m in Sources */,
-				630B051E1CF548D4008733E6 /* UPNavigationView.m in Sources */,
 				630B05DF1CF59CBC008733E6 /* UIImage+MultiFormat.m in Sources */,
 				630B05D81CF59CBC008733E6 /* SDWebImageDecoder.m in Sources */,
 				6381750C1CFA266C00A63B35 /* UPDownLoadVC.m in Sources */,
@@ -1243,7 +1232,6 @@
 				8A0175DA1CF9CF0500737797 /* UPResourceSubCategoryCell.m in Sources */,
 				8AB1D0CA1CF0574F00C47609 /* UPTabBarController.m in Sources */,
 				630B05AE1CF59AA1008733E6 /* TAPageControl.m in Sources */,
-				8A0175CA1CF9C6D400737797 /* UPResourceView.m in Sources */,
 				8ACAF9581CF0C17C002981E4 /* UPViewController.m in Sources */,
 				630B05D91CF59CBC008733E6 /* SDWebImageDownloader.m in Sources */,
 				631F23A01CFA89C700A2905B /* StoreSetting.m in Sources */,

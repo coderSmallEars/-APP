@@ -7,10 +7,9 @@
 //
 
 #import "UPDownLoadView.h"
-#import "UPNavigationView.h"
 
 @interface UPDownLoadView ()<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic, strong)UPNavigationView * nav;
+
 @property (nonatomic ,strong)UISegmentedControl * segment;
 @property (nonatomic ,strong)UITableView * tableView;
 @property (nonatomic ,strong)NSMutableArray * finishDataArray;
@@ -25,11 +24,6 @@
 {
     if (self = [super initWithFrame:frame]) {
         
-        self.nav= [[UPNavigationView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];
-        
-        [_nav creatNavigitionViewWithLeftImgName:@"navbar_backarrow_icon" titleName:@"下载管理" rightImgName:@""];
-        
-        [self addSubview:_nav];
     
         [self buildUI];
 
@@ -55,7 +49,7 @@
         
         _segment = [[UISegmentedControl alloc]initWithItems:@[@"已完成",@"下载中"]];
         
-        _segment.frame =CGRectMake(-2, _nav.bottom, kScreenWidth+4, 40);
+        _segment.frame =CGRectMake(-2, 0, kScreenWidth+4, 40);
         
         _segment.selectedSegmentIndex = 0;
         
@@ -161,6 +155,5 @@
     
     [super addDelegate];
     
-    self.nav.delegate  = self.delegate;
 }
 @end

@@ -29,13 +29,31 @@
     [super viewDidLoad];
     self.localView.delegate = self;
     
+    self.title = @"历史";
+    [self addBarButtonItems];
     //查找轮播图表
     [UPBmobSingetonManager loadScrollPicList:^(NSArray *resultArray) {
         [_localView updateCycleScrollView:resultArray];
     }];
-    
 
     
+}
+-(void)addBarButtonItems{
+    UIButton * deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *deleteImg = [UIImage imageNamed:@"navbar_delete_icon"];
+    deleteBtn.bounds = CGRectMake(0, 0, deleteImg.size.width +20.f, deleteImg.size.height +20.f);
+    [deleteBtn setImage:deleteImg forState:UIControlStateNormal];
+    [deleteBtn addTarget:self action:@selector(clickDeleteBtn) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem * rightBI1 = [[UIBarButtonItem alloc]initWithCustomView:deleteBtn];
+    
+    UIButton * searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *searchImg = [UIImage imageNamed:@"navbar_search_icon-"];
+    [searchBtn setImage:searchImg forState:UIControlStateNormal];
+    searchBtn.bounds = CGRectMake(0, 0, searchImg.size.width + 20.f, searchImg.size.height + 20.f);
+    [searchBtn addTarget:self action:@selector(clickSearchBtn) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem * rightBI2 = [[UIBarButtonItem alloc]initWithCustomView:searchBtn];
+    self.navigationItem.rightBarButtonItems = @[rightBI2,rightBI1];
+
 }
 -(void)changeLocalVideos{
     if ([[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] == nil || [[[NSUserDefaults standardUserDefaults] objectForKey:User_Encrypt] isEqualToString:@"0"]){
@@ -50,38 +68,40 @@
     }
 
 }
+-(void)clickDeleteBtn{
+    //清空,先看数据库有内容否
+    NSMutableArray * historyArr = [SqliteTool getAllHistoryModels];
+    if (historyArr.count > 0) {
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"" message:@"是否全部清空?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alert show];
+    }
+
+
+
+}
+-(void)clickSearchBtn{
+
+    UPSearchUrlPlayVC * searchUrlPlay = [UPSearchUrlPlayVC new];
+    
+    [self presentViewController:searchUrlPlay animated:YES completion:^{
+        
+    }];
+
+}
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self changeLocalVideos];
    }
 -(void)uiview:(UIView *)view collectionEventType:(id)type params:(id)params{
     [super uiview:view collectionEventType:type params:params];
-    if ([type isEqualToString:@"点击删除按钮"]) {
-        //清空,先看数据库有内容否
-         NSMutableArray * historyArr = [SqliteTool getAllHistoryModels];
-        if (historyArr.count > 0) {
-            UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"" message:@"是否全部清空?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-            [alert show];
-        }
-        
-    }
+    
     if ([type isEqualToString:@"点击历史观看cell"]) {
         UPUrlSubCategoryModel * model = params;
         UPPlayerController *playerCtrl = [[UPPlayerController alloc] initWithURL:[NSURL URLWithString:model.video_url]];
         playerCtrl.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:playerCtrl animated:YES];
     }
-    //搜索
-    if ([type isEqualToString:@"navbar_search_icon-"]) {
-        
-        UPSearchUrlPlayVC * searchUrlPlay = [UPSearchUrlPlayVC new];
-        
-        [self presentViewController:searchUrlPlay animated:YES completion:^{
-            
-        }];
-        
-        
-    }
+   
     
     if ([type isEqualToString:@"点击了轮播图"]) {
 
@@ -90,9 +110,7 @@
         advertisementVC.model = params;
         [self.navigationController pushViewController:advertisementVC animated:YES];
     }
-    if ([type isEqualToString:@"搜索本地视频"]) {
-        
-    }
+    
 
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{

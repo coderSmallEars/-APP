@@ -7,7 +7,7 @@
 //
 
 #import "UPSearchUrlPlayView.h"
-#import "UPNavigationView.h"
+
 @interface UPSearchUrlPlayView ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic , strong) UISearchBar * search;
@@ -16,7 +16,7 @@
 
 @property (nonatomic , strong) UITableView * tableView;
 
-@property (nonatomic, strong) UPNavigationView * nav;
+@property (nonatomic, strong) UIView * nav;
 
 @end
 
@@ -88,9 +88,9 @@
     return _search;
     
 }
--(UPNavigationView *)nav{
+-(UIView *)nav{
     if (_nav == nil) {
-        _nav = [[UPNavigationView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64.f)];
+        _nav = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64.f)];
         
     }
     return _nav;

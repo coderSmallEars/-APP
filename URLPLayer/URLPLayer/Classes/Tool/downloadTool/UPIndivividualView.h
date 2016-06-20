@@ -9,7 +9,7 @@
 #import "UPView.h"
 #import "UPIndivividualTableView.h"
 @interface UPIndivividualView : UPView
-@property (nonatomic,strong )UPNavigationView *navigationView;
+
 @property (nonatomic, strong)UPIndivividualTableView *indivividualTV;
 
 //清空吐槽内容

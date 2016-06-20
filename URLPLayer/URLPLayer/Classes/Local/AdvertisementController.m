@@ -23,7 +23,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    self.title = _model.title;
 }
 -(void)uiview:(UIView *)view collectionEventType:(id)type params:(id)params{
     [super uiview:view collectionEventType:type params:params];

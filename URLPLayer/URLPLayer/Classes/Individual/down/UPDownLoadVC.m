@@ -26,6 +26,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    self.title = @"下载管理";
     _downLoadView.delegate = self;
     
     
@@ -44,9 +45,7 @@
 }
 -(void)uiview:(UIView *)view collectionEventType:(id)type params:(id)params{
     [super uiview:view collectionEventType:type params:params];
-    if ([type isEqualToString:@"navbar_backarrow_icon"]) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+    
 
 }
 - (void)didReceiveMemoryWarning {

@@ -19,7 +19,7 @@
     
     UPLocalViewController *localVC = [UPLocalViewController new];
     UPNavigationController *localNavi = [[UPNavigationController alloc] initWithRootViewController:localVC];
-    [localNavi setNavigationBarHidden:YES];
+    
     UITabBarItem *localItem = [[UITabBarItem alloc] initWithTitle:@"历史" image:nil selectedImage:nil];
     localNavi.tabBarItem = localItem;
     
@@ -30,7 +30,7 @@
     
     UPIndivividualViewController *individualVC = [UPIndivividualViewController new];
     UPNavigationController *individualNavi = [[UPNavigationController alloc] initWithRootViewController:individualVC];
-    [individualNavi setNavigationBarHidden:YES];
+    
     UITabBarItem *individualItem = [[UITabBarItem alloc] initWithTitle:@"个人" image:nil selectedImage:nil];
     individualNavi.tabBarItem = individualItem;
     

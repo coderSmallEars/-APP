@@ -23,8 +23,29 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"吐槽";
+    [self addBarButtonItems];
     _indivividualView.delegate  = self;
+}
+-(void)addBarButtonItems{
+
+    UIButton * searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *searchImg = [UIImage imageNamed:@"navbar_search_icon-"];
+    [searchBtn setImage:searchImg forState:UIControlStateNormal];
+    searchBtn.bounds = CGRectMake(0, 0, searchImg.size.width + 20.f, searchImg.size.height + 20.f);
+    [searchBtn addTarget:self action:@selector(clickSearchBtn) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem * rightBI = [[UIBarButtonItem alloc]initWithCustomView:searchBtn];
+    self.navigationItem.rightBarButtonItem = rightBI;
+
+}
+-(void)clickSearchBtn{
+    
+    UPSearchUrlPlayVC * searchUrlPlay = [UPSearchUrlPlayVC new];
+    
+    [self presentViewController:searchUrlPlay animated:YES completion:^{
+        
+    }];
+    
 }
 -(void)uiview:(UIView *)view collectionEventType:(id)type params:(id)params{
     [super uiview:view collectionEventType:type params:params];
