@@ -52,7 +52,7 @@
     
     if (range.length > 0)
     {
-        NSLog(@"%@",_search.text);
+        [self uiview:nil collectionEventType:@"打开播放器" params:self.search.text];
         
     }
     
