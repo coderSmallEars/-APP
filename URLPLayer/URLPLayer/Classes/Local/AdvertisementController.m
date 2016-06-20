@@ -16,10 +16,16 @@
 
 -(void)loadView{
     [super loadView];
-    _advertisementView  = [[AdvertisementView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.view = _advertisementView;
-    _advertisementView.delegate  =self;
     
+    self.view = self.advertisementView;
+    self.advertisementView.delegate  =self;
+    
+}
+-(AdvertisementView *)advertisementView{
+    if (_advertisementView == nil) {
+        _advertisementView  = [[AdvertisementView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    }
+    return _advertisementView;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,7 +40,7 @@
 }
 -(void)setModel:(ScorllModel *)model{
     _model = model;
-    _advertisementView.model = _model;
+    self.advertisementView.model = _model;
     
 }
 - (void)didReceiveMemoryWarning {
