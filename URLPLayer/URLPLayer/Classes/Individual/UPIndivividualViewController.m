@@ -28,7 +28,10 @@
     _indivividualView.delegate  = self;
 }
 -(void)addBarButtonItems{
-
+    UIImageView * leftImgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logo"]];
+    leftImgView.bounds = CGRectMake(0, 0, 29.f, 29.f);
+    UIBarButtonItem * leftBI = [[UIBarButtonItem alloc]initWithCustomView:leftImgView];
+        self.navigationItem.leftBarButtonItem = leftBI;
     UIButton * searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *searchImg = [UIImage imageNamed:@"navbar_search_icon-"];
     [searchBtn setImage:searchImg forState:UIControlStateNormal];

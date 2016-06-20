@@ -47,6 +47,7 @@
 		630B05EF1CF5AA42008733E6 /* UPHistoryWatchtTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 630B05EE1CF5AA42008733E6 /* UPHistoryWatchtTableView.m */; };
 		630B05F21CF5AF89008733E6 /* UPBaseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 630B05F11CF5AF89008733E6 /* UPBaseTableCell.m */; };
 		630B05F51CF5B037008733E6 /* UPHistoryWatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 630B05F41CF5B037008733E6 /* UPHistoryWatchCell.m */; };
+		630C21331D17DC8E00669672 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 630C21321D17DC8E00669672 /* logo.png */; };
 		631F239F1CFA89C700A2905B /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 631F239B1CFA89C700A2905B /* SSKeychain.m */; };
 		631F23A01CFA89C700A2905B /* StoreSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 631F239E1CFA89C700A2905B /* StoreSetting.m */; };
 		637978691CF6D08100B44F7C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 637978681CF6D08100B44F7C /* libsqlite3.0.tbd */; };
@@ -206,6 +207,7 @@
 		630B05F11CF5AF89008733E6 /* UPBaseTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPBaseTableCell.m; path = URLPLayer/Classes/SuperClasses/UPBaseTableCell.m; sourceTree = SOURCE_ROOT; };
 		630B05F31CF5B037008733E6 /* UPHistoryWatchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPHistoryWatchCell.h; path = URLPLayer/Classes/SuperClasses/UPHistoryWatchCell.h; sourceTree = SOURCE_ROOT; };
 		630B05F41CF5B037008733E6 /* UPHistoryWatchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPHistoryWatchCell.m; path = URLPLayer/Classes/SuperClasses/UPHistoryWatchCell.m; sourceTree = SOURCE_ROOT; };
+		630C21321D17DC8E00669672 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		631F239A1CFA89C700A2905B /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		631F239B1CFA89C700A2905B /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		631F239D1CFA89C700A2905B /* StoreSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreSetting.h; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 		630B05211CF54E82008733E6 /* @2X */ = {
 			isa = PBXGroup;
 			children = (
+				630C21321D17DC8E00669672 /* logo.png */,
 				630B052E1CF572CA008733E6 /* navbar_delete_icon@2x.png */,
 				630B05291CF55219008733E6 /* navbar_search_icon-@2x.png */,
 				630B05221CF54E82008733E6 /* navbar_backarrow_icon@2x.png */,
@@ -1096,6 +1099,7 @@
 				630B05251CF54E82008733E6 /* navbar_backarrow_icon@2x.png in Resources */,
 				630B052F1CF572CA008733E6 /* navbar_delete_icon@2x.png in Resources */,
 				630B052A1CF55219008733E6 /* navbar_search_icon-@2x.png in Resources */,
+				630C21331D17DC8E00669672 /* logo.png in Resources */,
 				630B05311CF572D4008733E6 /* navbar_delete_icon@3x.png in Resources */,
 				63CD9E9B1D112011009E14C2 /* Images.xcassets in Resources */,
 				6303A9CA1CF7CDA8008AD4EF /* bg_Input-panel@3x.png in Resources */,

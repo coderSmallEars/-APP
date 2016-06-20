@@ -39,6 +39,10 @@
     
 }
 -(void)addBarButtonItems{
+    UIImageView * leftImgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logo"]];
+    leftImgView.bounds = CGRectMake(0, 0, 29.f, 29.f);
+     UIBarButtonItem * leftBI = [[UIBarButtonItem alloc]initWithCustomView:leftImgView];
+    self.navigationItem.leftBarButtonItem = leftBI;
     UIButton * deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *deleteImg = [UIImage imageNamed:@"navbar_delete_icon"];
     deleteBtn.bounds = CGRectMake(0, 0, deleteImg.size.width +20.f, deleteImg.size.height +20.f);
