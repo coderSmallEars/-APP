@@ -82,10 +82,8 @@
 -(void)clickSearchBtn{
 
     UPSearchUrlPlayVC * searchUrlPlay = [UPSearchUrlPlayVC new];
-    
-    [self presentViewController:searchUrlPlay animated:YES completion:^{
-        
-    }];
+    searchUrlPlay.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:searchUrlPlay animated:YES];
 
 }
 -(void)viewWillAppear:(BOOL)animated{

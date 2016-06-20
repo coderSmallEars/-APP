@@ -60,22 +60,27 @@
     
     if([type isEqualToString:@"取消"]){
     
-        [self dismissViewControllerAnimated:YES completion:^{
-            
-        }];
+        [self.navigationController popViewControllerAnimated:YES];
         
     }
     
     if([type isEqualToString:@"打开播放器"]){
         UPPlayerController *playerCtrl = [[UPPlayerController alloc] initWithURL:[NSURL URLWithString:params]];
        
-        [self presentViewController:playerCtrl animated:YES completion:^{
-            
-        }];
-        
+        [self.navigationController pushViewController:playerCtrl animated:YES];
     }
 
 
+
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
 
 }
 - (void)didReceiveMemoryWarning {

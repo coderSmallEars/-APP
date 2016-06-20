@@ -41,10 +41,8 @@
 -(void)clickSearchBtn{
     
     UPSearchUrlPlayVC * searchUrlPlay = [UPSearchUrlPlayVC new];
-    
-    [self presentViewController:searchUrlPlay animated:YES completion:^{
-        
-    }];
+    searchUrlPlay.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:searchUrlPlay animated:YES];
     
 }
 -(void)uiview:(UIView *)view collectionEventType:(id)type params:(id)params{
@@ -79,17 +77,7 @@
     if ([type isEqualToString:@"联系我们"]){
     
     }
-    //搜索按钮
-    if ([type isEqualToString:@"navbar_search_icon-"]) {
-        
-        UPSearchUrlPlayVC * searchUrlPlay = [UPSearchUrlPlayVC new];
-        
-        [self presentViewController:searchUrlPlay animated:YES completion:^{
-            
-        }];
-        
-        
-    }
+   
 
 
 }
