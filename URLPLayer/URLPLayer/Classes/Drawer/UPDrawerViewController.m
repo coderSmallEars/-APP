@@ -82,7 +82,20 @@
         
     }
     if ([type isEqualToString:@"清除缓存"]) {
+        NSUserDefaults * ud = [NSUserDefaults standardUserDefaults];
+        if ([ud objectForKey:User_Encrypt] == nil || [[ud objectForKey:User_Encrypt] isEqualToString:@"0"]) {
+            [SqliteTool deleteAllNotEncryptHistoryModel];
+        }else{
         
+            [SqliteTool deleteAllEncryptHistoryModel];
+        }
+        UPTabBarController* tabBar =  app.mmDrawer.centerViewController.childViewControllers[0];
+        UPLocalViewController * localC =   tabBar.viewControllers[0];
+        [localC changeLocalVideos];
+        [app.mmDrawer closeDrawerAnimated:YES completion:^(BOOL finished) {
+            
+        }];
+ 
     }
 
 }
