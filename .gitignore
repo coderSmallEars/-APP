@@ -1,10 +1,10 @@
 
 
 .DS_Store
-URLPLayer.xcodeproj/project.xcworkspace/xcuserdata
-URLPLayer.xcodeproj/xcuserdata
-Pods/Pods.xcodeproj/xcuserdata
-URLPlayer.xcworkspace/xcuserdata
+URLPLayer/URLPLayer.xcodeproj/project.xcworkspace/xcuserdata
+URLPLayer/URLPLayer.xcodeproj/xcuserdata
+URLPLayer/Pods/Pods.xcodeproj/xcuserdata
+URLPLayer/URLPlayer.xcworkspace/xcuserdata
 
 *.xccheckout
 build
