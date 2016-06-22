@@ -10,12 +10,12 @@
 
 @interface UPControlPanel()
 
-@property (nonatomic, strong) UIButton *playButton;
-@property (nonatomic, strong) UILabel *currentTimeLabel;
-@property (nonatomic, strong) UILabel *totalDurationLabel;
-@property (nonatomic, strong) UISlider *playerProgressSlider;
+@property (nonatomic, strong) UIButton                *playButton;
+@property (nonatomic, strong) UILabel                 *currentTimeLabel;
+@property (nonatomic, strong) UILabel                 *totalDurationLabel;
+@property (nonatomic, strong) UISlider                *playerProgressSlider;
 @property (nonatomic, strong) UIActivityIndicatorView *indicateView;
-@property (nonatomic, assign) BOOL isPlayerSliderBeginDragged;
+@property (nonatomic, assign) BOOL                    isPlayerSliderBeginDragged;
 @end
 
 @implementation UPControlPanel
@@ -111,12 +111,12 @@
 - (void)refreshPlayerControl{
 //    duration
     NSTimeInterval duration = self.delegatePlayer.duration;
-    NSInteger intDuration = duration + 0.5;
+    NSInteger intDuration   = duration + 0.5;
     if (intDuration > 0) {
         self.playerProgressSlider.maximumValue = duration;
-        self.totalDurationLabel.text = [NSString stringWithFormat:@"%02d:%02d",(int)intDuration/60,(int)intDuration % 60];
+        self.totalDurationLabel.text           = [NSString stringWithFormat:@"%02d:%02d",(int)intDuration/60,(int)intDuration % 60];
     }else{
-        self.totalDurationLabel.text = @"--:--";
+        self.totalDurationLabel.text           = @"--:--";
         self.playerProgressSlider.maximumValue = 1;
     }
 //    position
@@ -125,6 +125,7 @@
         position = self.playerProgressSlider.value;
     }else{
         position = self.delegatePlayer.currentPlaybackTime;
+        NSLog(@"%ld",self.delegatePlayer.bufferingProgress);
     }
     NSInteger intPosition = position + 0.5;
     if (intDuration > 0) {
@@ -132,20 +133,20 @@
     }else{
         self.playerProgressSlider.value = 0.f;
     }
-    
+
     self.currentTimeLabel.text = [NSString stringWithFormat:@"%02d:%02d", (int)(intPosition / 60), (int)(intPosition % 60)];
-    
+
 //    status
-    BOOL isPlaying = self.delegatePlayer.isPlaying;
-    self.playButton.selected = !isPlaying;
-    
+    BOOL isPlaying             = self.delegatePlayer.isPlaying;
+    self.playButton.selected   = !isPlaying;
+
     if (isPlaying && self.indicateView.isAnimating) {
         [self.indicateView stopAnimating];
     }else if(self.delegatePlayer.playbackState == IJKMPMoviePlaybackStatePaused && !self.indicateView.isAnimating){
         [self.indicateView startAnimating];
     }
-    
-    
+
+
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(refreshPlayerControl) object:nil];
     if (!self.hidden) {
         [self performSelector:@selector(refreshPlayerControl) withObject:nil afterDelay:0.5];
@@ -191,8 +192,8 @@
 
 - (UIButton *)playButton{
     if (!_playButton) {
-        _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _playButton.frame = CGRectMake(0,0, 70,44);
+    _playButton       = [UIButton buttonWithType:UIButtonTypeCustom];
+    _playButton.frame = CGRectMake(0,0, 70,44);
         [_playButton setTitle:@"暂停" forState:UIControlStateNormal];
         [_playButton setTitle:@"播放" forState:UIControlStateSelected];
         [_playButton setBackgroundColor:[UIColor clearColor]];
@@ -204,17 +205,19 @@
 
 - (UILabel *)currentTimeLabel{
     if (!_currentTimeLabel) {
-        _currentTimeLabel = [UILabel new];
-        _currentTimeLabel.textColor = [UIColor whiteColor];
+    _currentTimeLabel             = [UILabel new];
+    _currentTimeLabel.textColor   = [UIColor whiteColor];
         [_currentTimeLabel setAdjustsFontSizeToFitWidth:YES];
-        _currentTimeLabel.text = @"cTime;";
+    _currentTimeLabel.text        = @"cTime;";
     }
     return _currentTimeLabel;
 }
 
 - (UISlider *)playerProgressSlider{
     if (!_playerProgressSlider) {
-        _playerProgressSlider = [UISlider new];
+    _playerProgressSlider = [UISlider new];
+    UIImage *sliderImg    = [self getImageWithColor:[UIColor grayColor] width:15 height:9];
+        [_playerProgressSlider setThumbImage:sliderImg forState:UIControlStateNormal];
         [_playerProgressSlider addTarget:self action:@selector(timeIntervalValueChanged:) forControlEvents:UIControlEventValueChanged];
         [_playerProgressSlider addTarget:self action:@selector(timeIntervalValueChangEnd:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -223,18 +226,29 @@
 
 - (UILabel *)totalDurationLabel{
     if (!_totalDurationLabel) {
-        _totalDurationLabel = [UILabel new];
-        _totalDurationLabel.textColor = [UIColor whiteColor];
+    _totalDurationLabel           = [UILabel new];
+    _totalDurationLabel.textColor = [UIColor whiteColor];
         [_totalDurationLabel setAdjustsFontSizeToFitWidth:YES];
-        _totalDurationLabel.text = @"aTime";
+    _totalDurationLabel.text      = @"aTime";
     }
     return _totalDurationLabel;
 }
 
 - (UIActivityIndicatorView *)indicateView{
     if (!_indicateView) {
-        _indicateView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    _indicateView                 = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     }
     return _indicateView;
 }
+//纯色image
+- (UIImage *)getImageWithColor:(UIColor *)color width:(CGFloat)width height:(CGFloat)height{
+    CGRect imageRect   = CGRectMake(0, 0, width, height);
+    UIGraphicsBeginImageContext(imageRect.size);
+    CGContextSetFillColorWithColor(UIGraphicsGetCurrentContext(), color.CGColor);
+    CGContextFillRect(UIGraphicsGetCurrentContext(), imageRect);
+    UIImage *sliderImg = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return sliderImg;
+}
+
 @end
